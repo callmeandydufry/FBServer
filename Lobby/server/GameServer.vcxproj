@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_Final|Win32">
+      <Configuration>Release_Final</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_Final|x64">
+      <Configuration>Release_Final</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\public\Connector\Connector.cpp" />
+    <ClCompile Include="..\public\Connector\ConnectorManager.cpp" />
+    <ClCompile Include="..\public\Connector\ConnectorManager_Epoll.cpp" />
+    <ClCompile Include="..\public\Connector\ConnectorManager_Select.cpp">
+      <PreprocessToFile Condition="'$(Configuration)|$(Platform)'=='Release_Final|Win32'">false</PreprocessToFile>
+    </ClCompile>
+    <ClCompile Include="..\public\Connector\ConnectorPool.cpp" />
+    <ClCompile Include="..\public\Connector\ConnectThread.cpp" />
+    <ClCompile Include="..\public\Connector\ServerConnectorManager.cpp" />
+    <ClCompile Include="..\public\Core\BaseTool_Config.cpp" />
+    <ClCompile Include="..\public\Core\BaseTool_Log.cpp" />
+    <ClCompile Include="..\public\Core\BaseTool_String.cpp" />
+    <ClCompile Include="..\public\Core\BaseTool_Thread.cpp" />
+    <ClCompile Include="..\public\Core\BaseTool_Time.cpp" />
+    <ClCompile Include="..\public\Core\Setting.cpp" />
+    <ClCompile Include="..\public\Core\ThreadContainer.cpp" />
+    <ClCompile Include="..\public\DataBase\ArchiveInterface.cpp" />
+    <ClCompile Include="..\public\DataBase\DBCore.cpp" />
+    <ClCompile Include="..\public\DataBase\KLODBCBase.cpp" />
+    <ClCompile Include="..\public\DataBase\MKManager.cpp" />
+    <ClCompile Include="..\public\DataBase\SqlStatement.cpp" />
+    <ClCompile Include="..\public\Debug.cpp" />
+    <ClCompile Include="..\public\DefineResult.cpp" />
+    <ClCompile Include="..\public\ExceptionHandler.cpp" />
+    <ClCompile Include="..\public\IntegerHashMap.cpp" />
+    <ClCompile Include="..\public\JsonSerialization.cpp" />
+    <ClCompile Include="..\public\List.cpp" />
+    <ClCompile Include="..\public\MessageFactoryManager.cpp" />
+    <ClCompile Include="..\public\Messages\CGHandShake.cpp" />
+    <ClCompile Include="..\public\Messages\CGPing.cpp" />
+    <ClCompile Include="..\public\Messages\CGReqeustLogin.cpp" />
+    <ClCompile Include="..\public\Messages\CGRpcInvokeMsg.cpp" />
+    <ClCompile Include="..\public\Messages\GCEncryptKey.cpp" />
+    <ClCompile Include="..\public\Messages\GCHandShake.cpp" />
+    <ClCompile Include="..\public\Messages\GCPing.cpp" />
+    <ClCompile Include="..\public\Messages\GCRpcInvokeMsg.cpp" />
+    <ClCompile Include="..\public\Messages\SSHandShake.cpp" />
+    <ClCompile Include="..\public\Module\ModuleComponent.cpp" />
+    <ClCompile Include="..\public\Module\ModuleConnector.cpp" />
+    <ClCompile Include="..\public\Module\ModuleConnectorManager.cpp" />
+    <ClCompile Include="..\public\Module\ModuleExportInterface.cpp" />
+    <ClCompile Include="..\public\Module\ModuleManager.cpp" />
+    <ClCompile Include="..\public\Module\ModulePacket.cpp" />
+    <ClCompile Include="..\public\Module\ModulePacketMessage.cpp" />
+    <ClCompile Include="..\public\Module\ModuleSupport.cpp" />
+    <ClCompile Include="..\public\Static_Allocator.cpp" />
+    <ClCompile Include="..\public\StringHashMap.cpp" />
+    <ClCompile Include="..\public\Struct.cpp" />
+    <ClCompile Include="..\public\StructMacro.cpp" />
+    <ClCompile Include="..\public\StructPlatform.cpp" />
+    <ClCompile Include="..\public\TabTemplateLoader.cpp" />
+    <ClCompile Include="..\public\TAB\TAB.cpp" />
+    <ClCompile Include="..\public\TAB\TabReload.cpp" />
+    <ClCompile Include="..\public\TAB\TabReloadShareSpace.cpp" />
+    <ClCompile Include="..\public\TAB\TabStruct.cpp" />
+    <ClCompile Include="..\public\Util.cpp" />
+    <ClCompile Include="..\public\Utilities\SplitStringBase.cpp" />
+    <ClCompile Include="..\public\Utilities\SplitStringLevelOne.cpp" />
+    <ClCompile Include="..\public\Utilities\SplitStringLevelTwo.cpp" />
+    <ClCompile Include="..\public\Version.cpp" />
+    <ClCompile Include="SnidallocateeDBProxy.cpp" />
+    <ClCompile Include="source\CGHandShakeHandler.cpp" />
+    <ClCompile Include="source\CGPingHandler.cpp" />
+    <ClCompile Include="source\CGRequestLoginHandler.cpp" />
+    <ClCompile Include="source\CGRPChandler.cpp" />
+    <ClCompile Include="source\CGRpcInvokeMsgHandler.cpp" />
+    <ClCompile Include="source\ChatManager.cpp" />
+    <ClCompile Include="source\ClientConnector.cpp" />
+    <ClCompile Include="source\ClientGateManager.cpp" />
+    <ClCompile Include="source\ClientSession.cpp" />
+    <ClCompile Include="source\DBOper.cpp" />
+    <ClCompile Include="source\DBProxyManager.cpp" />
+    <ClCompile Include="source\GameServer.cpp" />
+    <ClCompile Include="source\GameServerMainThread.cpp" />
+    <ClCompile Include="source\GCMsgHandler.cpp" />
+    <ClCompile Include="source\IncomingConnectorManager.cpp" />
+    <ClCompile Include="source\IndexAllocManager.cpp" />
+    <ClCompile Include="source\OnlinePlayer.cpp" />
+    <ClCompile Include="source\OnlinePlayerManager.cpp" />
+    <ClCompile Include="source\PlayerArchiveStruct.cpp" />
+    <ClCompile Include="source\PlayerDBProxy.cpp" />
+    <ClCompile Include="source\PlayerLogin.cpp" />
+    <ClCompile Include="source\RegisterPlayer.cpp" />
+    <ClCompile Include="source\RegisterPlayerManager.cpp" />
+    <ClCompile Include="source\RegisterPlayerStruct.cpp" />
+    <ClCompile Include="source\RobotData.cpp" />
+    <ClCompile Include="source\RobotManager.cpp" />
+    <ClCompile Include="source\ServerModuleBase.cpp" />
+    <ClCompile Include="source\ServerModuleManager.cpp">
+      <PreprocessToFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</PreprocessToFile>
+      <IgnoreStandardIncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</IgnoreStandardIncludePath>
+      <IgnoreStandardIncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</IgnoreStandardIncludePath>
+      <PreprocessToFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</PreprocessToFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <ShowIncludes Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ShowIncludes>
+    </ClCompile>
+    <ClCompile Include="source\ServerModuleRouter.cpp" />
+    <ClCompile Include="source\ServerModuleThreadContainer.cpp" />
+    <ClCompile Include="source\ServerModuleUtils.cpp" />
+    <ClCompile Include="source\SessionConnectorManager.cpp" />
+    <ClCompile Include="source\SnidAllocArchiveData.cpp" />
+    <ClCompile Include="source\SnidAllocManager.cpp" />
+    <ClCompile Include="source\SSHandShakeHandler.cpp" />
+    <ClCompile Include="source\stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_Final|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_Final|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Public\ClientRPCMethodInterface.h" />
+    <ClInclude Include="..\..\Public\ClientServerRPCSupport.h" />
+    <ClInclude Include="..\..\Public\DynaString.h" />
+    <ClInclude Include="..\..\Public\FixedString.h" />
+    <ClInclude Include="..\..\Public\PacketDataStream.h" />
+    <ClInclude Include="..\..\Public\ServerRPCMethodInterface.h" />
+    <ClInclude Include="..\..\Public\SharedTypes.h" />
+    <ClInclude Include="..\..\Public\ShareStruct.h" />
+    <ClInclude Include="..\..\Public\ShareStructDefine.h" />
+    <ClInclude Include="..\public\Array_Base.h" />
+    <ClInclude Include="..\public\Atomic.h" />
+    <ClInclude Include="..\public\ChatDefine.h" />
+    <ClInclude Include="..\public\Connector\Connector.h" />
+    <ClInclude Include="..\public\Connector\ConnectorManager.h" />
+    <ClInclude Include="..\public\Connector\ConnectorManager_Epoll.h" />
+    <ClInclude Include="..\public\Connector\ConnectorManager_Select.h" />
+    <ClInclude Include="..\public\Connector\ConnectorPool.h" />
+    <ClInclude Include="..\public\Connector\ConnectThread.h" />
+    <ClInclude Include="..\public\Connector\ServerConnector.h" />
+    <ClInclude Include="..\public\Connector\ServerConnectorManager.h" />
+    <ClInclude Include="..\public\Core\BaseTool.h" />
+    <ClInclude Include="..\public\Core\Setting.h" />
+    <ClInclude Include="..\public\Core\TemplateUtils.h" />
+    <ClInclude Include="..\public\Core\ThreadContainer.h" />
+    <ClInclude Include="..\public\DataBase\ArchiveInterface.h" />
+    <ClInclude Include="..\public\DataBase\DBConst.h" />
+    <ClInclude Include="..\public\DataBase\DBCore.h" />
+    <ClInclude Include="..\public\DataBase\KLODBCBase.h" />
+    <ClInclude Include="..\public\DataBase\MKManager.h" />
+    <ClInclude Include="..\public\DataBase\SqlStatement.h" />
+    <ClInclude Include="..\public\Debug.h" />
+    <ClInclude Include="..\public\Define.h" />
+    <ClInclude Include="..\public\DefineResult.h" />
+    <ClInclude Include="..\public\Enum.h" />
+    <ClInclude Include="..\public\ExceptionHandler.h" />
+    <ClInclude Include="..\public\IntegerHashMap.h" />
+    <ClInclude Include="..\public\JsonSerialization.h" />
+    <ClInclude Include="..\public\List.h" />
+    <ClInclude Include="..\public\lzoconf.h" />
+    <ClInclude Include="..\public\lzodefs.h" />
+    <ClInclude Include="..\public\MessageDefine.h" />
+    <ClInclude Include="..\public\MessageFactory.h" />
+    <ClInclude Include="..\public\MessageFactoryManager.h" />
+    <ClInclude Include="..\public\Messages\CGHandShake.h" />
+    <ClInclude Include="..\public\Messages\CGPing.h" />
+    <ClInclude Include="..\public\Messages\CGReqeustLogin.h" />
+    <ClInclude Include="..\public\Messages\CGRpcInvokeMsg.h" />
+    <ClInclude Include="..\public\Messages\GCEncryptKey.h" />
+    <ClInclude Include="..\public\Messages\GCHandShake.h" />
+    <ClInclude Include="..\public\Messages\GCPing.h" />
+    <ClInclude Include="..\public\Messages\GCRpcInvokeMsg.h" />
+    <ClInclude Include="..\public\Messages\SSHandShake.h" />
+    <ClInclude Include="..\public\ModuleDefine.h" />
+    <ClInclude Include="..\public\ModuleExportInterface\CommonModuleStruct.h" />
+    <ClInclude Include="..\public\Module\ModuleComponent.h" />
+    <ClInclude Include="..\public\Module\ModuleConnector.h" />
+    <ClInclude Include="..\public\Module\ModuleConnectorManager.h" />
+    <ClInclude Include="..\public\Module\ModuleDataStream.h" />
+    <ClInclude Include="..\public\Module\ModuleExportInterface.h" />
+    <ClInclude Include="..\public\Module\ModuleInlineMacros.h" />
+    <ClInclude Include="..\public\Module\ModuleManager.h" />
+    <ClInclude Include="..\public\Module\ModulePacket.h" />
+    <ClInclude Include="..\public\Module\ModulePacketMessage.h" />
+    <ClInclude Include="..\public\Module\ModuleSupport.h" />
+    <ClInclude Include="..\public\RapidJson\allocators.h" />
+    <ClInclude Include="..\public\RapidJson\document.h" />
+    <ClInclude Include="..\public\RapidJson\encodedstream.h" />
+    <ClInclude Include="..\public\RapidJson\encodings.h" />
+    <ClInclude Include="..\public\RapidJson\error\en.h" />
+    <ClInclude Include="..\public\RapidJson\error\error.h" />
+    <ClInclude Include="..\public\RapidJson\filereadstream.h" />
+    <ClInclude Include="..\public\RapidJson\filewritestream.h" />
+    <ClInclude Include="..\public\RapidJson\fwd.h" />
+    <ClInclude Include="..\public\RapidJson\internal\biginteger.h" />
+    <ClInclude Include="..\public\RapidJson\internal\diyfp.h" />
+    <ClInclude Include="..\public\RapidJson\internal\dtoa.h" />
+    <ClInclude Include="..\public\RapidJson\internal\ieee754.h" />
+    <ClInclude Include="..\public\RapidJson\internal\itoa.h" />
+    <ClInclude Include="..\public\RapidJson\internal\meta.h" />
+    <ClInclude Include="..\public\RapidJson\internal\pow10.h" />
+    <ClInclude Include="..\public\RapidJson\internal\regex.h" />
+    <ClInclude Include="..\public\RapidJson\internal\stack.h" />
+    <ClInclude Include="..\public\RapidJson\internal\strfunc.h" />
+    <ClInclude Include="..\public\RapidJson\internal\strtod.h" />
+    <ClInclude Include="..\public\RapidJson\internal\swap.h" />
+    <ClInclude Include="..\public\RapidJson\istreamwrapper.h" />
+    <ClInclude Include="..\public\RapidJson\memorybuffer.h" />
+    <ClInclude Include="..\public\RapidJson\memorystream.h" />
+    <ClInclude Include="..\public\RapidJson\msinttypes\inttypes.h" />
+    <ClInclude Include="..\public\RapidJson\msinttypes\stdint.h" />
+    <ClInclude Include="..\public\RapidJson\ostreamwrapper.h" />
+    <ClInclude Include="..\public\RapidJson\pointer.h" />
+    <ClInclude Include="..\public\RapidJson\prettywriter.h" />
+    <ClInclude Include="..\public\RapidJson\rapidjson.h" />
+    <ClInclude Include="..\public\RapidJson\reader.h" />
+    <ClInclude Include="..\public\RapidJson\schema.h" />
+    <ClInclude Include="..\public\RapidJson\stream.h" />
+    <ClInclude Include="..\public\RapidJson\stringbuffer.h" />
+    <ClInclude Include="..\public\RapidJson\writer.h" />
+    <ClInclude Include="..\public\Static_Allocator.h" />
+    <ClInclude Include="..\public\StringHashMap.h" />
+    <ClInclude Include="..\public\Struct.h" />
+    <ClInclude Include="..\public\StructMacro.h" />
+    <ClInclude Include="..\public\TabTemplateLoader.h" />
+    <ClInclude Include="..\public\TAB\TAB.h" />
+    <ClInclude Include="..\public\TAB\TabDefine.h" />
+    <ClInclude Include="..\public\TAB\TabReload.h" />
+    <ClInclude Include="..\public\TAB\TabStruct.h" />
+    <ClInclude Include="..\public\TypeDefine.h" />
+    <ClInclude Include="..\public\Util.h" />
+    <ClInclude Include="..\public\Utilities\SplitStringBase.h" />
+    <ClInclude Include="..\public\Utilities\SplitStringLevelOne.h" />
+    <ClInclude Include="..\public\Utilities\SplitStringLevelTwo.h" />
+    <ClInclude Include="..\public\Version.h" />
+    <ClInclude Include="include\CGRPChandler.h" />
+    <ClInclude Include="include\ChatManager.h" />
+    <ClInclude Include="include\ClientConnector.h" />
+    <ClInclude Include="include\ClientGateManager.h" />
+    <ClInclude Include="include\ClientSession.h" />
+    <ClInclude Include="include\CommonObjectPool.h" />
+    <ClInclude Include="include\DBOper.h" />
+    <ClInclude Include="include\DBProxyManager.h" />
+    <ClInclude Include="include\ExtendedObjectPool.h" />
+    <ClInclude Include="include\GameServer.h" />
+    <ClInclude Include="include\GameServerMainThread.h" />
+    <ClInclude Include="include\IncomingConnectorManager.h" />
+    <ClInclude Include="include\IndexAllocManager.h" />
+    <ClInclude Include="include\MsgTransDefine.h" />
+    <ClInclude Include="include\OnlinePlayer.h" />
+    <ClInclude Include="include\OnlinePlayerManager.h" />
+    <ClInclude Include="include\PlayerArchiveStruct.h" />
+    <ClInclude Include="include\PlayerDBProxy.h" />
+    <ClInclude Include="include\PlayerLogin.h" />
+    <ClInclude Include="include\PropertyPlayerState.h" />
+    <ClInclude Include="include\PropertySnidAccountRelation.h" />
+    <ClInclude Include="include\PropertyVersion.h" />
+    <ClInclude Include="include\RegisterPlayer.h" />
+    <ClInclude Include="include\RegisterPlayerManager.h" />
+    <ClInclude Include="include\RegisterPlayerStruct.h" />
+    <ClInclude Include="include\RobotData.h" />
+    <ClInclude Include="include\RobotManager.h" />
+    <ClInclude Include="include\ServerModuleBase.h" />
+    <ClInclude Include="include\ServerModuleExportInterface.h" />
+    <ClInclude Include="include\ServerModuleManager.h" />
+    <ClInclude Include="include\ServerModuleRouter.h" />
+    <ClInclude Include="include\ServerModuleThreadContainer.h" />
+    <ClInclude Include="include\ServerModuleUtils.h" />
+    <ClInclude Include="include\SessionConnectorManager.h" />
+    <ClInclude Include="include\SnidAllocArchiveData.h" />
+    <ClInclude Include="include\SnidallocateeDBProxy.h" />
+    <ClInclude Include="include\SnidAllocManager.h" />
+    <ClInclude Include="include\stdafx.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\public\Array_Base.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GameServer.rc" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0A9BA386-7E2A-4507-A5F0-1D3E0E154B5F}</ProjectGuid>
+    <RootNamespace>Server</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>GameServer</ProjectName>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Final|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Final|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_Final|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_Final|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\Build\$(Configuration)\$(PlatformName)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\Build\$(Configuration)\$(PlatformName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)$(ProjectName)_x64\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_Final|Win32'">..\Build\$(Configuration)\$(PlatformName)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_Final|x64'">..\Build\$(Configuration)\$(PlatformName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release_Final|Win32'">$(OutDir)$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release_Final|x64'">$(OutDir)$(ProjectName)_x64\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release_Final|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release_Final|x64'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release_Final|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release_Final|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release_Final|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release_Final|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release_Final|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release_Final|x64'" />
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">GameServer</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">GameServer_x64</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release_Final|Win32'">GameServer</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release_Final|x64'">GameServer_x64</TargetName>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release_Final|Win32'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./include;./../NetDrv/include;./../public;./../public/Module;./../public/DataBase;./../public/EncryptAriths;./../public/Item;./../public/Messages;./../public/TAB;./../public/Utilities;./../public/Messages/MsgMediator;./../public/Core;./../public/ModuleExportInterface;./../public/Connector;./../thirdparties/lzopro/include;../../Public;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;__WINDOWS__;__GAMESERVER__;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <ResourceOutputFileName>
+      </ResourceOutputFileName>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;NetDrv_d.lib;lzopro.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)GameServer.exe</OutputFile>
+      <AdditionalLibraryDirectories>..\Build\$(Configuration)\$(PlatformName)\;..\thirdparties\lzopro\lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+      <AddModuleNamesToAssembly>%(AddModuleNamesToAssembly)</AddModuleNamesToAssembly>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>
+      </ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./include;./../NetDrv/include;./../public;./../public/Module;./../public/DataBase;./../public/EncryptAriths;./../public/Item;./../public/Messages;./../public/TAB;./../public/Utilities;./../public/Messages/MsgMediator;./../public/Core;./../public/ModuleExportInterface;./../public/Connector;./../thirdparties/lzopro/include;../../Public;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;__WINDOWS__;__GAMESERVER__;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <ResourceOutputFileName>
+      </ResourceOutputFileName>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;NetDrv_x64_d.lib;lzopro.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)ServerCompact_x64.exe</OutputFile>
+      <AdditionalLibraryDirectories>..\Build\$(Configuration)\$(PlatformName)\;..\thirdparties\lzopro\lib\Win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+      <AddModuleNamesToAssembly>%(AddModuleNamesToAssembly)</AddModuleNamesToAssembly>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <ProgramDatabaseFile>$(OutDir)MapServer.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>
+      </ImportLibrary>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Final|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./include;./../NetDrv/include;./../public;./../public/Module;./../public/DataBase;./../public/EncryptAriths;./../public/Item;./../public/Messages;./../public/TAB;./../public/Utilities;./../public/Messages/MsgMediator;./../public/Core;./../public/ModuleExportInterface;./../public/Connector;./../thirdparties/lzopro/include;../../Public;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;__WINDOWS__;__GAMESERVER__;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <ResourceOutputFileName>
+      </ResourceOutputFileName>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;NetDrv.lib;lzopro.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)GameServer.exe</OutputFile>
+      <AdditionalLibraryDirectories>..\Build\$(Configuration)\$(PlatformName)\;..\thirdparties\lzopro\lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Final|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./include;./../NetDrv/include;./../public;./../public/Module;./../public/DataBase;./../public/EncryptAriths;./../public/Item;./../public/Messages;./../public/TAB;./../public/Utilities;./../public/Messages/MsgMediator;./../public/Core;./../public/ModuleExportInterface;./../public/Connector;./../thirdparties/lzopro/include;../../Public;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;__WINDOWS__;__GAMESERVER__;__RELEASE_SERVER__;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <ResourceOutputFileName>
+      </ResourceOutputFileName>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;NetDrv.lib;lzopro.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)ServerCompact_x64.exe</OutputFile>
+      <AdditionalLibraryDirectories>..\Build\$(Configuration)\$(PlatformName)\;..\thirdparties\lzopro\lib\Win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,849 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Run">
+      <UniqueIdentifier>{cf6edc83-2f96-4649-9d44-93ade36cbbca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Share">
+      <UniqueIdentifier>{b891e7bb-bfc5-4257-b973-f7829b8a3993}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Share\Module">
+      <UniqueIdentifier>{6c6bd3c3-ce22-4e49-840c-32a213c24209}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Share\Core">
+      <UniqueIdentifier>{66db99ca-5242-4f16-87b7-cf834e0df373}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Share\share">
+      <UniqueIdentifier>{13e1df91-0403-414c-84b1-7e84104da9fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Share\Connector">
+      <UniqueIdentifier>{5f9b4c33-4a95-4d0a-8534-5b00d6a45abc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Share\Messages">
+      <UniqueIdentifier>{67cb5569-951c-4ce1-b8b4-08b834f8d9d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Share\Utilities">
+      <UniqueIdentifier>{9d743e0f-2443-4392-99e7-83e950f1647d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Share\TAB">
+      <UniqueIdentifier>{5a505abf-9678-4def-a5ca-8377d2c18d89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MessageHandler">
+      <UniqueIdentifier>{442c8432-832e-4cba-ac9f-596c4d0ae9e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Share\ModuleExportInterface">
+      <UniqueIdentifier>{bad78186-dfaa-470b-9a97-f839caac9525}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Share\Database">
+      <UniqueIdentifier>{a1cdde18-29e6-4a07-b303-054eb5c5ef4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module">
+      <UniqueIdentifier>{6a6e12e3-a8dd-4e82-b6b0-728129f6c1c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module\OnlinePlayer">
+      <UniqueIdentifier>{42936211-adce-4164-9f52-721bc77f4552}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module\RegisterPlayer">
+      <UniqueIdentifier>{938f3b0f-583c-467f-9389-3c42af4e6290}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module\DBProxy">
+      <UniqueIdentifier>{131b5362-9790-4b29-b8d9-84220dedb16b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module\Room">
+      <UniqueIdentifier>{2cee931c-28af-496a-8ab4-ea92fa22a20b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module\ClientGate">
+      <UniqueIdentifier>{e9cca3ff-a52f-453c-b198-fd1005d036fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module\IndexAlloc">
+      <UniqueIdentifier>{df29828f-7c25-45ef-9df6-44a91e2c4996}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Share\RapidJson">
+      <UniqueIdentifier>{925e6287-fe4d-4ab0-9369-8b41a4da92f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Share\RapidJson\msinttypes">
+      <UniqueIdentifier>{f02fb889-c831-4b1a-ba97-ef355d56a799}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Share\RapidJson\internal">
+      <UniqueIdentifier>{739ca028-df57-450a-942a-f34dcea5b2f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Share\RapidJson\error">
+      <UniqueIdentifier>{a4e7e775-85df-47a2-b5c6-e3ac6e579076}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{e066f999-b9c2-4ae0-bd94-6d7989b34ae7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module\Route">
+      <UniqueIdentifier>{5333a7a7-eaa7-4907-8e83-d8f96d622fa7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ClientPublic">
+      <UniqueIdentifier>{a961075c-30e9-418b-856f-fb03287307ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module\ClientGate\RPCHandler">
+      <UniqueIdentifier>{ec81a162-447b-4907-822f-fccf9a7fab47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module\Robot">
+      <UniqueIdentifier>{bbb01755-41b5-4731-a630-a1d2d6b08c43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module\SnidAlloc">
+      <UniqueIdentifier>{0e228e48-2fef-4fb7-8bfe-a6820d018612}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module\Chat">
+      <UniqueIdentifier>{9b387bf3-2bc3-4ccc-b873-ab5562e14f84}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\public\Module\ModuleManager.cpp">
+      <Filter>Share\Module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Module\ModuleSupport.cpp">
+      <Filter>Share\Module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Module\ModuleConnectorManager.cpp">
+      <Filter>Share\Module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Module\ModulePacket.cpp">
+      <Filter>Share\Module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Module\ModuleConnector.cpp">
+      <Filter>Share\Module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Module\ModulePacketMessage.cpp">
+      <Filter>Share\Module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Module\ModuleExportInterface.cpp">
+      <Filter>Share\Module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Module\ModuleComponent.cpp">
+      <Filter>Share\Module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\ExceptionHandler.cpp">
+      <Filter>Share\share</Filter>
+    </ClCompile>
+    <ClCompile Include="source\stdafx.cpp">
+      <Filter>Run</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Debug.cpp">
+      <Filter>Share\share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Connector\Connector.cpp">
+      <Filter>Share\Connector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Connector\ConnectorManager.cpp">
+      <Filter>Share\Connector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Connector\ConnectorManager_Epoll.cpp">
+      <Filter>Share\Connector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Connector\ConnectorManager_Select.cpp">
+      <Filter>Share\Connector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Connector\ConnectorPool.cpp">
+      <Filter>Share\Connector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Connector\ConnectThread.cpp">
+      <Filter>Share\Connector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Connector\ServerConnectorManager.cpp">
+      <Filter>Share\Connector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Messages\SSHandShake.cpp">
+      <Filter>Share\Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\MessageFactoryManager.cpp">
+      <Filter>Share\share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Core\BaseTool_Config.cpp">
+      <Filter>Share\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Core\BaseTool_Log.cpp">
+      <Filter>Share\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Core\BaseTool_Thread.cpp">
+      <Filter>Share\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Core\BaseTool_Time.cpp">
+      <Filter>Share\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Core\Setting.cpp">
+      <Filter>Share\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Util.cpp">
+      <Filter>Share\share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Utilities\SplitStringBase.cpp">
+      <Filter>Share\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Utilities\SplitStringLevelOne.cpp">
+      <Filter>Share\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Utilities\SplitStringLevelTwo.cpp">
+      <Filter>Share\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\TAB\TAB.cpp">
+      <Filter>Share\TAB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\TAB\TabReload.cpp">
+      <Filter>Share\TAB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\TAB\TabReloadShareSpace.cpp">
+      <Filter>Share\TAB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\TAB\TabStruct.cpp">
+      <Filter>Share\TAB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\DefineResult.cpp">
+      <Filter>Share\share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\IntegerHashMap.cpp">
+      <Filter>Share\share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\JsonSerialization.cpp">
+      <Filter>Share\share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\List.cpp">
+      <Filter>Share\share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Static_Allocator.cpp">
+      <Filter>Share\share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\StringHashMap.cpp">
+      <Filter>Share\share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\StructPlatform.cpp">
+      <Filter>Share\share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\TabTemplateLoader.cpp">
+      <Filter>Share\share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Version.cpp">
+      <Filter>Share\share</Filter>
+    </ClCompile>
+    <ClCompile Include="source\SSHandShakeHandler.cpp">
+      <Filter>MessageHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\DataBase\ArchiveInterface.cpp">
+      <Filter>Share\Database</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\DataBase\DBCore.cpp">
+      <Filter>Share\Database</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\DataBase\KLODBCBase.cpp">
+      <Filter>Share\Database</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\DataBase\MKManager.cpp">
+      <Filter>Share\Database</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\DataBase\SqlStatement.cpp">
+      <Filter>Share\Database</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Struct.cpp">
+      <Filter>Share\share</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GameServer.cpp">
+      <Filter>Run</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GameServerMainThread.cpp">
+      <Filter>Run</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Core\ThreadContainer.cpp">
+      <Filter>Share\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ServerModuleThreadContainer.cpp">
+      <Filter>Module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Core\BaseTool_String.cpp">
+      <Filter>Share\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ServerModuleUtils.cpp">
+      <Filter>Module</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ServerModuleManager.cpp">
+      <Filter>Module</Filter>
+    </ClCompile>
+    <ClCompile Include="source\RegisterPlayerManager.cpp">
+      <Filter>Module\RegisterPlayer</Filter>
+    </ClCompile>
+    <ClCompile Include="source\RegisterPlayer.cpp">
+      <Filter>Module\RegisterPlayer</Filter>
+    </ClCompile>
+    <ClCompile Include="source\OnlinePlayerManager.cpp">
+      <Filter>Module\OnlinePlayer</Filter>
+    </ClCompile>
+    <ClCompile Include="source\OnlinePlayer.cpp">
+      <Filter>Module\OnlinePlayer</Filter>
+    </ClCompile>
+    <ClCompile Include="source\IndexAllocManager.cpp">
+      <Filter>Module\IndexAlloc</Filter>
+    </ClCompile>
+    <ClCompile Include="source\DBProxyManager.cpp">
+      <Filter>Module\DBProxy</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ClientGateManager.cpp">
+      <Filter>Module\ClientGate</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ClientSession.cpp">
+      <Filter>Module\ClientGate</Filter>
+    </ClCompile>
+    <ClCompile Include="source\PlayerDBProxy.cpp">
+      <Filter>Module\DBProxy</Filter>
+    </ClCompile>
+    <ClCompile Include="source\PlayerLogin.cpp">
+      <Filter>Module\ClientGate</Filter>
+    </ClCompile>
+    <ClCompile Include="source\DBOper.cpp">
+      <Filter>Module\DBProxy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\StructMacro.cpp">
+      <Filter>Share\share</Filter>
+    </ClCompile>
+    <ClCompile Include="source\PlayerArchiveStruct.cpp">
+      <Filter>Module\OnlinePlayer</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ServerModuleRouter.cpp">
+      <Filter>Module\Route</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ClientConnector.cpp">
+      <Filter>Module\ClientGate</Filter>
+    </ClCompile>
+    <ClCompile Include="source\IncomingConnectorManager.cpp">
+      <Filter>Module\ClientGate</Filter>
+    </ClCompile>
+    <ClCompile Include="source\SessionConnectorManager.cpp">
+      <Filter>Module\ClientGate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Messages\CGHandShake.cpp">
+      <Filter>Share\Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="source\CGHandShakeHandler.cpp">
+      <Filter>MessageHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ServerModuleBase.cpp">
+      <Filter>Module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Messages\GCHandShake.cpp">
+      <Filter>Share\Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GCMsgHandler.cpp">
+      <Filter>MessageHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Messages\CGReqeustLogin.cpp">
+      <Filter>Share\Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="source\CGRequestLoginHandler.cpp">
+      <Filter>MessageHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="source\CGRPChandler.cpp">
+      <Filter>Module\ClientGate\RPCHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Messages\CGRpcInvokeMsg.cpp">
+      <Filter>Share\Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Messages\GCRpcInvokeMsg.cpp">
+      <Filter>Share\Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="source\CGRpcInvokeMsgHandler.cpp">
+      <Filter>MessageHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Messages\GCEncryptKey.cpp">
+      <Filter>Share\Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Messages\CGPing.cpp">
+      <Filter>Share\Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="..\public\Messages\GCPing.cpp">
+      <Filter>Share\Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="source\CGPingHandler.cpp">
+      <Filter>MessageHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="source\SnidAllocManager.cpp">
+      <Filter>Module\SnidAlloc</Filter>
+    </ClCompile>
+    <ClCompile Include="source\RegisterPlayerStruct.cpp">
+      <Filter>Module\RegisterPlayer</Filter>
+    </ClCompile>
+    <ClCompile Include="source\SnidAllocArchiveData.cpp">
+      <Filter>Module\SnidAlloc</Filter>
+    </ClCompile>
+    <ClCompile Include="SnidallocateeDBProxy.cpp">
+      <Filter>Module\DBProxy</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ChatManager.cpp">
+      <Filter>Module\Chat</Filter>
+    </ClCompile>
+    <ClCompile Include="source\RobotData.cpp">
+      <Filter>Module\Robot</Filter>
+    </ClCompile>
+    <ClCompile Include="source\RobotManager.cpp">
+      <Filter>Module\Robot</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\public\Module\ModuleManager.h">
+      <Filter>Share\Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Module\ModuleSupport.h">
+      <Filter>Share\Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Module\ModuleConnectorManager.h">
+      <Filter>Share\Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Module\ModulePacket.h">
+      <Filter>Share\Module</Filter>
+    </ClInclude>
+    <ClInclude Include="include\stdafx.h">
+      <Filter>Run</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Module\ModuleConnector.h">
+      <Filter>Share\Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Module\ModulePacketMessage.h">
+      <Filter>Share\Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Module\ModuleExportInterface.h">
+      <Filter>Share\Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Module\ModuleInlineMacros.h">
+      <Filter>Share\Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Module\ModuleComponent.h">
+      <Filter>Share\Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\ExceptionHandler.h">
+      <Filter>Share\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Debug.h">
+      <Filter>Share\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Connector\Connector.h">
+      <Filter>Share\Connector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Connector\ConnectorManager.h">
+      <Filter>Share\Connector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Connector\ConnectorManager_Epoll.h">
+      <Filter>Share\Connector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Connector\ConnectorManager_Select.h">
+      <Filter>Share\Connector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Connector\ConnectorPool.h">
+      <Filter>Share\Connector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Connector\ConnectThread.h">
+      <Filter>Share\Connector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Connector\ServerConnector.h">
+      <Filter>Share\Connector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Connector\ServerConnectorManager.h">
+      <Filter>Share\Connector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Messages\SSHandShake.h">
+      <Filter>Share\Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\MessageDefine.h">
+      <Filter>Share\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\MessageFactory.h">
+      <Filter>Share\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\MessageFactoryManager.h">
+      <Filter>Share\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Core\BaseTool.h">
+      <Filter>Share\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Core\Setting.h">
+      <Filter>Share\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Util.h">
+      <Filter>Share\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Utilities\SplitStringBase.h">
+      <Filter>Share\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Utilities\SplitStringLevelOne.h">
+      <Filter>Share\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Utilities\SplitStringLevelTwo.h">
+      <Filter>Share\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\TAB\TAB.h">
+      <Filter>Share\TAB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\TAB\TabDefine.h">
+      <Filter>Share\TAB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\TAB\TabReload.h">
+      <Filter>Share\TAB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\TAB\TabStruct.h">
+      <Filter>Share\TAB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Array_Base.h">
+      <Filter>Share\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Atomic.h">
+      <Filter>Share\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Define.h">
+      <Filter>Share\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\DefineResult.h">
+      <Filter>Share\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Enum.h">
+      <Filter>Share\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\IntegerHashMap.h">
+      <Filter>Share\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\JsonSerialization.h">
+      <Filter>Share\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\List.h">
+      <Filter>Share\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\lzoconf.h">
+      <Filter>Share\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\lzodefs.h">
+      <Filter>Share\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Static_Allocator.h">
+      <Filter>Share\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\StringHashMap.h">
+      <Filter>Share\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\TabTemplateLoader.h">
+      <Filter>Share\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\TypeDefine.h">
+      <Filter>Share\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Version.h">
+      <Filter>Share\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\ModuleDefine.h">
+      <Filter>Share\Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\DataBase\ArchiveInterface.h">
+      <Filter>Share\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\DataBase\DBConst.h">
+      <Filter>Share\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\DataBase\DBCore.h">
+      <Filter>Share\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\DataBase\KLODBCBase.h">
+      <Filter>Share\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\DataBase\MKManager.h">
+      <Filter>Share\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\DataBase\SqlStatement.h">
+      <Filter>Share\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Struct.h">
+      <Filter>Share\share</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GameServer.h">
+      <Filter>Run</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GameServerMainThread.h">
+      <Filter>Run</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Core\ThreadContainer.h">
+      <Filter>Share\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\ModuleExportInterface\CommonModuleStruct.h">
+      <Filter>Share\ModuleExportInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Module\ModuleDataStream.h">
+      <Filter>Share\Module</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ServerModuleThreadContainer.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Core\TemplateUtils.h">
+      <Filter>Share\share</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ServerModuleUtils.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ServerModuleManager.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RegisterPlayerManager.h">
+      <Filter>Module\RegisterPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RegisterPlayer.h">
+      <Filter>Module\RegisterPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OnlinePlayerManager.h">
+      <Filter>Module\OnlinePlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OnlinePlayer.h">
+      <Filter>Module\OnlinePlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IndexAllocManager.h">
+      <Filter>Module\IndexAlloc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\DBProxyManager.h">
+      <Filter>Module\DBProxy</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ClientGateManager.h">
+      <Filter>Module\ClientGate</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ClientSession.h">
+      <Filter>Module\ClientGate</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PlayerDBProxy.h">
+      <Filter>Module\DBProxy</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PlayerLogin.h">
+      <Filter>Module\ClientGate</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RegisterPlayerStruct.h">
+      <Filter>Module\RegisterPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\DBOper.h">
+      <Filter>Module\DBProxy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\StructMacro.h">
+      <Filter>Share\share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\allocators.h">
+      <Filter>Share\RapidJson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\document.h">
+      <Filter>Share\RapidJson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\encodedstream.h">
+      <Filter>Share\RapidJson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\encodings.h">
+      <Filter>Share\RapidJson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\filereadstream.h">
+      <Filter>Share\RapidJson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\filewritestream.h">
+      <Filter>Share\RapidJson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\fwd.h">
+      <Filter>Share\RapidJson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\istreamwrapper.h">
+      <Filter>Share\RapidJson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\memorybuffer.h">
+      <Filter>Share\RapidJson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\memorystream.h">
+      <Filter>Share\RapidJson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\ostreamwrapper.h">
+      <Filter>Share\RapidJson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\pointer.h">
+      <Filter>Share\RapidJson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\prettywriter.h">
+      <Filter>Share\RapidJson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\rapidjson.h">
+      <Filter>Share\RapidJson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\reader.h">
+      <Filter>Share\RapidJson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\schema.h">
+      <Filter>Share\RapidJson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\stream.h">
+      <Filter>Share\RapidJson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\stringbuffer.h">
+      <Filter>Share\RapidJson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\writer.h">
+      <Filter>Share\RapidJson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\msinttypes\inttypes.h">
+      <Filter>Share\RapidJson\msinttypes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\msinttypes\stdint.h">
+      <Filter>Share\RapidJson\msinttypes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\internal\biginteger.h">
+      <Filter>Share\RapidJson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\internal\diyfp.h">
+      <Filter>Share\RapidJson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\internal\dtoa.h">
+      <Filter>Share\RapidJson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\internal\ieee754.h">
+      <Filter>Share\RapidJson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\internal\itoa.h">
+      <Filter>Share\RapidJson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\internal\meta.h">
+      <Filter>Share\RapidJson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\internal\pow10.h">
+      <Filter>Share\RapidJson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\internal\regex.h">
+      <Filter>Share\RapidJson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\internal\stack.h">
+      <Filter>Share\RapidJson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\internal\strfunc.h">
+      <Filter>Share\RapidJson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\internal\strtod.h">
+      <Filter>Share\RapidJson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\internal\swap.h">
+      <Filter>Share\RapidJson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\error\en.h">
+      <Filter>Share\RapidJson\error</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\RapidJson\error\error.h">
+      <Filter>Share\RapidJson\error</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PlayerArchiveStruct.h">
+      <Filter>Module\OnlinePlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PropertyPlayerState.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CommonObjectPool.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ServerModuleExportInterface.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ServerModuleRouter.h">
+      <Filter>Module\Route</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ClientConnector.h">
+      <Filter>Module\ClientGate</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IncomingConnectorManager.h">
+      <Filter>Module\ClientGate</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SessionConnectorManager.h">
+      <Filter>Module\ClientGate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Messages\CGHandShake.h">
+      <Filter>Share\Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="include\ServerModuleBase.h">
+      <Filter>Module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Messages\GCHandShake.h">
+      <Filter>Share\Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Messages\CGReqeustLogin.h">
+      <Filter>Share\Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Public\ClientRPCMethodInterface.h">
+      <Filter>ClientPublic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Public\ServerRPCMethodInterface.h">
+      <Filter>ClientPublic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Public\ClientServerRPCSupport.h">
+      <Filter>ClientPublic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Public\SharedTypes.h">
+      <Filter>ClientPublic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Public\PacketDataStream.h">
+      <Filter>ClientPublic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Public\DynaString.h">
+      <Filter>ClientPublic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CGRPChandler.h">
+      <Filter>Module\ClientGate\RPCHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Messages\CGRpcInvokeMsg.h">
+      <Filter>Share\Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Messages\GCRpcInvokeMsg.h">
+      <Filter>Share\Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Messages\GCEncryptKey.h">
+      <Filter>Share\Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Public\FixedString.h">
+      <Filter>ClientPublic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Messages\CGPing.h">
+      <Filter>Share\Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Messages\GCPing.h">
+      <Filter>Share\Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MsgTransDefine.h">
+      <Filter>Share\Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SnidAllocManager.h">
+      <Filter>Module\SnidAlloc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ExtendedObjectPool.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SnidAllocArchiveData.h">
+      <Filter>Module\SnidAlloc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PropertyVersion.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PropertySnidAccountRelation.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SnidallocateeDBProxy.h">
+      <Filter>Module\DBProxy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Public\ShareStruct.h">
+      <Filter>ClientPublic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Public\ShareStructDefine.h">
+      <Filter>ClientPublic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\ChatDefine.h">
+      <Filter>Module\Chat</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ChatManager.h">
+      <Filter>Module\Chat</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RobotData.h">
+      <Filter>Module\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RobotManager.h">
+      <Filter>Module\Robot</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\public\Array_Base.inl">
+      <Filter>Share\share</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GameServer.rc" />
+  </ItemGroup>
+</Project>

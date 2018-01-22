@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Public">
+      <UniqueIdentifier>{e5da5e5d-297e-4ee1-af55-460dd6abaed7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{9415126f-a369-4b5f-802e-dc39d3a48d22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NetWork">
+      <UniqueIdentifier>{325d009f-d7ca-4a7a-9bc1-67ac6620120f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Core\CoreBase.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Core\DebugUtilities.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Core\GameMisc.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\NetWork\GameNetBase.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\NetWork\GameNetCommand.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\NetWork\GameNetConnector.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\NetWork\GameNetMessageDefine.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\NetWork\GameNetMessageEncryptor.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\NetWork\GameNetMessageFactory.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\NetWork\GameNetMessageHandler.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\NetWork\GameNetMessages.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\NetWork\GameNetStream.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\NetWork\GameNetSystem.h">
+      <Filter>NetWork</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Public\ClientRPCMethodInterface.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Public\ClientServerRPCSupport.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Public\DynaString.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Public\FixedString.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Public\PacketDataStream.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Public\ServerRPCMethodInterface.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Public\SharedTypes.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Public\ShareStruct.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Public\ShareStructDefine.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GameClient.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\CoreBase.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\DebugUtilities.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\GameMisc.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\NetWork\GameNetBase.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\NetWork\GameNetConnector.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\NetWork\GameNetMessageEncryptor.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\NetWork\GameNetMessageFactory.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\NetWork\GameNetMessageHandler.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\NetWork\GameNetMessageProcess.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\NetWork\GameNetStream.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\NetWork\GameNetSystem.cpp">
+      <Filter>NetWork</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

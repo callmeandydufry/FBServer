@@ -1,0 +1,11 @@
+* 1.使用buffer.copy，而不是buffer.write
+* 2.Buffer只有readUInt8，而没有readUInt8LE
+* 3.加密
+* 4.作为对象使用function时，也就是new相应的对象时，任何成员变量都要使用this前缀引用
+* 5.node debug server.js来进入调试模式.
+** restart, repl, next(n), continue(c), restart(r), sb('file.js', line), cb() 
+* 6.sock.on('data', function(data){}); 此时的data参数是buffer，而不是string。如果设置了encoding，那么参数才是string
+二进制数据最好使用buffer
+* 7.node不支持int64，所以要自己写
+  并且在read和write int64时要注意陷阱，注意位移操作的结果
+* 8.mysql中query写操作时，结果的0元素是存储过程的select结果，而1元素就是affectrows等信息

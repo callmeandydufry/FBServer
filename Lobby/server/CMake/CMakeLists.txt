@@ -1,0 +1,1091 @@
+cmake_minimum_required(VERSION 2.8)
+
+project(ServerCompact)
+
+if (WIN32)
+	ADD_DEFINITIONS("-D__WINDOWS__")
+else()
+	ADD_DEFINITIONS("-D__LINUX__")
+endif()
+
+ADD_DEFINITIONS("-D_70_SERVER")
+ADD_DEFINITIONS("-D_70_WORLD")
+ADD_DEFINITIONS("-D_70_CLIENT")
+ADD_DEFINITIONS("-D_70_LOGIN")
+ADD_DEFINITIONS("-D_70_CLIENT")
+ADD_DEFINITIONS("-D_70_SHAREMEM")
+ADD_DEFINITIONS("-D_70_DBCENTER")
+ADD_DEFINITIONS("-D__EPOLL__")
+ADD_DEFINITIONS("-D__BATTLESERVER__")
+ADD_DEFINITIONS("-D__RELEASE_SERVER__")
+ADD_DEFINITIONS("-D_70_GMTOOL")
+
+INCLUDE_DIRECTORIES(../../KwLinuxDrv/include)
+INCLUDE_DIRECTORIES(../../KwGamePublicCompact)
+INCLUDE_DIRECTORIES(../../KwGamePublicCompact/DataBase)
+INCLUDE_DIRECTORIES(../../KwGamePublicCompact/EncryptAriths)
+INCLUDE_DIRECTORIES(.././../KwGamePublicCompact/Item)
+INCLUDE_DIRECTORIES(../../KwGamePublicCompact/Messages)
+INCLUDE_DIRECTORIES(../../KwGamePublicCompact/TAB)
+INCLUDE_DIRECTORIES(../../KwGamePublicCompact/Utilities)
+INCLUDE_DIRECTORIES(../../KwGamePublicCompact/Messages/MsgMediator)
+INCLUDE_DIRECTORIES(../../KwGamePublicCompact/Core)
+INCLUDE_DIRECTORIES(../../KwGamePublicCompact/Connector)
+INCLUDE_DIRECTORIES(../../KwGamePublicCompact/CombatLogic)
+INCLUDE_DIRECTORIES(../../../External/lzopro/include)
+INCLUDE_DIRECTORIES(../../../External/KwScriptLib/ScriptEngine/Src)
+INCLUDE_DIRECTORIES(../../../External/lzopro/include)
+
+if (WIN32)
+	
+else()
+#	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fpermissive -Wno-deprecated -fkeep-inline-functions")
+#	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-deprecated -fkeep-inline-functions")
+
+#64bit & O3 optimization
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fpermissive -Wno-deprecated -m64 -O3")
+	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-deprecated -O3")
+endif()
+
+##update_begin
+
+
+INCLUDE_DIRECTORIES(../../KwNetDrv/source)
+INCLUDE_DIRECTORIES(../../KwNetDrv/include)
+
+
+SET (NetDrv_LIST
+	../../KwNetDrv/source/KwNetAcceptor.cpp
+	../../KwNetDrv/source/KwNetCompressMinilzo.cpp
+	../../KwNetDrv/source/KwNetDrvStable.cpp
+	../../KwNetDrv/source/KwNetLocoStreamSystem.cpp
+	../../KwNetDrv/source/KwNetMessage.cpp
+	../../KwNetDrv/source/KwNetMessageEncryptor.cpp
+	../../KwNetDrv/source/KwNetRemoteDebugServer.cpp
+	../../KwNetDrv/source/KwNetSocket.cpp
+	../../KwNetDrv/source/KwNetStreamPointer.cpp
+	../../KwNetDrv/source/KwNetStreamSystem.cpp
+)
+
+
+
+if (WIN32)
+	source_group(NetDrv_src FILES ${NetDrv_LIST})
+endif()
+
+
+ADD_LIBRARY(NetDrv
+	${NetDrv_LIST}
+)
+
+
+
+
+INCLUDE_DIRECTORIES(../../../External/KwScriptLib/ScriptEngine/Src)
+
+
+SET (LuaScriptVM_LIST
+	../../../External/KwScriptLib/ScriptEngine/Src/LuaFileBridge.cpp
+	../../../External/KwScriptLib/ScriptEngine/Src/LuaMemManager.cpp
+	../../../External/KwScriptLib/ScriptEngine/Src/LuaScriptVM.cpp
+)
+
+
+
+if (WIN32)
+	source_group(LuaScriptVM_src FILES ${LuaScriptVM_LIST})
+endif()
+
+
+ADD_LIBRARY(LuaScriptVM
+	${LuaScriptVM_LIST}
+)
+
+
+
+
+INCLUDE_DIRECTORIES(../../../External/lzopro/B/vc10/)
+INCLUDE_DIRECTORIES(../../../External/lzopro/B/vc10/..\\..\\src)
+INCLUDE_DIRECTORIES(../../../External/lzopro/B/vc10/..\\..\\include\\lzo)
+INCLUDE_DIRECTORIES(../../../External/lzopro/B/vc10/..\\..\\include\\lzo\\lzopro)
+
+
+SET (lzopro_LIST
+	../../../External/lzopro/B/vc10/../../src/lzo1.c
+	../../../External/lzopro/B/vc10/../../src/lzo1a.c
+	../../../External/lzopro/B/vc10/../../src/lzo1a_99.c
+	../../../External/lzopro/B/vc10/../../src/lzo1b_1.c
+	../../../External/lzopro/B/vc10/../../src/lzo1b_2.c
+	../../../External/lzopro/B/vc10/../../src/lzo1b_3.c
+	../../../External/lzopro/B/vc10/../../src/lzo1b_4.c
+	../../../External/lzopro/B/vc10/../../src/lzo1b_5.c
+	../../../External/lzopro/B/vc10/../../src/lzo1b_6.c
+	../../../External/lzopro/B/vc10/../../src/lzo1b_7.c
+	../../../External/lzopro/B/vc10/../../src/lzo1b_8.c
+	../../../External/lzopro/B/vc10/../../src/lzo1b_9.c
+	../../../External/lzopro/B/vc10/../../src/lzo1b_99.c
+	../../../External/lzopro/B/vc10/../../src/lzo1b_9x.c
+	../../../External/lzopro/B/vc10/../../src/lzo1b_cc.c
+	../../../External/lzopro/B/vc10/../../src/lzo1b_d1.c
+	../../../External/lzopro/B/vc10/../../src/lzo1b_d2.c
+	../../../External/lzopro/B/vc10/../../src/lzo1b_rr.c
+	../../../External/lzopro/B/vc10/../../src/lzo1b_xx.c
+	../../../External/lzopro/B/vc10/../../src/lzo1c_1.c
+	../../../External/lzopro/B/vc10/../../src/lzo1c_2.c
+	../../../External/lzopro/B/vc10/../../src/lzo1c_3.c
+	../../../External/lzopro/B/vc10/../../src/lzo1c_4.c
+	../../../External/lzopro/B/vc10/../../src/lzo1c_5.c
+	../../../External/lzopro/B/vc10/../../src/lzo1c_6.c
+	../../../External/lzopro/B/vc10/../../src/lzo1c_7.c
+	../../../External/lzopro/B/vc10/../../src/lzo1c_8.c
+	../../../External/lzopro/B/vc10/../../src/lzo1c_9.c
+	../../../External/lzopro/B/vc10/../../src/lzo1c_99.c
+	../../../External/lzopro/B/vc10/../../src/lzo1c_9x.c
+	../../../External/lzopro/B/vc10/../../src/lzo1c_cc.c
+	../../../External/lzopro/B/vc10/../../src/lzo1c_d1.c
+	../../../External/lzopro/B/vc10/../../src/lzo1c_d2.c
+	../../../External/lzopro/B/vc10/../../src/lzo1c_rr.c
+	../../../External/lzopro/B/vc10/../../src/lzo1c_xx.c
+	../../../External/lzopro/B/vc10/../../src/lzo1f_1.c
+	../../../External/lzopro/B/vc10/../../src/lzo1f_9x.c
+	../../../External/lzopro/B/vc10/../../src/lzo1f_d1.c
+	../../../External/lzopro/B/vc10/../../src/lzo1f_d2.c
+	../../../External/lzopro/B/vc10/../../src/lzo1x_1.c
+	../../../External/lzopro/B/vc10/../../src/lzo1x_1k.c
+	../../../External/lzopro/B/vc10/../../src/lzo1x_1l.c
+	../../../External/lzopro/B/vc10/../../src/lzo1x_1o.c
+	../../../External/lzopro/B/vc10/../../src/lzo1x_9x.c
+	../../../External/lzopro/B/vc10/../../src/lzo1x_d1.c
+	../../../External/lzopro/B/vc10/../../src/lzo1x_d2.c
+	../../../External/lzopro/B/vc10/../../src/lzo1x_d3.c
+	../../../External/lzopro/B/vc10/../../src/lzo1x_d4.c
+	../../../External/lzopro/B/vc10/../../src/lzo1x_d4s.c
+	../../../External/lzopro/B/vc10/../../src/lzo1x_d4_a00.c
+	../../../External/lzopro/B/vc10/../../src/lzo1x_d4_a01.c
+	../../../External/lzopro/B/vc10/../../src/lzo1x_d4_a02.c
+	../../../External/lzopro/B/vc10/../../src/lzo1x_d4_a03.c
+	../../../External/lzopro/B/vc10/../../src/lzo1x_d4_a04.c
+	../../../External/lzopro/B/vc10/../../src/lzo1x_d4_a05.c
+	../../../External/lzopro/B/vc10/../../src/lzo1x_d4_a06.c
+	../../../External/lzopro/B/vc10/../../src/lzo1x_d4_a07.c
+	../../../External/lzopro/B/vc10/../../src/lzo1x_o.c
+	../../../External/lzopro/B/vc10/../../src/lzo1y_1.c
+	../../../External/lzopro/B/vc10/../../src/lzo1y_9x.c
+	../../../External/lzopro/B/vc10/../../src/lzo1y_d1.c
+	../../../External/lzopro/B/vc10/../../src/lzo1y_d2.c
+	../../../External/lzopro/B/vc10/../../src/lzo1y_d3.c
+	../../../External/lzopro/B/vc10/../../src/lzo1y_d4.c
+	../../../External/lzopro/B/vc10/../../src/lzo1y_d4s.c
+	../../../External/lzopro/B/vc10/../../src/lzo1y_d4_a00.c
+	../../../External/lzopro/B/vc10/../../src/lzo1y_d4_a01.c
+	../../../External/lzopro/B/vc10/../../src/lzo1y_d4_a02.c
+	../../../External/lzopro/B/vc10/../../src/lzo1y_d4_a03.c
+	../../../External/lzopro/B/vc10/../../src/lzo1y_d4_a04.c
+	../../../External/lzopro/B/vc10/../../src/lzo1y_d4_a05.c
+	../../../External/lzopro/B/vc10/../../src/lzo1y_d4_a06.c
+	../../../External/lzopro/B/vc10/../../src/lzo1y_d4_a07.c
+	../../../External/lzopro/B/vc10/../../src/lzo1y_o.c
+	../../../External/lzopro/B/vc10/../../src/lzo1z_9x.c
+	../../../External/lzopro/B/vc10/../../src/lzo1z_d1.c
+	../../../External/lzopro/B/vc10/../../src/lzo1z_d2.c
+	../../../External/lzopro/B/vc10/../../src/lzo1z_d3.c
+	../../../External/lzopro/B/vc10/../../src/lzo1_99.c
+	../../../External/lzopro/B/vc10/../../src/lzo2a_9x.c
+	../../../External/lzopro/B/vc10/../../src/lzo2a_d1.c
+	../../../External/lzopro/B/vc10/../../src/lzo2a_d2.c
+	../../../External/lzopro/B/vc10/../../src/lzo_crc.c
+	../../../External/lzopro/B/vc10/../../src/lzo_init.c
+	../../../External/lzopro/B/vc10/../../src/lzo_ptr.c
+	../../../External/lzopro/B/vc10/../../src/lzo_str.c
+	../../../External/lzopro/B/vc10/../../src/lzo_util.c
+	../../../External/lzopro/B/vc10/../../src/pinit.c
+	../../../External/lzopro/B/vc10/../../src/plzo1x_1f.c
+	../../../External/lzopro/B/vc10/../../src/plzo1x_1g.c
+	../../../External/lzopro/B/vc10/../../src/plzo1x_1h.c
+	../../../External/lzopro/B/vc10/../../src/plzo1x_1i.c
+	../../../External/lzopro/B/vc10/../../src/plzo1x_1j.c
+	../../../External/lzopro/B/vc10/../../src/plzo1x_1k.c
+	../../../External/lzopro/B/vc10/../../src/plzo1x_1l.c
+	../../../External/lzopro/B/vc10/../../src/plzo1x_1m.c
+	../../../External/lzopro/B/vc10/../../src/plzo1x_1n.c
+	../../../External/lzopro/B/vc10/../../src/plzo1x_1o.c
+	../../../External/lzopro/B/vc10/../../src/plzo1x_1p.c
+	../../../External/lzopro/B/vc10/../../src/plzo1x_99.c
+	../../../External/lzopro/B/vc10/../../src/plzo1y_1f.c
+	../../../External/lzopro/B/vc10/../../src/plzo1y_1g.c
+	../../../External/lzopro/B/vc10/../../src/plzo1y_1h.c
+	../../../External/lzopro/B/vc10/../../src/plzo1y_1i.c
+	../../../External/lzopro/B/vc10/../../src/plzo1y_1j.c
+	../../../External/lzopro/B/vc10/../../src/plzo1y_1k.c
+	../../../External/lzopro/B/vc10/../../src/plzo1y_1l.c
+	../../../External/lzopro/B/vc10/../../src/plzo1y_1m.c
+	../../../External/lzopro/B/vc10/../../src/plzo1y_1n.c
+	../../../External/lzopro/B/vc10/../../src/plzo1y_1o.c
+	../../../External/lzopro/B/vc10/../../src/plzo1y_1p.c
+)
+
+
+
+if (WIN32)
+	source_group(lzopro_src FILES ${lzopro_LIST})
+endif()
+
+
+ADD_LIBRARY(lzopro
+	${lzopro_LIST}
+)
+
+
+
+
+INCLUDE_DIRECTORIES(../../../External/KwScriptLib/LuaLib/src)
+INCLUDE_DIRECTORIES(../../../External/KwScriptLib/LuaLib/src\\baselib)
+
+
+SET (LuaLib_LIST
+	../../../External/KwScriptLib/LuaLib/src/lapi.c
+	../../../External/KwScriptLib/LuaLib/src/lcode.c
+	../../../External/KwScriptLib/LuaLib/src/ldebug.c
+	../../../External/KwScriptLib/LuaLib/src/ldo.c
+	../../../External/KwScriptLib/LuaLib/src/lfunc.c
+	../../../External/KwScriptLib/LuaLib/src/lgc.c
+	../../../External/KwScriptLib/LuaLib/src/llex.c
+	../../../External/KwScriptLib/LuaLib/src/lmem.c
+	../../../External/KwScriptLib/LuaLib/src/lobject.c
+	../../../External/KwScriptLib/LuaLib/src/lparser.c
+	../../../External/KwScriptLib/LuaLib/src/lstate.c
+	../../../External/KwScriptLib/LuaLib/src/lstring.c
+	../../../External/KwScriptLib/LuaLib/src/ltable.c
+	../../../External/KwScriptLib/LuaLib/src/ltests.c
+	../../../External/KwScriptLib/LuaLib/src/ltm.c
+	../../../External/KwScriptLib/LuaLib/src/lua.c
+	../../../External/KwScriptLib/LuaLib/src/LuaExtend.c
+	../../../External/KwScriptLib/LuaLib/src/lundump.c
+	../../../External/KwScriptLib/LuaLib/src/lvm.c
+	../../../External/KwScriptLib/LuaLib/src/lzio.c
+	../../../External/KwScriptLib/LuaLib/src/baselib/lauxlib.c
+	../../../External/KwScriptLib/LuaLib/src/baselib/lbaselib.c
+	../../../External/KwScriptLib/LuaLib/src/baselib/ldblib.c
+	../../../External/KwScriptLib/LuaLib/src/baselib/liolib.c
+	../../../External/KwScriptLib/LuaLib/src/baselib/lmathlib.c
+	../../../External/KwScriptLib/LuaLib/src/baselib/lstrlib.c
+)
+
+
+
+if (WIN32)
+	source_group(LuaLib_src FILES ${LuaLib_LIST})
+endif()
+
+
+ADD_LIBRARY(LuaLib
+	${LuaLib_LIST}
+)
+
+
+
+
+INCLUDE_DIRECTORIES(../..\\KwGamePublicCompact)
+INCLUDE_DIRECTORIES(../..\\KwGamePublicCompact\\EncryptAriths)
+INCLUDE_DIRECTORIES(../)
+INCLUDE_DIRECTORIES(../..\\KwGamePublicCompact\\Core)
+INCLUDE_DIRECTORIES(../..\\KwGamePublicCompact\\Messages)
+INCLUDE_DIRECTORIES(../..\\KwGamePublicCompact\\Connector)
+INCLUDE_DIRECTORIES(../..\\KwGamePublicCompact\\Utilities)
+INCLUDE_DIRECTORIES(../..\\KwGamePublicCompact\\TAB)
+INCLUDE_DIRECTORIES(../..\\KwGamePublicCompact\\DataBase)
+
+
+SET (ServerCompact_LIST
+	../../KwGamePublicCompact/DataBase/ArchiveInterface.cpp
+	../../KwGamePublicCompact/DataBase/DBCore.cpp
+	../../KwGamePublicCompact/DataBase/KLODBCBase.cpp
+	../../KwGamePublicCompact/DataBase/MKManager.cpp
+	../../KwGamePublicCompact/DataBase/SqlStatement.cpp
+	../../KwGamePublicCompact/GlobalSerializationManager.cpp
+	../../KwGamePublicCompact/List.cpp
+	../../KwGamePublicCompact/Messages/ActivityScriptCfgMessage.cpp
+	../../KwGamePublicCompact/Messages/ArenaBattleMessages.cpp
+	../../KwGamePublicCompact/Messages/ArenaMessage.cpp
+	../../KwGamePublicCompact/Messages/AssignLvlMonthGiftMessages.cpp
+	../../KwGamePublicCompact/Messages/AwardSystemCAndXMessage.cpp
+	../../KwGamePublicCompact/Messages/AwardSystemMessage.cpp
+	../../KwGamePublicCompact/Messages/BankMessages.cpp
+	../../KwGamePublicCompact/Messages/BattleGateMessage.cpp
+	../../KwGamePublicCompact/Messages/BPNoticeOrder.cpp
+	../../KwGamePublicCompact/Messages/BWNoticeOrder.cpp
+	../../KwGamePublicCompact/Messages/CDKeyServerMessage.cpp
+	../../KwGamePublicCompact/Messages/CheckinsMessage.cpp
+	../../KwGamePublicCompact/Messages/CLGMCommand.cpp
+	../../KwGamePublicCompact/Messages/CLGMHandShake.cpp
+	../../KwGamePublicCompact/Messages/CLGMHeartBeat.cpp
+	../../KwGamePublicCompact/Messages/CLGMRequireLogin.cpp
+	../../KwGamePublicCompact/Messages/CLHandShake.cpp
+	../../KwGamePublicCompact/Messages/ClientCombatMessage.cpp
+	../../KwGamePublicCompact/Messages/ClientReconnectMessages.cpp
+	../../KwGamePublicCompact/Messages/CLRequireCharList.cpp
+	../../KwGamePublicCompact/Messages/CLRequireCharLogin.cpp
+	../../KwGamePublicCompact/Messages/CLRequireCreateChar.cpp
+	../../KwGamePublicCompact/Messages/CLRequireLogin.cpp
+	../../KwGamePublicCompact/Messages/CXAltarCallCard.cpp
+	../../KwGamePublicCompact/Messages/CXAskLostItemInfo.cpp
+	../../KwGamePublicCompact/Messages/CXAttack.cpp
+	../../KwGamePublicCompact/Messages/CXBBSApply.cpp
+	../../KwGamePublicCompact/Messages/CXBBSSychMessages.cpp
+	../../KwGamePublicCompact/Messages/CXBuyCU.cpp
+	../../KwGamePublicCompact/Messages/CXCampaign.cpp
+	../../KwGamePublicCompact/Messages/CXCDkey.cpp
+	../../KwGamePublicCompact/Messages/CXChangeMoney.cpp
+	../../KwGamePublicCompact/Messages/CXChannelCreate.cpp
+	../../KwGamePublicCompact/Messages/CXChannelDismiss.cpp
+	../../KwGamePublicCompact/Messages/CXChannelInvite.cpp
+	../../KwGamePublicCompact/Messages/CXChannelKick.cpp
+	../../KwGamePublicCompact/Messages/CXCharAllTitles.cpp
+	../../KwGamePublicCompact/Messages/CXCharChangeFace.cpp
+	../../KwGamePublicCompact/Messages/CXCharChangeMoveMode.cpp
+	../../KwGamePublicCompact/Messages/CXCharIdle.cpp
+	../../KwGamePublicCompact/Messages/CXCharJump.cpp
+	../../KwGamePublicCompact/Messages/CXCharMoodState.cpp
+	../../KwGamePublicCompact/Messages/CXCharMove.cpp
+	../../KwGamePublicCompact/Messages/CXCharPositionWarp.cpp
+	../../KwGamePublicCompact/Messages/CXCharRename.cpp
+	../../KwGamePublicCompact/Messages/CXCharSit.cpp
+	../../KwGamePublicCompact/Messages/CXCharStopLogic.cpp
+	../../KwGamePublicCompact/Messages/CXCharUpdateCurTitle.cpp
+	../../KwGamePublicCompact/Messages/CXCharUseSkill.cpp
+	../../KwGamePublicCompact/Messages/CXChat.cpp
+	../../KwGamePublicCompact/Messages/CXChatReport.cpp
+	../../KwGamePublicCompact/Messages/CXCheckSuperPW.cpp
+	../../KwGamePublicCompact/Messages/CXClientErrorReport.cpp
+	../../KwGamePublicCompact/Messages/CXClientLoadSceneFinish.cpp
+	../../KwGamePublicCompact/Messages/CXClientLoadSceneFinishDispatch.cpp
+	../../KwGamePublicCompact/Messages/CXCommand.cpp
+	../../KwGamePublicCompact/Messages/CXCommonActivityMsg.cpp
+	../../KwGamePublicCompact/Messages/CXComplementarityNotify.cpp
+	../../KwGamePublicCompact/Messages/CXCopyMapDati.cpp
+	../../KwGamePublicCompact/Messages/CXDailyTaskMessages.cpp
+	../../KwGamePublicCompact/Messages/CXDealPost.cpp
+	../../KwGamePublicCompact/Messages/CXDiscardNWItem.cpp
+	../../KwGamePublicCompact/Messages/CXDispelBuffReq.cpp
+	../../KwGamePublicCompact/Messages/CXDoEvnet.cpp
+	../../KwGamePublicCompact/Messages/CXEnterMap.cpp
+	../../KwGamePublicCompact/Messages/CXExecuteScript.cpp
+	../../KwGamePublicCompact/Messages/CXGetAward.cpp
+	../../KwGamePublicCompact/Messages/CXGetXinShouReward.cpp
+	../../KwGamePublicCompact/Messages/CXGiftPack.cpp
+	../../KwGamePublicCompact/Messages/CXGodTower.cpp
+	../../KwGamePublicCompact/Messages/CXGoldExchangeSillerCard.cpp
+	../../KwGamePublicCompact/Messages/CXHandShake.cpp
+	../../KwGamePublicCompact/Messages/CXHeartBeat.cpp
+	../../KwGamePublicCompact/Messages/CXItemTrans.cpp
+	../../KwGamePublicCompact/Messages/CXItemWanfa.cpp
+	../../KwGamePublicCompact/Messages/CXLawlessOperate.cpp
+	../../KwGamePublicCompact/Messages/CXLeaveMap.cpp
+	../../KwGamePublicCompact/Messages/CXLockTarget.cpp
+	../../KwGamePublicCompact/Messages/CXLoginGift.cpp
+	../../KwGamePublicCompact/Messages/CXLookFormation.cpp
+	../../KwGamePublicCompact/Messages/CXMapInfo.cpp
+	../../KwGamePublicCompact/Messages/CXMinorPasswd.cpp
+	../../KwGamePublicCompact/Messages/CXMissionTransmit.cpp
+	../../KwGamePublicCompact/Messages/CXNWShopMsg.cpp
+	../../KwGamePublicCompact/Messages/CXNWTreasureGlamor.cpp
+	../../KwGamePublicCompact/Messages/CXNWUseTreasure.cpp
+	../../KwGamePublicCompact/Messages/CXOfflineRequest.cpp
+	../../KwGamePublicCompact/Messages/CXOffSale.cpp
+	../../KwGamePublicCompact/Messages/CXPeerVip.cpp
+	../../KwGamePublicCompact/Messages/CXPeerVipDispatch.cpp
+	../../KwGamePublicCompact/Messages/CXRequestAchievementList.cpp
+	../../KwGamePublicCompact/Messages/CXRequestAltarInfo.cpp
+	../../KwGamePublicCompact/Messages/CXRequestDetailEquipNewList.cpp
+	../../KwGamePublicCompact/Messages/CXRequestGetAchievementAward.cpp
+	../../KwGamePublicCompact/Messages/CXRequestHeroHandBook.cpp
+	../../KwGamePublicCompact/Messages/CXRequestMyNewBagList.cpp
+	../../KwGamePublicCompact/Messages/CXRequestNWItemInfo.cpp
+	../../KwGamePublicCompact/Messages/CXRequestQuestList.cpp
+	../../KwGamePublicCompact/Messages/CXSellBagItem.cpp
+	../../KwGamePublicCompact/Messages/CXSports.cpp
+	../../KwGamePublicCompact/Messages/CXSwapNWItem.cpp
+	../../KwGamePublicCompact/Messages/CXUseNWItem.cpp
+	../../KwGamePublicCompact/Messages/CXZhanyiGate.cpp
+	../../KwGamePublicCompact/Messages/FirstPayMessages.cpp
+	../../KwGamePublicCompact/Messages/GodCityMessage.cpp
+	../../KwGamePublicCompact/Messages/GrowFundMessage.cpp
+	../../KwGamePublicCompact/Messages/LOCOGMCommand.cpp
+	../../KwGamePublicCompact/Messages/OfflineTimeAward.cpp
+	../../KwGamePublicCompact/Messages/PWPlayerInfoMessage.cpp
+	../../KwGamePublicCompact/Messages/GuildSystemMessages.cpp
+	../../KwGamePublicCompact/Messages/RelationFriendMessage.cpp
+	../../KwGamePublicCompact/Messages/ScriptExtendMessage.cpp
+	../../KwGamePublicCompact/Messages/ServerReconnectMessages.cpp
+	../../KwGamePublicCompact/Messages/DSRetSaveCharData.cpp
+	../../KwGamePublicCompact/Messages/GMCommandMessage.cpp
+	../../KwGamePublicCompact/Messages/HeroCardLevelUpMessage.cpp
+	../../KwGamePublicCompact/Messages/ItemMixAndProduceMessage.cpp
+	../../KwGamePublicCompact/Messages/LCGMCommandResult.cpp
+	../../KwGamePublicCompact/Messages/LCGMRetHandShake.cpp
+	../../KwGamePublicCompact/Messages/LCGMReturnLogin.cpp
+	../../KwGamePublicCompact/Messages/LCHandShake.cpp
+	../../KwGamePublicCompact/Messages/LCReturnCharList.cpp
+	../../KwGamePublicCompact/Messages/LCReturnCharLogin.cpp
+	../../KwGamePublicCompact/Messages/LCReturnCreateChar.cpp
+	../../KwGamePublicCompact/Messages/LCReturnLogin.cpp
+	../../KwGamePublicCompact/Messages/LPRequestAuth.cpp
+	../../KwGamePublicCompact/Messages/PBRetOrder.cpp
+	../../KwGamePublicCompact/Messages/PlayerGuideMessage.cpp
+	../../KwGamePublicCompact/Messages/PlayerHeroMessage.cpp
+	../../KwGamePublicCompact/Messages/PLReturnAuth.cpp
+	../../KwGamePublicCompact/Messages/PWReturnOrder.cpp
+	../../KwGamePublicCompact/Messages/SceneBattleMessage.cpp
+	../../KwGamePublicCompact/Messages/SDSaveCharData.cpp
+	../../KwGamePublicCompact/Messages/SSLocoHandShake.cpp
+	../../KwGamePublicCompact/Messages/StoryControlMessage.cpp
+	../../KwGamePublicCompact/Messages/TDOrderStateMessage.cpp
+	../../KwGamePublicCompact/Messages/TopListSMessage.cpp
+	../../KwGamePublicCompact/Messages/WXDealPost.cpp
+	../../KwGamePublicCompact/Messages/WXNoticeOrder.cpp
+	../../KwGamePublicCompact/Messages/WXPost.cpp
+	../../KwGamePublicCompact/Messages/XCAchievementState.cpp
+	../../KwGamePublicCompact/Messages/XCAltarBaseInfo.cpp
+	../../KwGamePublicCompact/Messages/XCAltarCallCardResult.cpp
+	../../KwGamePublicCompact/Messages/XCCommonAward.cpp
+	../../KwGamePublicCompact/Messages/XCDailyTaskState.cpp
+	../../KwGamePublicCompact/Messages/XCDealPost.cpp
+	../../KwGamePublicCompact/Messages/XCDetailEquipNewList.cpp
+	../../KwGamePublicCompact/Messages/XCDiscardNWItemResult.cpp
+	../../KwGamePublicCompact/Messages/XCGodTower.cpp
+	../../KwGamePublicCompact/Messages/XCKickPlayerOffline.cpp
+	../../KwGamePublicCompact/Messages/XCLookFormation.cpp
+	../../KwGamePublicCompact/Messages/XCMyNewBagList.cpp
+	../../KwGamePublicCompact/Messages/XCNWItemInfo.cpp
+	../../KwGamePublicCompact/Messages/XCNWOpenAwardBoxResult.cpp
+	../../KwGamePublicCompact/Messages/XCNWShopMsg.cpp
+	../../KwGamePublicCompact/Messages/XCNWUseTreasureResult.cpp
+	../../KwGamePublicCompact/Messages/XCOrderInfo.cpp
+	../../KwGamePublicCompact/Messages/XCRecoverHpMpResult.cpp
+	../../KwGamePublicCompact/Messages/XCReloadActivityScriptCfg.cpp
+	../../KwGamePublicCompact/Messages/XCRepulse.cpp
+	../../KwGamePublicCompact/Messages/XCSellBagItemResult.cpp
+	../../KwGamePublicCompact/Messages/XCShowLoginNotice.cpp
+	../../KwGamePublicCompact/Messages/XCSports.cpp
+	../../KwGamePublicCompact/Messages/XCSwapNWItem.cpp
+	../../KwGamePublicCompact/Messages/XCTDInfro.cpp
+	../../KwGamePublicCompact/Messages/XCUseNWItemResult.cpp
+	../../KwGamePublicCompact/Messages/XCZhanyiGate.cpp
+	../../KwGamePublicCompact/Messages/XPRequestOrder.cpp
+	../../KwGamePublicCompact/Messages/XWAddDailyTaskAward.cpp
+	../../KwGamePublicCompact/Messages/XWDealPost.cpp
+	../../KwGamePublicCompact/Messages/XWGuildSystemMessages.cpp
+	../../KwGamePublicCompact/Messages/XWLockPlayer.cpp
+	../../KwGamePublicCompact/Messages/XWPost.cpp
+	../../KwGamePublicCompact/Messages/XWRetOrder.cpp
+	../../KwGamePublicCompact/Messages/XWSearchPlayer.cpp
+	../../KwGamePublicCompact/Messages/XWXRelationFriendMessage.cpp
+	../../KwGamePublicCompact/Messages/XWSportsDefenderAttrib.cpp
+	../../KwGamePublicCompact/Messages/XXBuildingMessages.cpp
+	../../KwGamePublicCompact/Messages/XXKickOnlinePlayer.cpp
+	../../KwGamePublicCompact/Messages/XXOrderInfo.cpp
+	../../KwGamePublicCompact/Messages/XRLRemoteLog.cpp
+	../../KwGamePublicCompact/Messages/XXRequestAccountLogin.cpp
+	../../KwGamePublicCompact/Messages/XWRequestPost.cpp
+	../../KwGamePublicCompact/Messages/XXChat.cpp
+	../../KwGamePublicCompact/Messages/XXChatDispath.cpp
+	../../KwGamePublicCompact/Messages/XXMapNotify.cpp
+	../../KwGamePublicCompact/Messages/XXNotifyPost.cpp
+	../../KwGamePublicCompact/Messages/XXOfflineCtrl.cpp
+	../../KwGamePublicCompact/Messages/XXRequestPlayerShopItemBuyState.cpp
+	../../KwGamePublicCompact/Serialization.cpp
+	../../KwGamePublicCompact/Static_Allocator.cpp
+	../../KwGamePublicCompact/StructPlatform.cpp
+	../../KwGamePublicCompact/StructSceneBattle.cpp
+	../../KwGamePublicCompact/StructSpell.cpp
+	../../KwGamePublicCompact/StructTopList.cpp
+	../../KwGamePublicCompact/UnSerialization.cpp
+	../../KwGamePublicCompact/Version.cpp
+	../../KwGamePublicCompact/TAB/TabDefine_Shared_Misc.cpp
+	../ActivityScriptCfgDispatch.cpp
+	../ArenaBattleDispatch.cpp
+	../Arena.cpp
+	../AwardSystem.cpp
+	../AwardSystemDispatch.cpp
+	../BillingConnectorThread.cpp
+	../BPNoticeOrderDispatch.cpp
+	../BuildingInfo.cpp
+	../BuildingInfoManager.cpp
+	../BWNoticeOrderDispatch.cpp
+	../CDKeyDispatch.cpp
+	../CharEventDispatcher.cpp
+	../CLGMCommandDispatch.cpp
+	../CLGMHandShakeDispatch.cpp
+	../CLGMHeartBeatDispatch.cpp
+	../CLGMRequireLoginDispatch.cpp
+	../CLHandShakeDispatch.cpp
+	../CLRequestCreateRoleDispatch.cpp
+	../CLRequestEnterGameDispatch.cpp
+	../CLRequestLogonDispatch.cpp
+	../CLRequestRoleSDispatch.cpp
+	../CXBuyEliteChallengeCount.cpp
+	../CXEquipNewDispatch.cpp
+	../CXGetAssignLvlMonthGiftDispatch.cpp
+	../CXGodCityDispatch.cpp
+	../CXGodTowerDispath.cpp
+	../CXGrowFundDispatch.cpp
+	../CXGuildMsgDispatch.cpp
+	../CXNWTreasureGlamorDispatch.cpp
+	../CXQuitCurrentBattleDispatch.cpp
+	../CXRelationFriendMessageDispatch.cpp
+	../CXRequestDispatch.cpp
+	../CXRequestFirstPayDispatch.cpp
+	../CXSceneBattleDispatch.cpp
+	../CXSportsDispath.cpp
+	../GameLogicLog.cpp
+	../GmBroadCastManager.cpp
+	../GMConnectorThread.cpp
+	../GRelationManager.cpp
+	../GuildInfo.cpp
+	../GuildManager.cpp
+	../LuaFunction_Activity.cpp
+	../MergeServer.cpp
+	../SerializationMessage.cpp
+	../OfflineTimeAwardSDispatch.cpp
+	../PlayerBattleInfo.cpp
+	../PWRequestPlayerInfoDispatch.cpp
+	../RemoteLogThread.cpp
+	../ScriptExtendOpDispatch.cpp
+	../PlayerSerialization.cpp
+	../SerializationMessageDispatch.cpp
+	../SerializationThread.cpp
+	../ServerConnectorManager_LocoGM.cpp
+	../ServerConnectorManager_RemoteLog.cpp
+	../ServerReconnectMsgDispatch.cpp
+	../CXSellBagItemDispatch.cpp
+	../CXLookFormationDispatch.cpp
+	../ExceptionHandler.cpp
+	../CXAltarDispatch.cpp
+	../CXBankDispatch.cpp
+	../CXBuyCUDispatch.cpp
+	../CXCheckinsDispatch.cpp
+	../CXDailyTasksDispath.cpp
+	../CXClientCombatDispatch.cpp
+	../CXBattleOpenAwardBoxDispatch.cpp
+	../CXEnterSweepBattleDispatch.cpp
+	../../KwGamePublicCompact/Messages/CXPing.cpp
+	../../KwGamePublicCompact/Messages/CXPlayerClickNpc.cpp
+	../../KwGamePublicCompact/Messages/CXPlayerDieResult.cpp
+	../../KwGamePublicCompact/Messages/CXPlayerRequestBaseAttrib.cpp
+	../../KwGamePublicCompact/Messages/CXPost.cpp
+	../../KwGamePublicCompact/Messages/CXRemoveGem.cpp
+	../../KwGamePublicCompact/Messages/CXReqManualAttr.cpp
+	../../KwGamePublicCompact/Messages/CXReqPlayerAttrUp.cpp
+	../../KwGamePublicCompact/Messages/CXReqResetAttr.cpp
+	../../KwGamePublicCompact/Messages/CXRequestCardRefresh.cpp
+	../../KwGamePublicCompact/Messages/CXRequestCarryOnShopInfo.cpp
+	../../KwGamePublicCompact/Messages/CXRequestChangeMap.cpp
+	../../KwGamePublicCompact/Messages/CXRequestDaytipsList.cpp
+	../../KwGamePublicCompact/Messages/CXRequestDetailProperty.cpp
+	../../KwGamePublicCompact/Messages/CXRequestDetailSpellList.cpp
+	../../KwGamePublicCompact/Messages/CXRequestLeanLifeSkill.cpp
+	../../KwGamePublicCompact/Messages/CXRequestLeaveGame.cpp
+	../../KwGamePublicCompact/Messages/CXRequestOtherOnlineDetailAttrib.cpp
+	../../KwGamePublicCompact/Messages/CXRequestPost.cpp
+	../../KwGamePublicCompact/Messages/CXRequestPrivateInfo.cpp
+	../../KwGamePublicCompact/Messages/CXRequestSetMoneyMode.cpp
+	../../KwGamePublicCompact/Messages/CXRequestTransGoldToPlayer.cpp
+	../../KwGamePublicCompact/Messages/CXRetEncryptOp.cpp
+	../../KwGamePublicCompact/Messages/CXRetMac.cpp
+	../../KwGamePublicCompact/Messages/CXRunningKill.cpp
+	../../KwGamePublicCompact/Messages/CXSearchOnlineUser.cpp
+	../../KwGamePublicCompact/Messages/CXSelectMapCity.cpp
+	../../KwGamePublicCompact/Messages/CXSetChannelMode.cpp
+	../../KwGamePublicCompact/Messages/CXSetMoodToHead.cpp
+	../../KwGamePublicCompact/Messages/CXSkill.cpp
+	../../KwGamePublicCompact/Messages/CXSkillUpgrade.cpp
+	../../KwGamePublicCompact/Messages/CXTopList.cpp
+	../../KwGamePublicCompact/Messages/CXTrainingApplyI.cpp
+	../../KwGamePublicCompact/Messages/CXTrainingConfirmIII.cpp
+	../../KwGamePublicCompact/Messages/CXUseLifeSkill.cpp
+	../../KwGamePublicCompact/Messages/CXUseSectorSkill.cpp
+	../../KwGamePublicCompact/Messages/CXWorldShangDianRequestSell.cpp
+	../../KwGamePublicCompact/Messages/MessageStruct.cpp
+	../../KwGamePublicCompact/Messages/SanBaoMessage.cpp
+	../../KwGamePublicCompact/Messages/SSHandShake.cpp
+	../../KwGamePublicCompact/StructSLGAirLine.cpp
+	../../KwGamePublicCompact/Messages/XCAbandonLifeSkill.cpp
+	../../KwGamePublicCompact/Messages/XCAddLockObj.cpp
+	../../KwGamePublicCompact/Messages/XCAddSkillToSkillList.cpp
+	../../KwGamePublicCompact/Messages/XCAlertMibaoka.cpp
+	../../KwGamePublicCompact/Messages/XCArrive.cpp
+	../../KwGamePublicCompact/Messages/XCAttack.cpp
+	../../KwGamePublicCompact/Messages/XCBBSMessages.cpp
+	../../KwGamePublicCompact/Messages/XCBoxItemList.cpp
+	../../KwGamePublicCompact/Messages/XCChangeMapRestrictiveMode.cpp
+	../../KwGamePublicCompact/Messages/XCChannelError.cpp
+	../../KwGamePublicCompact/Messages/XCChannelResult.cpp
+	../../KwGamePublicCompact/Messages/XCCharAction.cpp
+	../../KwGamePublicCompact/Messages/XCCharBUFF.cpp
+	../../KwGamePublicCompact/Messages/XCCharDirectEffect.cpp
+	../../KwGamePublicCompact/Messages/XCCharDoAction.cpp
+	../../KwGamePublicCompact/Messages/XCCharEffectListUpdate.cpp
+	../../KwGamePublicCompact/Messages/XCCharEquipment.cpp
+	../../KwGamePublicCompact/Messages/XCCharIdle.cpp
+	../../KwGamePublicCompact/Messages/XCCharJump.cpp
+	../../KwGamePublicCompact/Messages/XCCharModifyAction.cpp
+	../../KwGamePublicCompact/Messages/XCCharMonsterBaseAttrib.cpp
+	../../KwGamePublicCompact/Messages/XCCharMove.cpp
+	../../KwGamePublicCompact/Messages/XCCharMoveResult.cpp
+	../../KwGamePublicCompact/Messages/XCCharPlayerBaseAttrib.cpp
+	../../KwGamePublicCompact/Messages/XCCharSkill_CreateBullet.cpp
+	../../KwGamePublicCompact/Messages/XCCharSkill_Gather.cpp
+	../../KwGamePublicCompact/Messages/XCCharSkill_Gather_Modify.cpp
+	../../KwGamePublicCompact/Messages/XCCharSkill_Lead.cpp
+	../../KwGamePublicCompact/Messages/XCCharSkill_Lead_Modify.cpp
+	../../KwGamePublicCompact/Messages/XCCharSkill_Missed.cpp
+	../../KwGamePublicCompact/Messages/XCCharSkill_Send.cpp
+	../../KwGamePublicCompact/Messages/XCCharStopAction.cpp
+	../../KwGamePublicCompact/Messages/XCChat.cpp
+	../../KwGamePublicCompact/Messages/XCChatLaBa.cpp
+	../../KwGamePublicCompact/Messages/XCCollectMac.cpp
+	../../KwGamePublicCompact/Messages/XCCommonActivityNotify.cpp
+	../../KwGamePublicCompact/Messages/XCConnect.cpp
+	../../KwGamePublicCompact/Messages/XCCoolDownUpdate.cpp
+	../../KwGamePublicCompact/Messages/XCCopyMapDati.cpp
+	../../KwGamePublicCompact/Messages/XCDaytipsList.cpp
+	../../KwGamePublicCompact/Messages/XCDelChar.cpp
+	../../KwGamePublicCompact/Messages/XCDelObject.cpp
+	../../KwGamePublicCompact/Messages/XCDetailAttrib.cpp
+	../../KwGamePublicCompact/Messages/XCDetailBUFF.cpp
+	../../KwGamePublicCompact/Messages/XCDetailEffectListUpdate.cpp
+	../../KwGamePublicCompact/Messages/XCDetailEquipAtt.cpp
+	../../KwGamePublicCompact/Messages/XCDetailHealsAndDamages.cpp
+	../../KwGamePublicCompact/Messages/XCDetailSkillList.cpp
+	../../KwGamePublicCompact/Messages/XCDie.cpp
+	../../KwGamePublicCompact/Messages/XCDiscardEquipResult.cpp
+	../../KwGamePublicCompact/Messages/XCDiscardItemResult.cpp
+	../../KwGamePublicCompact/Messages/XCEncryptKey.cpp
+	../../KwGamePublicCompact/Messages/XCEnterMap.cpp
+	../../KwGamePublicCompact/Messages/XCErrorAttack.cpp
+	../../KwGamePublicCompact/Messages/XCErrorSkill.cpp
+	../../KwGamePublicCompact/Messages/XCForceReconnect.cpp
+	../../KwGamePublicCompact/Messages/XCGameWanfaState.cpp
+	../../KwGamePublicCompact/Messages/XCGiftPack.cpp
+	../../KwGamePublicCompact/Messages/XCGoldExchangeSillerCard.cpp
+	../../KwGamePublicCompact/Messages/XCGuanQiaSpellUI.cpp
+	../../KwGamePublicCompact/Messages/XCHeartBeat.cpp
+	../../KwGamePublicCompact/Messages/XCInputSuperPW.cpp
+	../../KwGamePublicCompact/Messages/XCItemTrans.cpp
+	../../KwGamePublicCompact/Messages/XCItemWanfaResult.cpp
+	../../KwGamePublicCompact/Messages/XCJoinTempChannel.cpp
+	../../KwGamePublicCompact/Messages/XCLeaveGame.cpp
+	../../KwGamePublicCompact/Messages/XCLeaveMap.cpp
+	../../KwGamePublicCompact/Messages/XCLevelUp.cpp
+	../../KwGamePublicCompact/Messages/XCLevelUpResult.cpp
+	../../KwGamePublicCompact/Messages/XCLifeSkillAction.cpp
+	../../KwGamePublicCompact/Messages/XCLifeSkillExp.cpp
+	../../KwGamePublicCompact/Messages/XCLifeSkillLevel.cpp
+	../../KwGamePublicCompact/Messages/XCLifeSkillResult.cpp
+	../../KwGamePublicCompact/Messages/XCLifeSkillSucc.cpp
+	../../KwGamePublicCompact/Messages/XCLifeSkillTeacherInfo.cpp
+	../../KwGamePublicCompact/Messages/XCLoginGift.cpp
+	../../KwGamePublicCompact/Messages/XCManualAttrResult.cpp
+	../../KwGamePublicCompact/Messages/XCMapMapPointData.cpp
+	../../KwGamePublicCompact/Messages/XCMilitaryRankLevelup.cpp
+	../../KwGamePublicCompact/Messages/XCMinorPasswd.cpp
+	../../KwGamePublicCompact/Messages/XCModifyGuanQiaSpell.cpp
+	../../KwGamePublicCompact/Messages/XCModifySpeed.cpp
+	../../KwGamePublicCompact/Messages/XCMonsterRealMove.cpp
+	../../KwGamePublicCompact/Messages/XCMonsterSpeak.cpp
+	../../KwGamePublicCompact/Messages/XCNeedPWDProtect.cpp
+	../../KwGamePublicCompact/Messages/XCNewBeastie.cpp
+	../../KwGamePublicCompact/Messages/XCNewBeastie_Move.cpp
+	../../KwGamePublicCompact/Messages/XCNewGainPromotion.cpp
+	../../KwGamePublicCompact/Messages/XCNewItem.cpp
+	../../KwGamePublicCompact/Messages/XCNewMonster.cpp
+	../../KwGamePublicCompact/Messages/XCNewMonster_Death.cpp
+	../../KwGamePublicCompact/Messages/XCNewMonster_Move.cpp
+	../../KwGamePublicCompact/Messages/XCNewObjItem.cpp
+	../../KwGamePublicCompact/Messages/XCNewPlatform.cpp
+	../../KwGamePublicCompact/Messages/XCNewPlayer.cpp
+	../../KwGamePublicCompact/Messages/XCNewPlayer_Death.cpp
+	../../KwGamePublicCompact/Messages/XCNewPlayer_Move.cpp
+	../../KwGamePublicCompact/Messages/XCNewPortal.cpp
+	../../KwGamePublicCompact/Messages/XCNewSkillObj.cpp
+	../../KwGamePublicCompact/Messages/XCNewSpecial.cpp
+	../../KwGamePublicCompact/Messages/XCNotifyChangeMap.cpp
+	../../KwGamePublicCompact/Messages/XCNotifyClientToNpcPoint.cpp
+	../../KwGamePublicCompact/Messages/XCNotifyGoodBad.cpp
+	../../KwGamePublicCompact/Messages/XCNotifyInfo.cpp
+	../../KwGamePublicCompact/Messages/XCNotifyPost.cpp
+	../../KwGamePublicCompact/Messages/XCNPCTransferType.cpp
+	../../KwGamePublicCompact/Messages/XCObjTeleport.cpp
+	../../KwGamePublicCompact/Messages/XCOnlineShowTips.cpp
+	../../KwGamePublicCompact/Messages/XCOpenAwardBox.cpp
+	../../KwGamePublicCompact/Messages/XCOpenBox.cpp
+	../../KwGamePublicCompact/Messages/XCOpenBoxManipulate.cpp
+	../../KwGamePublicCompact/Messages/XCOpenOffSaleSystem.cpp
+	../../KwGamePublicCompact/Messages/XCOperateResult.cpp
+	../../KwGamePublicCompact/Messages/XCOtherAttack.cpp
+	../../KwGamePublicCompact/Messages/XCOtherSkill.cpp
+	../../KwGamePublicCompact/Messages/XCPackUpPacket.cpp
+	../../KwGamePublicCompact/Messages/XCPeerVip.cpp
+	../../KwGamePublicCompact/Messages/XCPickDropItemResult.cpp
+	../../KwGamePublicCompact/Messages/XCPickResult.cpp
+	../../KwGamePublicCompact/Messages/XCPing.cpp
+	../../KwGamePublicCompact/Messages/XCPlayerDie.cpp
+	../../KwGamePublicCompact/Messages/XCPlayerFirstEnterNotify.cpp
+	../../KwGamePublicCompact/Messages/XCPlayerRealMove.cpp
+	../../KwGamePublicCompact/Messages/XCPlayerRelive.cpp
+	../../KwGamePublicCompact/Messages/XCPost.cpp
+	../../KwGamePublicCompact/Messages/XCPrescription.cpp
+	../../KwGamePublicCompact/Messages/XCPrivateInfo.cpp
+	../../KwGamePublicCompact/Messages/XCRemoveGemResult.cpp
+	../../KwGamePublicCompact/Messages/XCReqResetAttrResult.cpp
+	../../KwGamePublicCompact/Messages/XCRequestCardRefresh.cpp
+	../../KwGamePublicCompact/Messages/XCRequestEncryptOp.cpp
+	../../KwGamePublicCompact/Messages/XCRetChangeMap.cpp
+	../../KwGamePublicCompact/Messages/XCRetCharChangeFace.cpp
+	../../KwGamePublicCompact/Messages/XCRetPlayerAttrUp.cpp
+	../../KwGamePublicCompact/Messages/XCRetTransGoldToChar.cpp
+	../../KwGamePublicCompact/Messages/XCReturnOnlineUser.cpp
+	../../KwGamePublicCompact/Messages/XCRunningKill.cpp
+	../../KwGamePublicCompact/Messages/XCScriptCommand.cpp
+	../../KwGamePublicCompact/Messages/XCSendXinShouMaxLevel.cpp
+	../../KwGamePublicCompact/Messages/XCSetChannelModeResult.cpp
+	../../KwGamePublicCompact/Messages/XCSetShowSuitModeResult.cpp
+	../../KwGamePublicCompact/Messages/XCSkill.cpp
+	../../KwGamePublicCompact/Messages/XCSkillPrepare.cpp
+	../../KwGamePublicCompact/Messages/XCSkillSuccessfulUse.cpp
+	../../KwGamePublicCompact/Messages/XCSkillUpgrade.cpp
+	../../KwGamePublicCompact/Messages/XCSpecialObj_FadeOut.cpp
+	../../KwGamePublicCompact/Messages/XCSystemError.cpp
+	../../KwGamePublicCompact/Messages/XCTimerCommand.cpp
+	../../KwGamePublicCompact/Messages/XCTopList.cpp
+	../../KwGamePublicCompact/Messages/XCTrainingApplyII.cpp
+	../../KwGamePublicCompact/Messages/XCUICommand.cpp
+	../../KwGamePublicCompact/Messages/XCUIStateCtrl.cpp
+	../../KwGamePublicCompact/Messages/XCUnExtraBagResult.cpp
+	../../KwGamePublicCompact/Messages/XCUpdateTitle.cpp
+	../../KwGamePublicCompact/Messages/XCUseBallEffect.cpp
+	../../KwGamePublicCompact/Messages/XCWorldShopInfo.cpp
+	../../KwGamePublicCompact/Messages/XCWorldShopOpenSell.cpp
+	../../KwGamePublicCompact/Messages/XCWorldTime.cpp
+	../CXHeroCardLevelUpDispatch.cpp
+	../CXNWItemDispatch.cpp
+	../CXNWItemMixAndProcDispatch.cpp
+	../CXNWShopDispatch.cpp
+	../CXNWTreasureDispatch.cpp
+	../CXPlayerGuideDispatch.cpp
+	../CXRequestAchievementListDispatch.cpp
+	../CXRequestBattleListDispatch.cpp
+	../CXRequestGetAchievementAwardDiapatch.cpp
+	../CXStoryControlDispatch.cpp
+	../CXZhanyiGateDispatch.cpp
+	../CXPlayerHeroDispatch.cpp
+	../DBOperMgr.cpp
+	../DBThread.cpp
+	../DBThreadManager.cpp
+	../DSRetSaveCharDataHandler.cpp
+	../GMCommandDispatch.cpp
+	../GWorldManager.cpp
+	../GXMapDispatch.cpp
+	../Item_PlayerEquipContainer.cpp
+	../LocoConnector.cpp
+	../LoginConnectorManager.cpp
+	../LoginManager.cpp
+	../LuaFunction_Achievement.cpp
+	../LuaFunction_Arena.cpp
+	../LuaFunction_Battle.cpp
+	../LuaFunction_DailyTask.cpp
+	../LuaFunction_HeroCard.cpp
+	../LuaFunction_PlayerGuide.cpp
+	../MKLogicManager.cpp
+	../NWItem_Base.cpp
+	../NWItem_Container.cpp
+	../NWItem_Equip.cpp
+	../NWItem_Gem.cpp
+	../NWItem_Interface.cpp
+	../NWItem_Medic.cpp
+	../NWItem_PlayerMedicContainer.cpp
+	../NWItem_PlayerGemContainer.cpp
+	../NWItem_PlayerTreasureContainer.cpp
+	../NWItem_ScriptLogic.cpp
+	../NWItem_Treasure.cpp
+	../OfflineDataManager.cpp
+	../OrderListManager.cpp
+	../PlatConnector.cpp
+	../PlatConnectorThread.cpp
+	../PlayerHeros.cpp
+	../../KwGamePublicCompact/TAB/TAB.cpp
+	../../KwGamePublicCompact/TAB/TabDefine_Map.cpp
+	../../KwGamePublicCompact/TAB/TabDefine_Map_Item.cpp
+	../../KwGamePublicCompact/TAB/TabDefine_Map_Misc.cpp
+	../../KwGamePublicCompact/TAB/TabDefine_Map_Monster.cpp
+	../../KwGamePublicCompact/TAB/TabDefine_Map_Quest.cpp
+	../../KwGamePublicCompact/TAB/TabDefine_Map_Skill.cpp
+	../../KwGamePublicCompact/TAB/TabDefine_Share.cpp
+	../../KwGamePublicCompact/TAB/TabReload.cpp
+	../../KwGamePublicCompact/TAB/TabReloadShareSpace.cpp
+	../../KwGamePublicCompact/TAB/TabStruct.cpp
+	../../KwGamePublicCompact/Array_Base.cpp
+	../../KwGamePublicCompact/Camp.cpp
+	../../KwGamePublicCompact/Debug.cpp
+	../../KwGamePublicCompact/DefineResult.cpp
+	../../KwGamePublicCompact/MessageFactoryManager.cpp
+	../../KwGamePublicCompact/ScriptCacheMgr.cpp
+	../../KwGamePublicCompact/ScriptStruct.cpp
+	../../KwGamePublicCompact/SpellDataLoader.cpp
+	../../KwGamePublicCompact/Struct.cpp
+	../../KwGamePublicCompact/StructChannelMeridian.cpp
+	../../KwGamePublicCompact/StructDB.cpp
+	../../KwGamePublicCompact/StructFarEastNpc.cpp
+	../../KwGamePublicCompact/StructFinger.cpp
+	../../KwGamePublicCompact/StructGameBattle.cpp
+	../../KwGamePublicCompact/StructMinorPasswd.cpp
+	../../KwGamePublicCompact/StructOneVsOne.cpp
+	../../KwGamePublicCompact/StructRoomBattle.cpp
+	../../KwGamePublicCompact/StructScript.cpp
+	../../KwGamePublicCompact/StructTeam.cpp
+	../../KwGamePublicCompact/StructTeamTank.cpp
+	../../KwGamePublicCompact/TabTemplateLoader.cpp
+	../../KwGamePublicCompact/Util.cpp
+	../../KwGamePublicCompact/Utilities/PacketUseCount.cpp
+	../../KwGamePublicCompact/Utilities/SplitStringBase.cpp
+	../../KwGamePublicCompact/Utilities/SplitStringLevelOne.cpp
+	../../KwGamePublicCompact/Utilities/SplitStringLevelTwo.cpp
+	../../KwGamePublicCompact/PlayerStateMutex.cpp
+	../../KwGamePublicCompact/EncryptAriths/BitOper.cpp
+	../../KwGamePublicCompact/EncryptAriths/BlowFish.cpp
+	../../KwGamePublicCompact/EncryptAriths/DES.cpp
+	../../KwGamePublicCompact/EncryptAriths/Devalue.cpp
+	../../KwGamePublicCompact/EncryptAriths/EncryptFunction.cpp
+	../../KwGamePublicCompact/EncryptAriths/Gost.cpp
+	../../KwGamePublicCompact/EncryptAriths/Idea.cpp
+	../../KwGamePublicCompact/EncryptAriths/Increment.cpp
+	../../KwGamePublicCompact/EncryptAriths/Mars.cpp
+	../../KwGamePublicCompact/EncryptAriths/rc2.cpp
+	../../KwGamePublicCompact/EncryptAriths/rc5.cpp
+	../../KwGamePublicCompact/EncryptAriths/rc6.cpp
+	../../KwGamePublicCompact/EncryptAriths/rsa.cpp
+	../../KwGamePublicCompact/EncryptAriths/safer.cpp
+	../../KwGamePublicCompact/EncryptAriths/tea.cpp
+	../../KwGamePublicCompact/EncryptAriths/vlong.cpp
+	../../KwGamePublicCompact/Core/ArchiveHolder.cpp
+	../../KwGamePublicCompact/Core/BaseTool_Config.cpp
+	../../KwGamePublicCompact/Core/BaseTool_Log.cpp
+	../../KwGamePublicCompact/Core/BaseTool_Thread.cpp
+	../../KwGamePublicCompact/Core/BaseTool_Time.cpp
+	../../KwGamePublicCompact/Core/DecoderManager.cpp
+	../../KwGamePublicCompact/IntegerHashMap.cpp
+	../../KwGamePublicCompact/Core/LogAssistant.cpp
+	../../KwGamePublicCompact/Core/Setting.cpp
+	../../KwGamePublicCompact/StringHashMap.cpp
+	../../KwGamePublicCompact/Connector/Connector.cpp
+	../../KwGamePublicCompact/Connector/ConnectorManager.cpp
+	../../KwGamePublicCompact/Connector/ConnectorManager_Epoll.cpp
+	../../KwGamePublicCompact/Connector/ConnectorManager_Select.cpp
+	../../KwGamePublicCompact/Connector/ConnectorPool.cpp
+	../../KwGamePublicCompact/Connector/ServerConnectorManager.cpp
+	../../KwGamePublicCompact/Connector/udpsender.cpp
+	../AcceptManager.cpp
+	../CheckDeadLock.cpp
+	../clienterrorpool.cpp
+	../KLDaemonThread.cpp
+	../KThreadContainer.cpp
+	../MapServer.cpp
+	../PLReturnAuthDispatch.cpp
+	../PostCore.cpp
+	../PostDefine.cpp
+	../PostDispatch.cpp
+	../PostPool.cpp
+	../PWReturnOrderDispatch.cpp
+	../SDSaveCharDataHandler.cpp
+	../SearchPlayerDispatch.cpp
+	../ServerConnectorManager_LocoBilling.cpp
+	../ServerConnectorManager_Platform.cpp
+	../ServerConnectorThread.cpp
+	../ActivityScriptCfgManager.cpp
+	../SNIDManager.cpp
+	../SSLocoHandShakeDiapatch.cpp
+	../ThreadSingleton.cpp
+	../CXAskLostItemInfoDispatch.cpp
+	../CXAttackDispatch.cpp
+	../CXBBSApplyDispatch.cpp
+	../CXBBSSychMessagesDispatch.cpp
+	../CXCampaignDispatch.cpp
+	../CXChangeMoneyDispatch.cpp
+	../CXCheckSuperPWDispatch.cpp
+	../CXClientErrorReportDispatch.cpp
+	../CXCommandDispatch.cpp
+	../CXCommonActivityMsgDispatch.cpp
+	../CXDispelBuffReqDispatch.cpp
+	../CXDoEventDispatch.cpp
+	../CXExecuteScriptDispatch.cpp
+	../CXGetAwardDispatch.cpp
+	../CXGetXinShouRewardDispatch.cpp
+	../CXGiftPackDispatch.cpp
+	../CXGoldExchangeSillerCardDispatch.cpp
+	../CXHandShakeDispatch.cpp
+	../CXHeartBeatDispatch.cpp
+	../CXItemTransDispatch.cpp
+	../CXLawlessOperateDispatch.cpp
+	../CXLockTargetDispatch.cpp
+	../CXLoginGiftDispatch.cpp
+	../CXMinorPasswordDispatch.cpp
+	../CXMissonTransmitDispatch.cpp
+	../CXOffSaleDispatch.cpp
+	../CXOnlineShowTips.cpp
+	../CXPingDispatch.cpp
+	../CXPlayerClickNpcDispatch.cpp
+	../CXPlayerDieResultDispatch.cpp
+	../CXRelationDispatch.cpp
+	../CXRemoveGemDispatch.cpp
+	../CXReqManualAttrDispatch.cpp
+	../CXReqPlayerAttrUpDispatch.cpp
+	../CXReqResetAttrDispatch.cpp
+	../CXRequestCardRefreshDispatch.cpp
+	../CXRetEncryptOpDispatch.cpp
+	../CXRetMacDispatch.cpp
+	../CXRunningKillDispatch.cpp
+	../CXSanBaoMessageDispatch.cpp
+	../CXSearchOnlineUserDispatch.cpp
+	../CXSelectMapCityDispatch.cpp
+	../CXSetMoodToHeadDispatch.cpp
+	../CXTopListDispatch.cpp
+	../CXTrainingApplyIDispatch.cpp
+	../CXTrainingConfirmIIIDispatch.cpp
+	../MessageStructDispatch.cpp
+	../SSHandShakeHandler.cpp
+	../TopList.cpp
+	../TopListManager.cpp
+	../VerifyReceiptMessageDispatch.cpp
+	../VerifyReceiptServerMessages.cpp
+	../TopListSMessageDispatch.cpp
+	../WXKickOnlinePlayerDispatch.cpp
+	../WXNoticeOrderDispatch.cpp
+	../WXRetAccountLoginDispatch.cpp
+	../XCDispatch.cpp
+	../../KwGamePublicCompact/Messages/XCRetAccountMoney.cpp
+	../ChangeMapDelegater.cpp
+	../ConnectDelegater.cpp
+	../CXChannelDelegater.cpp
+	../CXCharDelegater.cpp
+	../CXChatDelegater.cpp
+	../MinorPasswdDispatchDelegater.cpp
+	../CXChannelDispatch.cpp
+	../CXCharDispatch.cpp
+	../CXChatDispatch.cpp
+	../CXEquipDispatch.cpp
+	../CXMapDispatch.cpp
+	../CXSkillDispatch.cpp
+	../Character.cpp
+	../Creature.cpp
+	../ItemInstance.cpp
+	../ItemInstanceManager.cpp
+	../ItemInstancePool.cpp
+	../KCharacter_Mgr.cpp
+	../Object.cpp
+	../ObjectManager.cpp
+	../ObjectPool.cpp
+	../ObjectSingleManager.cpp
+	../ObjPoolDefine.cpp
+	../Player.cpp
+	../PlayerAttributes.cpp
+	../PlayerAttrRefesh.cpp
+	../PlayerCalc.cpp
+	../PlayerManager.cpp
+	../../KwGamePublicCompact/Connector/ConnectThread.cpp
+	../GameConnector.cpp
+	../IncomingConnectorManager.cpp
+	../MapConnectorManager.cpp
+	../RecycleConnectorManager.cpp
+	../ServerConnectorManager_MapServer.cpp
+	../LuaFunction_Behavior.cpp
+	../LuaFunction_Chat.cpp
+	../LuaFunction_Fight.cpp
+	../LuaFunction_Guild.cpp
+	../LuaFunction_Item.cpp
+	../LuaFunction_ItemWanfa.cpp
+	../LuaFunction_Map.cpp
+	../LuaFunction_Misc.cpp
+	../LuaFunction_Party.cpp
+	../LuaFunction_Property.cpp
+	../LuaFunction_Quest.cpp
+	../LuaFunction_Relation.cpp
+	../LuaFunction_Shop.cpp
+	../LuaFunction_Skill.cpp
+	../LuaFunction_Spell.cpp
+	../LuaFunction_Team.cpp
+	../LuaFunction_TeamGroup.cpp
+	../LuaStack.cpp
+	../LuaSystem.cpp
+	../LuaSystem_Function.cpp
+	../CowryManager.cpp
+	../GMCommand.cpp
+	../MapTabReload.cpp
+	../TabReloadNameSpace.cpp
+	../TabReloadNameSpaceItem.cpp
+	../TabReloadNameSpaceWanfa.cpp
+	../TeamGroupInfo.cpp
+	../TimerDoingManager.cpp
+	../Map.cpp
+	../MapCore.cpp
+	../MapEvent.cpp
+	../MapHelper.cpp
+	../MapManager.cpp
+	../PlayerArchive.cpp
+	../stdafx.cpp
+	../Item_Container.cpp
+	../Item_GamePlayerInterface.cpp
+	../Item_GatherPointMgr.cpp
+	../Item_Helper.cpp
+	../Item_Manager.cpp
+	../Item_Ruler.cpp
+	../ItemWanfa_Manager.cpp
+	../Misc_ShangDian_System.cpp
+	../Skill_All.cpp
+	../Skill_Base.cpp
+	../Skill_Manager.cpp
+	../Team_Interface.cpp
+	../XWAddDailyTaskAwardDispatch.cpp
+	../XWGuildSystemMessageDispatch.cpp
+	../XWLockPlayerDispatch.cpp
+	../XWRequestAccountLoginDispatch.cpp
+	../XWRequestAccountLogoutDispatch.cpp
+	../XWRetKickPlayerDispatch.cpp
+	../XWRetOrderDispatch.cpp
+	../XWXRelationFriendDispatch.cpp
+	../XWSportsDefenderAttribDispatch.cpp
+	../XXBuildingMessageDispatch.cpp
+	../XXOfflineCtrlDispatch.cpp
+	../XXOrderInfoDispatch.cpp
+	../XXPlayerShopItemBuyStateDispatch.cpp
+)
+
+
+
+if (WIN32)
+	source_group(ServerCompact_src FILES ${ServerCompact_LIST})
+endif()
+
+
+ADD_EXECUTABLE(ServerCompact
+	${ServerCompact_LIST}
+)
+TARGET_LINK_LIBRARIES(ServerCompact 
+	NetDrv
+	LuaScriptVM
+	lzopro
+	LuaLib
+)
+
+
+
+
+
+
+
+##update_end
+
+TARGET_LINK_LIBRARIES(ServerCompact -lodbc)
+
+if (WIN32)
+	TARGET_LINK_LIBRARIES(ServerCompact ws2_32.lib odbc32.lib odbccp32.lib)
+endif()

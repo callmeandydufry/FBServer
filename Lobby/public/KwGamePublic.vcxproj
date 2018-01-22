@@ -1,0 +1,1746 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Android">
+      <Configuration>Debug</Configuration>
+      <Platform>Android</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_Final|Android">
+      <Configuration>Release_Final</Configuration>
+      <Platform>Android</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_Final|Win32">
+      <Configuration>Release_Final</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_OptimizeDisable|Android">
+      <Configuration>Release_OptimizeDisable</Configuration>
+      <Platform>Android</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_OptimizeDisable|Win32">
+      <Configuration>Release_OptimizeDisable</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9A08F9A8-2FD4-4409-BB71-8F522115D512}</ProjectGuid>
+    <RootNamespace>KwGamePublic</RootNamespace>
+    <ProjectName>KwGamePublicCompact</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Final|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Final|Android'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_OptimizeDisable|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_OptimizeDisable|Android'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Android'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <AndroidTargetAPI>android-9</AndroidTargetAPI>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_Final|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_Final|Android'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_OptimizeDisable|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_OptimizeDisable|Android'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Android'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\EngineOut\$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Android'">..\..\EngineOut\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Android'">$(OutDir)$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_OptimizeDisable|Win32'">..\..\EngineOut\$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_OptimizeDisable|Android'">..\..\EngineOut\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release_OptimizeDisable|Win32'">$(OutDir)$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release_OptimizeDisable|Android'">$(OutDir)$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_Final|Win32'">..\..\EngineOut\$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_Final|Android'">..\..\EngineOut\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release_Final|Win32'">$(OutDir)$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release_Final|Android'">$(OutDir)$(ProjectName)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Android'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Android'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Android'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release_Final|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release_Final|Android'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release_Final|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release_Final|Android'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release_Final|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release_Final|Android'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release_OptimizeDisable|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release_OptimizeDisable|Android'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release_OptimizeDisable|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release_OptimizeDisable|Android'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release_OptimizeDisable|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release_OptimizeDisable|Android'" />
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Android'">lib$(ProjectName)_d</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release_Final|Android'">lib$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\;.\Core;.\Messages;.\Utilities;.\..\KwNetDrv\include;.\..\..\External\lzopro\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;__WINDOWS__;_70_CLIENT;_70_SERVER;GAME_CLIENT;_70_LOGIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)_d.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Android'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\;.\..\KwGamePublic;.\..\KwGamePublic\Core;.\Messages;.\Utilities;.\..\KwNetDrv\include;.\..\..\External\lzopro\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__LINUX__;_GLIBCXX_PERMIT_BACKWARD_HASH;_DEBUG;_LIB;_70_CLIENT;_70_SERVER;GAME_CLIENT;_70_LOGIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalOptions>-fpermissive -fexceptions %(AdditionalOptions)</AdditionalOptions>
+      <ThumbMode>false</ThumbMode>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_OptimizeDisable|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>.\;.\Messages;.\Utilities;.\..\KwNetDrv\include;.\..\..\External\lzopro\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;__WINDOWS__;_70_CLIENT;_70_SERVER;GAME_CLIENT;_70_LOGIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)_Od.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_OptimizeDisable|Android'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>.\;.\Messages;.\Utilities;.\..\KwNetDrv\include;.\..\..\External\lzopro\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;__WINDOWS__;_70_CLIENT;_70_SERVER;GAME_CLIENT;_70_LOGIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)_Od.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Final|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>.\;.\Core;.\Messages;.\Utilities;.\..\KwNetDrv\include;.\..\..\External\lzopro\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;__WINDOWS__;_70_CLIENT;_70_SERVER;GAME_CLIENT;_70_LOGIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Final|Android'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>.\;.\..\KwGamePublic;.\Messages;.\Utilities;.\..\KwNetDrv\include;.\..\..\External\lzopro\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__LINUX__;_GLIBCXX_PERMIT_BACKWARD_HASH;ANDROID;NDEBUG;_LIB;_70_CLIENT;_70_SERVER;GAME_CLIENT;_70_LOGIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalOptions>-fpermissive -fexceptions %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="DefineResult.cpp" />
+    <ClCompile Include="KwGamePublicLib.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Android'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_Final|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_Final|Android'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_OptimizeDisable|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_OptimizeDisable|Android'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Messages\LDRequestPlayerList.cpp" />
+    <ClCompile Include="StructCountry.cpp" />
+    <ClCompile Include="StructFinger.cpp" />
+    <ClCompile Include="StructMinorPasswd.cpp" />
+    <ClCompile Include="StructScript.cpp" />
+    <ClCompile Include="Messages\CLCancelQueue.cpp" />
+    <ClCompile Include="Messages\CLCaptcha.cpp" />
+    <ClCompile Include="Messages\CLCheckAnswer.cpp" />
+    <ClCompile Include="Messages\CLCheckPasspod.cpp" />
+    <ClCompile Include="Messages\CLCheckPWCard.cpp" />
+    <ClCompile Include="Messages\CLHandShake.cpp" />
+    <ClCompile Include="Messages\CLRegisterAndCreate.cpp" />
+    <ClCompile Include="Messages\CLRequestChangeName.cpp" />
+    <ClCompile Include="Messages\CLRequireCharList.cpp" />
+    <ClCompile Include="Messages\CLRequireCharLogin.cpp" />
+    <ClCompile Include="Messages\CLRequireCreateChar.cpp" />
+    <ClCompile Include="Messages\CLRequireDeleteChar.cpp" />
+    <ClCompile Include="Messages\CLRequireLogin.cpp" />
+    <ClCompile Include="Messages\CLRequireYYLogin.cpp" />
+    <ClCompile Include="Messages\CLRequireYYToken.cpp" />
+    <ClCompile Include="Messages\CXAcceptGuildConvoy.cpp" />
+    <ClCompile Include="Messages\CXApplyPrivateInfo.cpp" />
+    <ClCompile Include="Messages\CXAskCardActive.cpp" />
+    <ClCompile Include="Messages\CXAskEnterFuben.cpp" />
+    <ClCompile Include="Messages\CXAskEnterFubenWithOutNpc.cpp" />
+    <ClCompile Include="Messages\CXAskEnterSoldierBattle.cpp" />
+    <ClCompile Include="Messages\CXAskLostItemInfo.cpp" />
+    <ClCompile Include="Messages\CXAskPartyShop.cpp" />
+    <ClCompile Include="Messages\CXAttack.cpp" />
+    <ClCompile Include="Messages\CXBaitanAddItem.cpp" />
+    <ClCompile Include="Messages\CXBaitanApply.cpp" />
+    <ClCompile Include="Messages\CXBaitanBuy.cpp" />
+    <ClCompile Include="Messages\CXBaitanClose.cpp" />
+    <ClCompile Include="Messages\CXBaitanDefaultPage.cpp" />
+    <ClCompile Include="Messages\CXBaitanEstablish.cpp" />
+    <ClCompile Include="Messages\CXBaitanItemPrice.cpp" />
+    <ClCompile Include="Messages\CXBaitanlDefaultPage.cpp" />
+    <ClCompile Include="Messages\CXBaitanOpen.cpp" />
+    <ClCompile Include="Messages\CXBaitanRemoveItem.cpp" />
+    <ClCompile Include="Messages\CXBaitanShopName.cpp" />
+    <ClCompile Include="Messages\CXBBSApply.cpp" />
+    <ClCompile Include="Messages\CXBBSSychMessages.cpp" />
+    <ClCompile Include="Messages\CXBusApplyChangeState.cpp" />
+    <ClCompile Include="Messages\CXBusApplyInto.cpp" />
+    <ClCompile Include="Messages\CXBusLeave.cpp" />
+    <ClCompile Include="Messages\CXCallUpTeamMember.cpp" />
+    <ClCompile Include="Messages\CXCamera.cpp" />
+    <ClCompile Include="Messages\CXCampaign.cpp" />
+    <ClCompile Include="Messages\CXCancelHorseFindMateInfo.cpp" />
+    <ClCompile Include="Messages\CXCardBagOperation.cpp" />
+    <ClCompile Include="Messages\CXChangeHorseState.cpp" />
+    <ClCompile Include="Messages\CXChangeMoney.cpp" />
+    <ClCompile Include="Messages\CXChangeProfession.cpp" />
+    <ClCompile Include="Messages\CXChannelCreate.cpp" />
+    <ClCompile Include="Messages\CXChannelDismiss.cpp" />
+    <ClCompile Include="Messages\CXChannelInvite.cpp" />
+    <ClCompile Include="Messages\CXChannelKick.cpp" />
+    <ClCompile Include="Messages\CXCharAllTitles.cpp" />
+    <ClCompile Include="Messages\CXCharChangeFace.cpp" />
+    <ClCompile Include="Messages\CXCharChangeMoveMode.cpp" />
+    <ClCompile Include="Messages\CXCharIdle.cpp" />
+    <ClCompile Include="Messages\CXCharJump.cpp" />
+    <ClCompile Include="Messages\CXCharMoodState.cpp" />
+    <ClCompile Include="Messages\CXCharMove.cpp" />
+    <ClCompile Include="Messages\CXCharPositionWarp.cpp" />
+    <ClCompile Include="Messages\CXCharRename.cpp" />
+    <ClCompile Include="Messages\CXCharSit.cpp" />
+    <ClCompile Include="Messages\CXCharStopLogic.cpp" />
+    <ClCompile Include="Messages\CXCharUpdateCurTitle.cpp" />
+    <ClCompile Include="Messages\CXCharUseSkill.cpp" />
+    <ClCompile Include="Messages\CXChat.cpp" />
+    <ClCompile Include="Messages\CXChatReport.cpp" />
+    <ClCompile Include="Messages\CXCheckSuperPW.cpp" />
+    <ClCompile Include="Messages\CXCleanSubTrainInfo.cpp" />
+    <ClCompile Include="Messages\CXClientErrorReport.cpp" />
+    <ClCompile Include="Messages\CXCommand.cpp" />
+    <ClCompile Include="Messages\CXCommonActivityMsg.cpp" />
+    <ClCompile Include="Messages\CXComplementarityNotify.cpp" />
+    <ClCompile Include="Messages\CXConformFubenProcess.cpp" />
+    <ClCompile Include="Messages\CXCopyMapDati.cpp" />
+    <ClCompile Include="Messages\CXCountry.cpp" />
+    <ClCompile Include="Messages\CXCountryAppoint.cpp" />
+    <ClCompile Include="Messages\CXCountryBattleLite.cpp" />
+    <ClCompile Include="Messages\CXCountryCollect.cpp" />
+    <ClCompile Include="Messages\CXCountryDelate.cpp" />
+    <ClCompile Include="Messages\CXCountryDonative.cpp" />
+    <ClCompile Include="Messages\CXCountryFetch.cpp" />
+    <ClCompile Include="Messages\CXCountryInfoRequest.cpp" />
+    <ClCompile Include="Messages\CXCountryRemove.cpp" />
+    <ClCompile Include="Messages\CXCountryRequestKindom.cpp" />
+    <ClCompile Include="Messages\CXCountryVoteOn.cpp" />
+    <ClCompile Include="Messages\CXDiscardEquip.cpp" />
+    <ClCompile Include="Messages\CXDiscardEquipChariot.cpp" />
+    <ClCompile Include="Messages\CXDiscardItem.cpp" />
+    <ClCompile Include="Messages\CXDispelBuffReq.cpp" />
+    <ClCompile Include="Messages\CXDoEvnet.cpp" />
+    <ClCompile Include="Messages\CXDuelApply.cpp" />
+    <ClCompile Include="Messages\CXDuelConfirm.cpp" />
+    <ClCompile Include="Messages\CXEmpire.cpp" />
+    <ClCompile Include="Messages\CXEnterMap.cpp" />
+    <ClCompile Include="Messages\CXEnvRequest.cpp" />
+    <ClCompile Include="Messages\CXEquipFusion.cpp" />
+    <ClCompile Include="Messages\CXEquipSuitExchange.cpp" />
+    <ClCompile Include="Messages\CXEquipTmpPurpleAttr.cpp" />
+    <ClCompile Include="Messages\CXEquipWanfa.cpp" />
+    <ClCompile Include="Messages\CXEventRequest.cpp" />
+    <ClCompile Include="Messages\CXExecuteScript.cpp" />
+    <ClCompile Include="Messages\CXFarEastWarQuit.cpp" />
+    <ClCompile Include="Messages\CXFetchLostItem.cpp" />
+    <ClCompile Include="Messages\CXFinger.cpp" />
+    <ClCompile Include="Messages\CXFuBenPingFenOpt.cpp" />
+    <ClCompile Include="Messages\CXFutuAutoInfo.cpp" />
+    <ClCompile Include="Messages\CXGameBattle.cpp" />
+    <ClCompile Include="Messages\CXGarden.cpp" />
+    <ClCompile Include="Messages\CXGardenQuest.cpp" />
+    <ClCompile Include="Messages\CXGemCompound.cpp" />
+    <ClCompile Include="Messages\CXGetAward.cpp" />
+    <ClCompile Include="Messages\CXGetXinShouReward.cpp" />
+    <ClCompile Include="Messages\CXGiftPack.cpp" />
+    <ClCompile Include="Messages\CXGoldExchangeSillerCard.cpp" />
+    <ClCompile Include="Messages\CXGroupAppoint.cpp" />
+    <ClCompile Include="Messages\CXGroupChangePickupMode.cpp" />
+    <ClCompile Include="Messages\CXGroupDismiss.cpp" />
+    <ClCompile Include="Messages\CXGroupInvite.cpp" />
+    <ClCompile Include="Messages\CXGroupInviteRet.cpp" />
+    <ClCompile Include="Messages\CXGroupKick.cpp" />
+    <ClCompile Include="Messages\CXGroupLeave.cpp" />
+    <ClCompile Include="Messages\CXGroupRequestApply.cpp" />
+    <ClCompile Include="Messages\CXGroupRequestApplyRet.cpp" />
+    <ClCompile Include="Messages\CXGuardFuBen.cpp" />
+    <ClCompile Include="Messages\CXGuild.cpp" />
+    <ClCompile Include="Messages\CXGuildApply.cpp" />
+    <ClCompile Include="Messages\CXGuildBattle.cpp" />
+    <ClCompile Include="Messages\CXGuildContend.cpp" />
+    <ClCompile Include="Messages\CXGuildConvoyKick.cpp" />
+    <ClCompile Include="Messages\CXGuildJoin.cpp" />
+    <ClCompile Include="Messages\CXHandShake.cpp" />
+    <ClCompile Include="Messages\CXHeartBeat.cpp" />
+    <ClCompile Include="Messages\CXHorseGaming.cpp" />
+    <ClCompile Include="Messages\CXHorseRaceHistory.cpp" />
+    <ClCompile Include="Messages\CXInherenceBalanceUpgrade.cpp" />
+    <ClCompile Include="Messages\CXInherenceZhuanFangLevelUp.cpp" />
+    <ClCompile Include="Messages\CXInherenceZhuanGongCoefficient.cpp" />
+    <ClCompile Include="Messages\CXIssueHorseFindMateInfo.cpp" />
+    <ClCompile Include="Messages\CXItemTrans.cpp" />
+    <ClCompile Include="Messages\CXItemWanfa.cpp" />
+    <ClCompile Include="Messages\CXKingBattle.cpp" />
+    <ClCompile Include="Messages\CXLawlessOperate.cpp" />
+    <ClCompile Include="Messages\CXLeagueMatch.cpp" />
+    <ClCompile Include="Messages\CXLeaveMap.cpp" />
+    <ClCompile Include="Messages\CXLifeShopReq.cpp" />
+    <ClCompile Include="Messages\CXLockEquipOrHorse.cpp" />
+    <ClCompile Include="Messages\CXLockTarget.cpp" />
+    <ClCompile Include="Messages\CXLoginGift.cpp" />
+    <ClCompile Include="Messages\CXManipulateHorse.cpp" />
+    <ClCompile Include="Messages\CXMapInfo.cpp" />
+    <ClCompile Include="Messages\CXMentalGame.cpp" />
+    <ClCompile Include="Messages\CXMinorPasswd.cpp" />
+    <ClCompile Include="Messages\CXMissionTransmit.cpp" />
+    <ClCompile Include="Messages\CXModifyPKMode.cpp" />
+    <ClCompile Include="Messages\CXModifySetting.cpp" />
+    <ClCompile Include="Messages\CXMPVPBattle.cpp" />
+    <ClCompile Include="Messages\CXMutliSubmitItem.cpp" />
+    <ClCompile Include="Messages\CXOfflineRequest.cpp" />
+    <ClCompile Include="Messages\CXOffSale.cpp" />
+    <ClCompile Include="Messages\CXOneVsOne.cpp" />
+    <ClCompile Include="Messages\CXOnlineShowTips.cpp" />
+    <ClCompile Include="Messages\CXOpenBox.cpp" />
+    <ClCompile Include="Messages\CXOpenBoxManipulate.cpp" />
+    <ClCompile Include="Messages\CXOpenItemBox.cpp" />
+    <ClCompile Include="Messages\CXOperaRideHorse.cpp" />
+    <ClCompile Include="Messages\CXOperateSoldierReq.cpp" />
+    <ClCompile Include="Messages\CXOtherEquip.cpp" />
+    <ClCompile Include="Messages\CXPackage_SwapItem.cpp" />
+    <ClCompile Include="Messages\CXPackUpPacket.cpp" />
+    <ClCompile Include="Messages\CXPeerVip.cpp" />
+    <ClCompile Include="Messages\CXPetHatch.cpp" />
+    <ClCompile Include="Messages\CXPickBoxItem.cpp" />
+    <ClCompile Include="Messages\CXPickDropItem.cpp" />
+    <ClCompile Include="Messages\CXPing.cpp" />
+    <ClCompile Include="Messages\CXPlayerCallOfResult.cpp" />
+    <ClCompile Include="Messages\CXPlayerClickNpc.cpp" />
+    <ClCompile Include="Messages\CXPlayerDieResult.cpp" />
+    <ClCompile Include="Messages\CXPlayerRequestBaseAttrib.cpp" />
+    <ClCompile Include="Messages\CXPlayerRequestEquipment.cpp" />
+    <ClCompile Include="Messages\CXPlayerShopFavorite.cpp" />
+    <ClCompile Include="Messages\CXPost.cpp" />
+    <ClCompile Include="Messages\CXPVP2v2Battle.cpp" />
+    <ClCompile Include="Messages\CXPVP6v6Battle.cpp" />
+    <ClCompile Include="Messages\CXQueryAccountMoney.cpp" />
+    <ClCompile Include="Messages\CXQueryHorseFindMateInfo.cpp" />
+    <ClCompile Include="Messages\CXQuestAbandon.cpp" />
+    <ClCompile Include="Messages\CXQuestAccept.cpp" />
+    <ClCompile Include="Messages\CXQuestCollectHorse.cpp" />
+    <ClCompile Include="Messages\CXQuestCommand.cpp" />
+    <ClCompile Include="Messages\CXQuestContinue.cpp" />
+    <ClCompile Include="Messages\CXQuestMixture.cpp" />
+    <ClCompile Include="Messages\CXQuestRefuse.cpp" />
+    <ClCompile Include="Messages\CXQuestSort.cpp" />
+    <ClCompile Include="Messages\CXQuestSubmit.cpp" />
+    <ClCompile Include="Messages\CXQuestUpdate.cpp" />
+    <ClCompile Include="Messages\CXQuizAnswer.cpp" />
+    <ClCompile Include="Messages\CXRegisterTeamRecruit.cpp" />
+    <ClCompile Include="Messages\CXRelation.cpp" />
+    <ClCompile Include="Messages\CXRemoveGem.cpp" />
+    <ClCompile Include="Messages\CXReqLevelUp.cpp" />
+    <ClCompile Include="Messages\CXReqManualAttr.cpp" />
+    <ClCompile Include="Messages\CXReqPlayerAttrUp.cpp" />
+    <ClCompile Include="Messages\CXReqPunch.cpp" />
+    <ClCompile Include="Messages\CXReqResetAttr.cpp" />
+    <ClCompile Include="Messages\CXRequestBeginSubTrain.cpp" />
+    <ClCompile Include="Messages\CXRequestBusInfo.cpp" />
+    <ClCompile Include="Messages\CXRequestCardRefresh.cpp" />
+    <ClCompile Include="Messages\CXRequestCarryOnShopInfo.cpp" />
+    <ClCompile Include="Messages\CXRequestChangeMap.cpp" />
+    <ClCompile Include="Messages\CXRequestChariotInfo.cpp" />
+    <ClCompile Include="Messages\CXRequestDaytipsList.cpp" />
+    <ClCompile Include="Messages\CXRequestDetailEquipList.cpp" />
+    <ClCompile Include="Messages\CXRequestDetailEquipListChariot.cpp" />
+    <ClCompile Include="Messages\CXRequestDetailEquipListHorse.cpp" />
+    <ClCompile Include="Messages\CXRequestDetailInherenceBalanceList.cpp" />
+    <ClCompile Include="Messages\CXRequestDetailLifeSkillInfo.cpp" />
+    <ClCompile Include="Messages\CXRequestDetailProperty.cpp" />
+    <ClCompile Include="Messages\CXRequestDetailSpellList.cpp" />
+    <ClCompile Include="Messages\CXRequestEndSubTrain.cpp" />
+    <ClCompile Include="Messages\CXRequestGetSubTrainExp.cpp" />
+    <ClCompile Include="Messages\CXRequestGuildConvoyInfo.cpp" />
+    <ClCompile Include="Messages\CXRequestGuildConvoyList.cpp" />
+    <ClCompile Include="Messages\CXRequestHorseConfig.cpp" />
+    <ClCompile Include="Messages\CXRequestInherenceZhuanJingInfo.cpp" />
+    <ClCompile Include="Messages\CXRequestItemInfo.cpp" />
+    <ClCompile Include="Messages\CXRequestLeanLifeSkill.cpp" />
+    <ClCompile Include="Messages\CXRequestLeaveGame.cpp" />
+    <ClCompile Include="Messages\CXRequestLockObj.cpp" />
+    <ClCompile Include="Messages\CXRequestMyBagList.cpp" />
+    <ClCompile Include="Messages\CXRequestOtherOnlineDetailAttrib.cpp" />
+    <ClCompile Include="Messages\CXRequestPost.cpp" />
+    <ClCompile Include="Messages\CXRequestPrivateInfo.cpp" />
+    <ClCompile Include="Messages\CXRequestQuestList.cpp" />
+    <ClCompile Include="Messages\CXRequestSeachTeamInfo.cpp" />
+    <ClCompile Include="Messages\CXRequestSetMoneyMode.cpp" />
+    <ClCompile Include="Messages\CXRequestSetTeamEnounce.cpp" />
+    <ClCompile Include="Messages\CXRequestSetting.cpp" />
+    <ClCompile Include="Messages\CXRequestShangDianInfo.cpp" />
+    <ClCompile Include="Messages\CXRequestStockInfo.cpp" />
+    <ClCompile Include="Messages\CXRequestSubTrainMode.cpp" />
+    <ClCompile Include="Messages\CXRequestSubTrainSetting.cpp" />
+    <ClCompile Include="Messages\CXRequestTeamDistribMode.cpp" />
+    <ClCompile Include="Messages\CXRequestTeamFollow.cpp" />
+    <ClCompile Include="Messages\CXRequestTeamInfo.cpp" />
+    <ClCompile Include="Messages\CXRequestTeamMemberInfo.cpp" />
+    <ClCompile Include="Messages\CXRequestTeamMemEquip.cpp" />
+    <ClCompile Include="Messages\CXRequestTeamRecruitInfo.cpp" />
+    <ClCompile Include="Messages\CXRequestTransGoldToPlayer.cpp" />
+    <ClCompile Include="Messages\CXRet360Info.cpp" />
+    <ClCompile Include="Messages\CXRetCountryDestroyIssue.cpp" />
+    <ClCompile Include="Messages\CXRetEncryptOp.cpp" />
+    <ClCompile Include="Messages\CXRetGuildConvoy.cpp" />
+    <ClCompile Include="Messages\CXRetMac.cpp" />
+    <ClCompile Include="Messages\CXReturnTeamFollow.cpp" />
+    <ClCompile Include="Messages\CXRoomBattle.cpp" />
+    <ClCompile Include="Messages\CXRunningKill.cpp" />
+    <ClCompile Include="Messages\CXSaveEquipSuit.cpp" />
+    <ClCompile Include="Messages\CXSearchHorseFindMateInfo.cpp" />
+    <ClCompile Include="Messages\CXSearchOnlineUser.cpp" />
+    <ClCompile Include="Messages\CXSelectMapCity.cpp" />
+    <ClCompile Include="Messages\CXSetChannelMode.cpp" />
+    <ClCompile Include="Messages\CXSetHorseAttrib.cpp" />
+    <ClCompile Include="Messages\CXSetMoodToHead.cpp" />
+    <ClCompile Include="Messages\CXSetShowSuitMode.cpp" />
+    <ClCompile Include="Messages\CXSetTeamDistribMode.cpp" />
+    <ClCompile Include="Messages\CXShopActive.cpp" />
+    <ClCompile Include="Messages\CXShopBuy.cpp" />
+    <ClCompile Include="Messages\CXShopClose.cpp" />
+    <ClCompile Include="Messages\CXShopRepair.cpp" />
+    <ClCompile Include="Messages\CXShopSell.cpp" />
+    <ClCompile Include="Messages\CXShopSpecialRepair.cpp" />
+    <ClCompile Include="Messages\CXSkill.cpp" />
+    <ClCompile Include="Messages\CXSkillUpgrade.cpp" />
+    <ClCompile Include="Messages\CXSLGAirLines.cpp" />
+    <ClCompile Include="Messages\CXSLGBuild.cpp" />
+    <ClCompile Include="Messages\CXSoldierBattle.cpp" />
+    <ClCompile Include="Messages\CXSoldierCard.cpp" />
+    <ClCompile Include="Messages\CXSplitItem.cpp" />
+    <ClCompile Include="Messages\CXStallPurchaseAddItemInfo.cpp" />
+    <ClCompile Include="Messages\CXStallPurchaseBuyItem.cpp" />
+    <ClCompile Include="Messages\CXStallPurchasePriceAmount.cpp" />
+    <ClCompile Include="Messages\CXStallPurchaseRemoveItemInfo.cpp" />
+    <ClCompile Include="Messages\CXStopTeamFollow.cpp" />
+    <ClCompile Include="Messages\CXTankLeave.cpp" />
+    <ClCompile Include="Messages\CXTeamApply.cpp" />
+    <ClCompile Include="Messages\CXTeamAppoint.cpp" />
+    <ClCompile Include="Messages\CXTeamDismiss.cpp" />
+    <ClCompile Include="Messages\CXTeamInvite.cpp" />
+    <ClCompile Include="Messages\CXTeamKick.cpp" />
+    <ClCompile Include="Messages\CXTeamLeaderRetInvite.cpp" />
+    <ClCompile Include="Messages\CXTeamLeave.cpp" />
+    <ClCompile Include="Messages\CXTeamRetApply.cpp" />
+    <ClCompile Include="Messages\CXTeamRetInvite.cpp" />
+    <ClCompile Include="Messages\CXTopList.cpp" />
+    <ClCompile Include="Messages\CXTradeApplyI.cpp" />
+    <ClCompile Include="Messages\CXTradeCancel.cpp" />
+    <ClCompile Include="Messages\CXTradeOkIII.cpp" />
+    <ClCompile Include="Messages\CXTradeReplyI.cpp" />
+    <ClCompile Include="Messages\CXTradeSynchItemII.cpp" />
+    <ClCompile Include="Messages\CXTradeSynchLock.cpp" />
+    <ClCompile Include="Messages\CXTradeSynchMoneyII.cpp" />
+    <ClCompile Include="Messages\CXTrainingApplyI.cpp" />
+    <ClCompile Include="Messages\CXTrainingConfirmIII.cpp" />
+    <ClCompile Include="Messages\CXTransPosInfo.cpp" />
+    <ClCompile Include="Messages\CXUnEquip.cpp" />
+    <ClCompile Include="Messages\CXUnEquipChariot.cpp" />
+    <ClCompile Include="Messages\CXUnEquipHorse.cpp" />
+    <ClCompile Include="Messages\CXUnExtraBag.cpp" />
+    <ClCompile Include="Messages\CXUseEquip.cpp" />
+    <ClCompile Include="Messages\CXUseEquipChariot.cpp" />
+    <ClCompile Include="Messages\CXUseEquipHorse.cpp" />
+    <ClCompile Include="Messages\CXUseExtraBag.cpp" />
+    <ClCompile Include="Messages\CXUseItem.cpp" />
+    <ClCompile Include="Messages\CXUseLifeSkill.cpp" />
+    <ClCompile Include="Messages\CXUseSectorSkill.cpp" />
+    <ClCompile Include="Messages\CXWarehouseAcquireList.cpp" />
+    <ClCompile Include="Messages\CXWarehouseAddItem.cpp" />
+    <ClCompile Include="Messages\CXWarehouseClose.cpp" />
+    <ClCompile Include="Messages\CXWarehouseMoney.cpp" />
+    <ClCompile Include="Messages\CXWarehouseOperateHorse.cpp" />
+    <ClCompile Include="Messages\CXWarehouseRemoveItem.cpp" />
+    <ClCompile Include="Messages\CXWarehouseSwapItem.cpp" />
+    <ClCompile Include="Messages\CXWorldShangDianRequestSell.cpp" />
+    <ClCompile Include="Messages\XCAbandonLifeSkill.cpp" />
+    <ClCompile Include="Messages\XCAddHorsePromotion.cpp" />
+    <ClCompile Include="Messages\XCAddLockObj.cpp" />
+    <ClCompile Include="Messages\XCAddSkillToSkillList.cpp" />
+    <ClCompile Include="Messages\XCAlertMibaoka.cpp" />
+    <ClCompile Include="Messages\XCArrive.cpp" />
+    <ClCompile Include="Messages\XCAttack.cpp" />
+    <ClCompile Include="Messages\XCBaitanAddItem.cpp" />
+    <ClCompile Include="Messages\XCBaitanApply.cpp" />
+    <ClCompile Include="Messages\XCBaitanBuy.cpp" />
+    <ClCompile Include="Messages\XCBaitanClose.cpp" />
+    <ClCompile Include="Messages\XCBaitanError.cpp" />
+    <ClCompile Include="Messages\XCBaitanEstablish.cpp" />
+    <ClCompile Include="Messages\XCBaitanItemPrice.cpp" />
+    <ClCompile Include="Messages\XCBaitanOpen.cpp" />
+    <ClCompile Include="Messages\XCBaitanRemoveItem.cpp" />
+    <ClCompile Include="Messages\XCBattleMap.cpp" />
+    <ClCompile Include="Messages\XCBattleNotice.cpp" />
+    <ClCompile Include="Messages\XCBBSMessages.cpp" />
+    <ClCompile Include="Messages\XCBoxItemList.cpp" />
+    <ClCompile Include="Messages\XCBusError.cpp" />
+    <ClCompile Include="Messages\XCBusResult.cpp" />
+    <ClCompile Include="Messages\XCBusRetChangeState.cpp" />
+    <ClCompile Include="Messages\XCBusRetInfo.cpp" />
+    <ClCompile Include="Messages\XCCallUpTeamMember.cpp" />
+    <ClCompile Include="Messages\XCCamera.cpp" />
+    <ClCompile Include="Messages\XCCardBagOperation.cpp" />
+    <ClCompile Include="Messages\XCChangeMapRestrictiveMode.cpp" />
+    <ClCompile Include="Messages\XCChangeProfession.cpp" />
+    <ClCompile Include="Messages\XCChannelError.cpp" />
+    <ClCompile Include="Messages\XCChannelResult.cpp" />
+    <ClCompile Include="Messages\XCCharAction.cpp" />
+    <ClCompile Include="Messages\XCCharAllTitles.cpp" />
+    <ClCompile Include="Messages\XCCharBUFF.cpp" />
+    <ClCompile Include="Messages\XCCharBusBaseAttrib.cpp" />
+    <ClCompile Include="Messages\XCCharDirectEffect.cpp" />
+    <ClCompile Include="Messages\XCCharDoAction.cpp" />
+    <ClCompile Include="Messages\XCCharEffectListUpdate.cpp" />
+    <ClCompile Include="Messages\XCCharEquipment.cpp" />
+    <ClCompile Include="Messages\XCCharIdle.cpp" />
+    <ClCompile Include="Messages\XCChariotBaseAttrib.cpp" />
+    <ClCompile Include="Messages\XCChariotResult.cpp" />
+    <ClCompile Include="Messages\XCCharJump.cpp" />
+    <ClCompile Include="Messages\XCCharModifyAction.cpp" />
+    <ClCompile Include="Messages\XCCharMonsterBaseAttrib.cpp" />
+    <ClCompile Include="Messages\XCCharMove.cpp" />
+    <ClCompile Include="Messages\XCCharMoveResult.cpp" />
+    <ClCompile Include="Messages\XCCharPlayerBaseAttrib.cpp" />
+    <ClCompile Include="Messages\XCCharSkill_CreateBullet.cpp" />
+    <ClCompile Include="Messages\XCCharSkill_Gather.cpp" />
+    <ClCompile Include="Messages\XCCharSkill_Gather_Modify.cpp" />
+    <ClCompile Include="Messages\XCCharSkill_Lead.cpp" />
+    <ClCompile Include="Messages\XCCharSkill_Lead_Modify.cpp" />
+    <ClCompile Include="Messages\XCCharSkill_Missed.cpp" />
+    <ClCompile Include="Messages\XCCharSkill_Send.cpp" />
+    <ClCompile Include="Messages\XCCharStopAction.cpp" />
+    <ClCompile Include="Messages\XCChat.cpp" />
+    <ClCompile Include="Messages\XCChatLaBa.cpp" />
+    <ClCompile Include="Messages\XCCollectMac.cpp" />
+    <ClCompile Include="Messages\XCCommonActivityNotify.cpp" />
+    <ClCompile Include="Messages\XCComplementarityNotify.cpp" />
+    <ClCompile Include="Messages\XCConnect.cpp" />
+    <ClCompile Include="Messages\XCCoolDownUpdate.cpp" />
+    <ClCompile Include="Messages\XCCopyMapDati.cpp" />
+    <ClCompile Include="Messages\XCCountry.cpp" />
+    <ClCompile Include="Messages\XCCountryBattleLite.cpp" />
+    <ClCompile Include="Messages\XCCountryCollect.cpp" />
+    <ClCompile Include="Messages\XCCountryDelateBegin.cpp" />
+    <ClCompile Include="Messages\XCCountryDestroyIssue.cpp" />
+    <ClCompile Include="Messages\XCCountryFetch.cpp" />
+    <ClCompile Include="Messages\XCCountryInfoConfirm.cpp" />
+    <ClCompile Include="Messages\XCCountryReturn.cpp" />
+    <ClCompile Include="Messages\XCCountryVoteShow.cpp" />
+    <ClCompile Include="Messages\XCCreatePetPromotion.cpp" />
+    <ClCompile Include="Messages\XCDaytipsList.cpp" />
+    <ClCompile Include="Messages\XCDelChar.cpp" />
+    <ClCompile Include="Messages\XCDelObject.cpp" />
+    <ClCompile Include="Messages\XCDetailAttrib.cpp" />
+    <ClCompile Include="Messages\XCDetailAttrib_Chariot.cpp" />
+    <ClCompile Include="Messages\XCDetailAttrib_Horse.cpp" />
+    <ClCompile Include="Messages\XCDetailAttrib_Pet.cpp" />
+    <ClCompile Include="Messages\XCDetailBUFF.cpp" />
+    <ClCompile Include="Messages\XCDetailEffectListUpdate.cpp" />
+    <ClCompile Include="Messages\XCDetailEquipAtt.cpp" />
+    <ClCompile Include="Messages\XCDetailEquipList.cpp" />
+    <ClCompile Include="Messages\XCDetailEquipListChariot.cpp" />
+    <ClCompile Include="Messages\XCDetailEquipListHorse.cpp" />
+    <ClCompile Include="Messages\XCDetailHealsAndDamages.cpp" />
+    <ClCompile Include="Messages\XCDetailInherenceBalanceList.cpp" />
+    <ClCompile Include="Messages\XCDetailLifeSkillInfo.cpp" />
+    <ClCompile Include="Messages\XCDetailSkillList.cpp" />
+    <ClCompile Include="Messages\XCDie.cpp" />
+    <ClCompile Include="Messages\XCDiscardEquipResult.cpp" />
+    <ClCompile Include="Messages\XCDiscardItemResult.cpp" />
+    <ClCompile Include="Messages\XCDuelRet.cpp" />
+    <ClCompile Include="Messages\XCEmpire.cpp" />
+    <ClCompile Include="Messages\XCEncryptKey.cpp" />
+    <ClCompile Include="Messages\XCEndSubTrainResult.cpp" />
+    <ClCompile Include="Messages\XCEnterMap.cpp" />
+    <ClCompile Include="Messages\XCEquipFusionResult.cpp" />
+    <ClCompile Include="Messages\XCEquipSuitExchangeResult.cpp" />
+    <ClCompile Include="Messages\XCEquipTmpPurpleAttr.cpp" />
+    <ClCompile Include="Messages\XCEquipWanfaResult.cpp" />
+    <ClCompile Include="Messages\XCErrorAttack.cpp" />
+    <ClCompile Include="Messages\XCErrorSkill.cpp" />
+    <ClCompile Include="Messages\XCExpandWarehouseSize.cpp" />
+    <ClCompile Include="Messages\XCFarEastWarQuit.cpp" />
+    <ClCompile Include="Messages\XCFightInfo.cpp" />
+    <ClCompile Include="Messages\XCFinger.cpp" />
+    <ClCompile Include="Messages\XCForceReconnect.cpp" />
+    <ClCompile Include="Messages\XCFuBenPingFenOpt.cpp" />
+    <ClCompile Include="Messages\XCFutuUI.cpp" />
+    <ClCompile Include="Messages\XCGameBattle.cpp" />
+    <ClCompile Include="Messages\XCGameWanfaState.cpp" />
+    <ClCompile Include="Messages\XCGarden.cpp" />
+    <ClCompile Include="Messages\XCGetSubTrainExpResult.cpp" />
+    <ClCompile Include="Messages\XCGiftPack.cpp" />
+    <ClCompile Include="Messages\XCGoldExchangeSillerCard.cpp" />
+    <ClCompile Include="Messages\XCGroupDismissRet.cpp" />
+    <ClCompile Include="Messages\XCGroupError.cpp" />
+    <ClCompile Include="Messages\XCGroupFubenChange.cpp" />
+    <ClCompile Include="Messages\XCGroupInviteAsk.cpp" />
+    <ClCompile Include="Messages\XCGroupInviteRet.cpp" />
+    <ClCompile Include="Messages\XCGroupKickRet.cpp" />
+    <ClCompile Include="Messages\XCGroupLeaveRet.cpp" />
+    <ClCompile Include="Messages\XCGroupRequestApplyAsk.cpp" />
+    <ClCompile Include="Messages\XCGroupSynchData.cpp" />
+    <ClCompile Include="Messages\XCGuanQiaSpellUI.cpp" />
+    <ClCompile Include="Messages\XCGuardFuBen.cpp" />
+    <ClCompile Include="Messages\XCGuild.cpp" />
+    <ClCompile Include="Messages\XCGuildApply.cpp" />
+    <ClCompile Include="Messages\XCGuildBattle.cpp" />
+    <ClCompile Include="Messages\XCGuildContend.cpp" />
+    <ClCompile Include="Messages\XCGuildConvoyList.cpp" />
+    <ClCompile Include="Messages\XCGuildConvoyResult.cpp" />
+    <ClCompile Include="Messages\XCGuildError.cpp" />
+    <ClCompile Include="Messages\XCGuildReturn.cpp" />
+    <ClCompile Include="Messages\XCHeartBeat.cpp" />
+    <ClCompile Include="Messages\XCHorseConfig.cpp" />
+    <ClCompile Include="Messages\XCHorseLevelUp.cpp" />
+    <ClCompile Include="Messages\XCHorseRaceGaming.cpp" />
+    <ClCompile Include="Messages\XCHorseRaceHistory.cpp" />
+    <ClCompile Include="Messages\XCInherenceBalanceUpgrade.cpp" />
+    <ClCompile Include="Messages\XCInherenceZhuanFangInfo.cpp" />
+    <ClCompile Include="Messages\XCInherenceZhuanGongInfo.cpp" />
+    <ClCompile Include="Messages\XCInputSuperPW.cpp" />
+    <ClCompile Include="Messages\XCItemInfo.cpp" />
+    <ClCompile Include="Messages\XCItemTrans.cpp" />
+    <ClCompile Include="Messages\XCItemWanfaResult.cpp" />
+    <ClCompile Include="Messages\XCJoinTempChannel.cpp" />
+    <ClCompile Include="Messages\XCKingBattle.cpp" />
+    <ClCompile Include="Messages\XCLeagueMatch.cpp" />
+    <ClCompile Include="Messages\XCLeaveGame.cpp" />
+    <ClCompile Include="Messages\XCLeaveMap.cpp" />
+    <ClCompile Include="Messages\XCLevelUp.cpp" />
+    <ClCompile Include="Messages\XCLevelUpResult.cpp" />
+    <ClCompile Include="Messages\XCLifeSkillAction.cpp" />
+    <ClCompile Include="Messages\XCLifeSkillExp.cpp" />
+    <ClCompile Include="Messages\XCLifeSkillLevel.cpp" />
+    <ClCompile Include="Messages\XCLifeSkillResult.cpp" />
+    <ClCompile Include="Messages\XCLifeSkillSucc.cpp" />
+    <ClCompile Include="Messages\XCLifeSkillTeacherInfo.cpp" />
+    <ClCompile Include="Messages\XCLoginGift.cpp" />
+    <ClCompile Include="Messages\XCManipulateHorseRet.cpp" />
+    <ClCompile Include="Messages\XCManualAttrResult.cpp" />
+    <ClCompile Include="Messages\XCMapMapPointData.cpp" />
+    <ClCompile Include="Messages\XCMentalGame.cpp" />
+    <ClCompile Include="Messages\XCMilitaryRankLevelup.cpp" />
+    <ClCompile Include="Messages\XCMinorPasswd.cpp" />
+    <ClCompile Include="Messages\XCModifyGuanQiaSpell.cpp" />
+    <ClCompile Include="Messages\XCModifySpeed.cpp" />
+    <ClCompile Include="Messages\XCMonsterRealMove.cpp" />
+    <ClCompile Include="Messages\XCMonsterSpeak.cpp" />
+    <ClCompile Include="Messages\XCMPVPBattle.cpp" />
+    <ClCompile Include="Messages\XCMyBagList.cpp" />
+    <ClCompile Include="Messages\XCNeedPWDProtect.cpp" />
+    <ClCompile Include="Messages\XCNew_Chariot.cpp" />
+    <ClCompile Include="Messages\XCNewBeastie.cpp" />
+    <ClCompile Include="Messages\XCNewBeastie_Move.cpp" />
+    <ClCompile Include="Messages\XCNewBus.cpp" />
+    <ClCompile Include="Messages\XCNewBus_Death.cpp" />
+    <ClCompile Include="Messages\XCNewBus_Move.cpp" />
+    <ClCompile Include="Messages\XCNewChariot_Death.cpp" />
+    <ClCompile Include="Messages\XCNewChariot_Move.cpp" />
+    <ClCompile Include="Messages\XCNewGainPromotion.cpp" />
+    <ClCompile Include="Messages\XCNewHorse.cpp" />
+    <ClCompile Include="Messages\XCNewHorse_Move.cpp" />
+    <ClCompile Include="Messages\XCNewItem.cpp" />
+    <ClCompile Include="Messages\XCNewItemBox.cpp" />
+    <ClCompile Include="Messages\XCNewMonster.cpp" />
+    <ClCompile Include="Messages\XCNewMonster_Death.cpp" />
+    <ClCompile Include="Messages\XCNewMonster_Move.cpp" />
+    <ClCompile Include="Messages\XCNewObjItem.cpp" />
+    <ClCompile Include="Messages\XCNewPlatform.cpp" />
+    <ClCompile Include="Messages\XCNewPlayer.cpp" />
+    <ClCompile Include="Messages\XCNewPlayer_Death.cpp" />
+    <ClCompile Include="Messages\XCNewPlayer_Move.cpp" />
+    <ClCompile Include="Messages\XCNewPortal.cpp" />
+    <ClCompile Include="Messages\XCNewSkillObj.cpp" />
+    <ClCompile Include="Messages\XCNewSpecial.cpp" />
+    <ClCompile Include="Messages\XCNotifyChangeMap.cpp" />
+    <ClCompile Include="Messages\XCNotifyClientToNpcPoint.cpp" />
+    <ClCompile Include="Messages\XCNotifyEquip.cpp" />
+    <ClCompile Include="Messages\XCNotifyGoodBad.cpp" />
+    <ClCompile Include="Messages\XCNotifyInfo.cpp" />
+    <ClCompile Include="Messages\XCNotifyPost.cpp" />
+    <ClCompile Include="Messages\XCNotifyTeamGroupInfo.cpp" />
+    <ClCompile Include="Messages\XCNotifyTeamInfo.cpp" />
+    <ClCompile Include="Messages\XCNPCTransferType.cpp" />
+    <ClCompile Include="Messages\XCObjTeleport.cpp" />
+    <ClCompile Include="Messages\XCOneVsOne.cpp" />
+    <ClCompile Include="Messages\XCOnlineShowTips.cpp" />
+    <ClCompile Include="Messages\XCOpenAwardBox.cpp" />
+    <ClCompile Include="Messages\XCOpenBox.cpp" />
+    <ClCompile Include="Messages\XCOpenBoxManipulate.cpp" />
+    <ClCompile Include="Messages\XCOpenFindHorseMating.cpp" />
+    <ClCompile Include="Messages\XCOpenOffSaleSystem.cpp" />
+    <ClCompile Include="Messages\XCOperateResult.cpp" />
+    <ClCompile Include="Messages\XCOperateSoldierRet.cpp" />
+    <ClCompile Include="Messages\XCOtherAttack.cpp" />
+    <ClCompile Include="Messages\XCOtherEquip.cpp" />
+    <ClCompile Include="Messages\XCOtherSkill.cpp" />
+    <ClCompile Include="Messages\XCPackage_SwapItem.cpp" />
+    <ClCompile Include="Messages\XCPackUpPacket.cpp" />
+    <ClCompile Include="Messages\XCPeerVip.cpp" />
+    <ClCompile Include="Messages\XCPetHatch.cpp" />
+    <ClCompile Include="Messages\XCPickDropItemResult.cpp" />
+    <ClCompile Include="Messages\XCPickResult.cpp" />
+    <ClCompile Include="Messages\XCPing.cpp" />
+    <ClCompile Include="Messages\XCPlayerCallOf.cpp" />
+    <ClCompile Include="Messages\XCPlayerDie.cpp" />
+    <ClCompile Include="Messages\XCPlayerFirstEnterNotify.cpp" />
+    <ClCompile Include="Messages\XCPlayerRealMove.cpp" />
+    <ClCompile Include="Messages\XCPlayerRelive.cpp" />
+    <ClCompile Include="Messages\XCPost.cpp" />
+    <ClCompile Include="Messages\XCPrescription.cpp" />
+    <ClCompile Include="Messages\XCPrivateInfo.cpp" />
+    <ClCompile Include="Messages\XCPVP2v2Battle.cpp" />
+    <ClCompile Include="Messages\XCPVP6v6Battle.cpp" />
+    <ClCompile Include="Messages\XCQuestAdd.cpp" />
+    <ClCompile Include="Messages\XCQuestCollectHorseResult.cpp" />
+    <ClCompile Include="Messages\XCQuestDoneNotify.cpp" />
+    <ClCompile Include="Messages\XCQuestList.cpp" />
+    <ClCompile Include="Messages\XCQuestListRefresh.cpp" />
+    <ClCompile Include="Messages\XCQuestMixtureResult.cpp" />
+    <ClCompile Include="Messages\XCQuestModify.cpp" />
+    <ClCompile Include="Messages\XCQuestRemove.cpp" />
+    <ClCompile Include="Messages\XCQuestSort.cpp" />
+    <ClCompile Include="Messages\XCQuizQuest.cpp" />
+    <ClCompile Include="Messages\XCQuizResult.cpp" />
+    <ClCompile Include="Messages\XCRectPartyShop.cpp" />
+    <ClCompile Include="Messages\XCRelation.cpp" />
+    <ClCompile Include="Messages\XCRemoveGemResult.cpp" />
+    <ClCompile Include="Messages\XCRemoveHorse.cpp" />
+    <ClCompile Include="Messages\XCReqResetAttrResult.cpp" />
+    <ClCompile Include="Messages\XCRequest360Info.cpp" />
+    <ClCompile Include="Messages\XCRequestAcceptGuildConvoy.cpp" />
+    <ClCompile Include="Messages\XCRequestCardRefresh.cpp" />
+    <ClCompile Include="Messages\XCRequestEncryptOp.cpp" />
+    <ClCompile Include="Messages\XCRequestGuildConvoy.cpp" />
+    <ClCompile Include="Messages\XCRequestTeamFollow.cpp" />
+    <ClCompile Include="Messages\XCRetAccountMoney.cpp" />
+    <ClCompile Include="Messages\XCRetChangeMap.cpp" />
+    <ClCompile Include="Messages\XCRetCharChangeFace.cpp" />
+    <ClCompile Include="Messages\XCRetFetchLostItem.cpp" />
+    <ClCompile Include="Messages\XCRetLostItemInfo.cpp" />
+    <ClCompile Include="Messages\XCRetPlayerAttrUp.cpp" />
+    <ClCompile Include="Messages\XCRetSetting.cpp" />
+    <ClCompile Include="Messages\XCRetSkillSetting.cpp" />
+    <ClCompile Include="Messages\XCRetStockAcc.cpp" />
+    <ClCompile Include="Messages\XCRetSubTrainSetting.cpp" />
+    <ClCompile Include="Messages\XCRetTeamDistribMode.cpp" />
+    <ClCompile Include="Messages\XCRetTeamMemEquip.cpp" />
+    <ClCompile Include="Messages\XCRetTeamRecruitInfo.cpp" />
+    <ClCompile Include="Messages\XCRetTransGoldToChar.cpp" />
+    <ClCompile Include="Messages\XCReturnHorseFindMateInfo.cpp" />
+    <ClCompile Include="Messages\XCReturnOnlineUser.cpp" />
+    <ClCompile Include="Messages\XCReturnTeamFollow.cpp" />
+    <ClCompile Include="Messages\XCRoomBattle.cpp" />
+    <ClCompile Include="Messages\XCRunningKill.cpp" />
+    <ClCompile Include="Messages\XCSaveEquipSuitResult.cpp" />
+    <ClCompile Include="Messages\XCScriptCommand.cpp" />
+    <ClCompile Include="Messages\XCSeachTeamInfoResult.cpp" />
+    <ClCompile Include="Messages\XCSendXinShouMaxLevel.cpp" />
+    <ClCompile Include="Messages\XCSetChannelModeResult.cpp" />
+    <ClCompile Include="Messages\XCSetShowSuitModeResult.cpp" />
+    <ClCompile Include="Messages\XCSetTeamEnounceResult.cpp" />
+    <ClCompile Include="Messages\XCShopBuy.cpp" />
+    <ClCompile Include="Messages\XCShopItemElementList.cpp" />
+    <ClCompile Include="Messages\XCShopMerchandiseList.cpp" />
+    <ClCompile Include="Messages\XCShopRepair.cpp" />
+    <ClCompile Include="Messages\XCShopSell.cpp" />
+    <ClCompile Include="Messages\XCShopSoldList.cpp" />
+    <ClCompile Include="Messages\XCShopSpecialRepairResult.cpp" />
+    <ClCompile Include="Messages\XCShopUpdateMerchandiseList.cpp" />
+    <ClCompile Include="Messages\XCSkill.cpp" />
+    <ClCompile Include="Messages\XCSkillPrepare.cpp" />
+    <ClCompile Include="Messages\XCSkillSuccessfulUse.cpp" />
+    <ClCompile Include="Messages\XCSkillUpgrade.cpp" />
+    <ClCompile Include="Messages\XCSLGAirLines.cpp" />
+    <ClCompile Include="Messages\XCSLGBuild.cpp" />
+    <ClCompile Include="Messages\XCSoldierBattle.cpp" />
+    <ClCompile Include="Messages\XCSoldierBattleEndInfo.cpp" />
+    <ClCompile Include="Messages\XCSoldierReadyList.cpp" />
+    <ClCompile Include="Messages\XCSpecialObj_ActNow.cpp" />
+    <ClCompile Include="Messages\XCSpecialObj_FadeOut.cpp" />
+    <ClCompile Include="Messages\XCSplitItemResult.cpp" />
+    <ClCompile Include="Messages\XCStallPurchaseAddItemInfo.cpp" />
+    <ClCompile Include="Messages\XCStallPurchaseBuyItem.cpp" />
+    <ClCompile Include="Messages\XCStallPurchasePriceAmount.cpp" />
+    <ClCompile Include="Messages\XCStallPurchaseRemoveItemInfo.cpp" />
+    <ClCompile Include="Messages\XCSubTrainModeResult.cpp" />
+    <ClCompile Include="Messages\XCSubTrainResult.cpp" />
+    <ClCompile Include="Messages\XCSystemError.cpp" />
+    <ClCompile Include="Messages\XCTargetListAndHitFlags.cpp" />
+    <ClCompile Include="Messages\XCTeamError.cpp" />
+    <ClCompile Include="Messages\XCTeamFollowErr.cpp" />
+    <ClCompile Include="Messages\XCTeamFollowList.cpp" />
+    <ClCompile Include="Messages\XCTeamLeaderRequestInvite.cpp" />
+    <ClCompile Include="Messages\XCTeamList.cpp" />
+    <ClCompile Include="Messages\XCTeamMemberInfo.cpp" />
+    <ClCompile Include="Messages\XCTeamRequestApply.cpp" />
+    <ClCompile Include="Messages\XCTeamRequestInvite.cpp" />
+    <ClCompile Include="Messages\XCTeamResult.cpp" />
+    <ClCompile Include="Messages\XCTimerCommand.cpp" />
+    <ClCompile Include="Messages\XCTopList.cpp" />
+    <ClCompile Include="Messages\XCTradeApplyI.cpp" />
+    <ClCompile Include="Messages\XCTradeCancel.cpp" />
+    <ClCompile Include="Messages\XCTradeError.cpp" />
+    <ClCompile Include="Messages\XCTradeEstablishI.cpp" />
+    <ClCompile Include="Messages\XCTraderror.cpp" />
+    <ClCompile Include="Messages\XCTradeSuccessIII.cpp" />
+    <ClCompile Include="Messages\XCTradeSynchConfirmII.cpp" />
+    <ClCompile Include="Messages\XCTradeSynchII.cpp" />
+    <ClCompile Include="Messages\XCTradeSynchLock.cpp" />
+    <ClCompile Include="Messages\XCTrainingApplyII.cpp" />
+    <ClCompile Include="Messages\XCTransPosInfo.cpp" />
+    <ClCompile Include="Messages\XCUICommand.cpp" />
+    <ClCompile Include="Messages\XCUIStateCtrl.cpp" />
+    <ClCompile Include="Messages\XCUnEquipResult.cpp" />
+    <ClCompile Include="Messages\XCUnExtraBagResult.cpp" />
+    <ClCompile Include="Messages\XCUpdateTitle.cpp" />
+    <ClCompile Include="Messages\XCUseBallEffect.cpp" />
+    <ClCompile Include="Messages\XCUseEquipResult.cpp" />
+    <ClCompile Include="Messages\XCUseExtraBagResult.cpp" />
+    <ClCompile Include="Messages\XCUseItemResult.cpp" />
+    <ClCompile Include="Messages\XCWarehouseAcquireList.cpp" />
+    <ClCompile Include="Messages\XCWarehouseAddItem.cpp" />
+    <ClCompile Include="Messages\XCWarehouseBegin.cpp" />
+    <ClCompile Include="Messages\XCWarehouseItemInfo.cpp" />
+    <ClCompile Include="Messages\XCWarehousekMoney.cpp" />
+    <ClCompile Include="Messages\XCWarehouseMoney.cpp" />
+    <ClCompile Include="Messages\XCWarehouseRemoveItem.cpp" />
+    <ClCompile Include="Messages\XCWarehouseSize.cpp" />
+    <ClCompile Include="Messages\XCWarehouseSwapItem.cpp" />
+    <ClCompile Include="Messages\XCWorldShopInfo.cpp" />
+    <ClCompile Include="Messages\XCWorldShopOpenSell.cpp" />
+    <ClCompile Include="Messages\XCWorldTime.cpp" />
+    <ClCompile Include="Messages\LCCaptcha.cpp" />
+    <ClCompile Include="Messages\LCRetAnswer.cpp" />
+    <ClCompile Include="Messages\LCRetChangeName.cpp" />
+    <ClCompile Include="Messages\LCRetPasspod.cpp" />
+    <ClCompile Include="Messages\LCRetRequireYYToken.cpp" />
+    <ClCompile Include="Messages\LCReturnCharList.cpp" />
+    <ClCompile Include="Messages\LCReturnCharLogin.cpp" />
+    <ClCompile Include="Messages\LCReturnConnect.cpp" />
+    <ClCompile Include="Messages\LCReturnCreateChar.cpp" />
+    <ClCompile Include="Messages\LCReturnDeleteChar.cpp" />
+    <ClCompile Include="Messages\LCReturnLogin.cpp" />
+    <ClCompile Include="Messages\LCReturnStatus.cpp" />
+    <ClCompile Include="Messages\ChannelMeridianMessage.cpp" />
+    <ClCompile Include="Messages\FarEastNpcMessage.cpp" />
+    <ClCompile Include="Messages\MaskMessage.cpp" />
+    <ClCompile Include="Messages\MessageStruct.cpp" />
+    <ClCompile Include="Messages\SanBaoMessage.cpp" />
+    <ClCompile Include="TAB\TAB.cpp" />
+    <ClCompile Include="Camp.cpp" />
+    <ClCompile Include="Debug.cpp" />
+    <ClCompile Include="EffectMgr.cpp" />
+    <ClCompile Include="MessageFactoryManager.cpp" />
+    <ClCompile Include="ScriptStruct.cpp" />
+    <ClCompile Include="SpellDataMgr.cpp" />
+    <ClCompile Include="Struct.cpp" />
+    <ClCompile Include="StructChannelMeridian.cpp" />
+    <ClCompile Include="StructDB.cpp" />
+    <ClCompile Include="StructFarEastNpc.cpp" />
+    <ClCompile Include="StructGameBattle.cpp" />
+    <ClCompile Include="StructHorse.cpp" />
+    <ClCompile Include="StructOneVsOne.cpp" />
+    <ClCompile Include="StructRoomBattle.cpp" />
+    <ClCompile Include="StructSLGAirLine.cpp" />
+    <ClCompile Include="StructTeam.cpp" />
+    <ClCompile Include="StructTeamTank.cpp" />
+    <ClCompile Include="TabTemplateLoader.cpp" />
+    <ClCompile Include="Util.cpp" />
+    <ClCompile Include="Utilities\SplitStringBase.cpp" />
+    <ClCompile Include="Utilities\SplitStringLevelOne.cpp" />
+    <ClCompile Include="Utilities\SplitStringLevelTwo.cpp" />
+    <ClCompile Include="EncryptAriths\BitOper.cpp" />
+    <ClCompile Include="EncryptAriths\BlowFish.cpp" />
+    <ClCompile Include="EncryptAriths\DES.cpp" />
+    <ClCompile Include="EncryptAriths\Devalue.cpp" />
+    <ClCompile Include="EncryptAriths\EncryptFunction.cpp" />
+    <ClCompile Include="EncryptAriths\Gost.cpp" />
+    <ClCompile Include="EncryptAriths\Idea.cpp" />
+    <ClCompile Include="EncryptAriths\Increment.cpp" />
+    <ClCompile Include="EncryptAriths\Mars.cpp" />
+    <ClCompile Include="EncryptAriths\rc2.cpp" />
+    <ClCompile Include="EncryptAriths\rc5.cpp" />
+    <ClCompile Include="EncryptAriths\rc6.cpp" />
+    <ClCompile Include="EncryptAriths\rsa.cpp" />
+    <ClCompile Include="EncryptAriths\safer.cpp" />
+    <ClCompile Include="EncryptAriths\tea.cpp" />
+    <ClCompile Include="EncryptAriths\vlong.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DefineResult.h" />
+    <ClInclude Include="Messages\LDRequestPlayerList.h" />
+    <ClInclude Include="Stdafx.h" />
+    <ClInclude Include="StructCountry.h" />
+    <ClInclude Include="StructFinger.h" />
+    <ClInclude Include="StructMinorPasswd.h" />
+    <ClInclude Include="StructScript.h" />
+    <ClInclude Include="Messages\CLCancelQueue.h" />
+    <ClInclude Include="Messages\CLCaptcha.h" />
+    <ClInclude Include="Messages\CLCheckAnswer.h" />
+    <ClInclude Include="Messages\CLCheckPasspod.h" />
+    <ClInclude Include="Messages\CLCheckPWCard.h" />
+    <ClInclude Include="Messages\CLHandShake.h" />
+    <ClInclude Include="Messages\CLRegisterAndCreate.h" />
+    <ClInclude Include="Messages\CLRequestChangeName.h" />
+    <ClInclude Include="Messages\CLRequireCharList.h" />
+    <ClInclude Include="Messages\CLRequireCharLogin.h" />
+    <ClInclude Include="Messages\CLRequireCreateChar.h" />
+    <ClInclude Include="Messages\CLRequireDeleteChar.h" />
+    <ClInclude Include="Messages\CLRequireLogin.h" />
+    <ClInclude Include="Messages\CLRequireYYLogin.h" />
+    <ClInclude Include="Messages\CLRequireYYToken.h" />
+    <ClInclude Include="Messages\CXAcceptGuildConvoy.h" />
+    <ClInclude Include="Messages\CXApplyPrivateInfo.h" />
+    <ClInclude Include="Messages\CXAskCardActive.h" />
+    <ClInclude Include="Messages\CXAskEnterFuben.h" />
+    <ClInclude Include="Messages\CXAskEnterFubenWithOutNpc.h" />
+    <ClInclude Include="Messages\CXAskEnterSoldierBattle.h" />
+    <ClInclude Include="Messages\CXAskLostItemInfo.h" />
+    <ClInclude Include="Messages\CXAskPartyShop.h" />
+    <ClInclude Include="Messages\CXAttack.h" />
+    <ClInclude Include="Messages\CXBaitanAddItem.h" />
+    <ClInclude Include="Messages\CXBaitanApply.h" />
+    <ClInclude Include="Messages\CXBaitanBuy.h" />
+    <ClInclude Include="Messages\CXBaitanClose.h" />
+    <ClInclude Include="Messages\CXBaitanDefaultPage.h" />
+    <ClInclude Include="Messages\CXBaitanEstablish.h" />
+    <ClInclude Include="Messages\CXBaitanItemPrice.h" />
+    <ClInclude Include="Messages\CXBaitanOpen.h" />
+    <ClInclude Include="Messages\CXBaitanRemoveItem.h" />
+    <ClInclude Include="Messages\CXBaitanShopName.h" />
+    <ClInclude Include="Messages\CXBBSApply.h" />
+    <ClInclude Include="Messages\CXBBSSychMessages.h" />
+    <ClInclude Include="Messages\CXBusApplyChangeState.h" />
+    <ClInclude Include="Messages\CXBusApplyInto.h" />
+    <ClInclude Include="Messages\CXBusLeave.h" />
+    <ClInclude Include="Messages\CXCallUpTeamMember.h" />
+    <ClInclude Include="Messages\CXCamera.h" />
+    <ClInclude Include="Messages\CXCampaign.h" />
+    <ClInclude Include="Messages\CXCancelHorseFindMateInfo.h" />
+    <ClInclude Include="Messages\CXCardBagOperation.h" />
+    <ClInclude Include="Messages\CXChangeHorseState.h" />
+    <ClInclude Include="Messages\CXChangeMoney.h" />
+    <ClInclude Include="Messages\CXChangePetState.h" />
+    <ClInclude Include="Messages\CXChangeProfession.h" />
+    <ClInclude Include="Messages\CXChannelCreate.h" />
+    <ClInclude Include="Messages\CXChannelDismiss.h" />
+    <ClInclude Include="Messages\CXChannelInvite.h" />
+    <ClInclude Include="Messages\CXChannelKick.h" />
+    <ClInclude Include="Messages\CXCharAllTitles.h" />
+    <ClInclude Include="Messages\CXCharChangeFace.h" />
+    <ClInclude Include="Messages\CXCharChangeMoveMode.h" />
+    <ClInclude Include="Messages\CXCharIdle.h" />
+    <ClInclude Include="Messages\CXCharJump.h" />
+    <ClInclude Include="Messages\CXCharMoodState.h" />
+    <ClInclude Include="Messages\CXCharMove.h" />
+    <ClInclude Include="Messages\CXCharPositionWarp.h" />
+    <ClInclude Include="Messages\CXCharRename.h" />
+    <ClInclude Include="Messages\CXCharSit.h" />
+    <ClInclude Include="Messages\CXCharStopLogic.h" />
+    <ClInclude Include="Messages\CXCharUpdateCurTitle.h" />
+    <ClInclude Include="Messages\CXCharUseSkill.h" />
+    <ClInclude Include="Messages\CXChat.h" />
+    <ClInclude Include="Messages\CXChatReport.h" />
+    <ClInclude Include="Messages\CXCheckSuperPW.h" />
+    <ClInclude Include="Messages\CXCleanSubTrainInfo.h" />
+    <ClInclude Include="Messages\CXClientErrorReport.h" />
+    <ClInclude Include="Messages\CXCommand.h" />
+    <ClInclude Include="Messages\CXCommonActivityMsg.h" />
+    <ClInclude Include="Messages\CXComplementarityNotify.h" />
+    <ClInclude Include="Messages\CXConformFubenProcess.h" />
+    <ClInclude Include="Messages\CXCopyMapDati.h" />
+    <ClInclude Include="Messages\CXCountry.h" />
+    <ClInclude Include="Messages\CXCountryAppoint.h" />
+    <ClInclude Include="Messages\CXCountryBattleLite.h" />
+    <ClInclude Include="Messages\CXCountryCollect.h" />
+    <ClInclude Include="Messages\CXCountryDelate.h" />
+    <ClInclude Include="Messages\CXCountryDonative.h" />
+    <ClInclude Include="Messages\CXCountryFetch.h" />
+    <ClInclude Include="Messages\CXCountryInfoRequest.h" />
+    <ClInclude Include="Messages\CXCountryRemove.h" />
+    <ClInclude Include="Messages\CXCountryRequestKindom.h" />
+    <ClInclude Include="Messages\CXCountryVoteOn.h" />
+    <ClInclude Include="Messages\CXDiscardEquip.h" />
+    <ClInclude Include="Messages\CXDiscardEquipChariot.h" />
+    <ClInclude Include="Messages\CXDiscardItem.h" />
+    <ClInclude Include="Messages\CXDispelBuffReq.h" />
+    <ClInclude Include="Messages\CXDoEvent.h" />
+    <ClInclude Include="Messages\CXDuelApply.h" />
+    <ClInclude Include="Messages\CXDuelConfirm.h" />
+    <ClInclude Include="Messages\CXEmpire.h" />
+    <ClInclude Include="Messages\CXEnterMap.h" />
+    <ClInclude Include="Messages\CXEnvRequest.h" />
+    <ClInclude Include="Messages\CXEquipFusion.h" />
+    <ClInclude Include="Messages\CXEquipSuitExchange.h" />
+    <ClInclude Include="Messages\CXEquipTmpPurpleAttr.h" />
+    <ClInclude Include="Messages\CXEquipWanfa.h" />
+    <ClInclude Include="Messages\CXEventRequest.h" />
+    <ClInclude Include="Messages\CXExecuteScript.h" />
+    <ClInclude Include="Messages\CXFarEastWarQuit.h" />
+    <ClInclude Include="Messages\CXFetchLostItem.h" />
+    <ClInclude Include="Messages\CXFinger.h" />
+    <ClInclude Include="Messages\CXFuBenPingFenOpt.h" />
+    <ClInclude Include="Messages\CXFutuAutoInfo.h" />
+    <ClInclude Include="Messages\CXGameBattle.h" />
+    <ClInclude Include="Messages\CXGarden.h" />
+    <ClInclude Include="Messages\CXGardenQuest.h" />
+    <ClInclude Include="Messages\CXGemCompound.h" />
+    <ClInclude Include="Messages\CXGetAward.h" />
+    <ClInclude Include="Messages\CXGetXinShouReward.h" />
+    <ClInclude Include="Messages\CXGiftPack.h" />
+    <ClInclude Include="Messages\CXGoldExchangeSillerCard.h" />
+    <ClInclude Include="Messages\CXGroupAppoint.h" />
+    <ClInclude Include="Messages\CXGroupChangePickupMode.h" />
+    <ClInclude Include="Messages\CXGroupDismiss.h" />
+    <ClInclude Include="Messages\CXGroupInvite.h" />
+    <ClInclude Include="Messages\CXGroupInviteRet.h" />
+    <ClInclude Include="Messages\CXGroupKick.h" />
+    <ClInclude Include="Messages\CXGroupLeave.h" />
+    <ClInclude Include="Messages\CXGroupRequestApply.h" />
+    <ClInclude Include="Messages\CXGroupRequestApplyRet.h" />
+    <ClInclude Include="Messages\CXGuardFuBen.h" />
+    <ClInclude Include="Messages\CXGuild.h" />
+    <ClInclude Include="Messages\CXGuildApply.h" />
+    <ClInclude Include="Messages\CXGuildBattle.h" />
+    <ClInclude Include="Messages\CXGuildContend.h" />
+    <ClInclude Include="Messages\CXGuildConvoyKick.h" />
+    <ClInclude Include="Messages\CXGuildJoin.h" />
+    <ClInclude Include="Messages\CXHandShake.h" />
+    <ClInclude Include="Messages\CXHeartBeat.h" />
+    <ClInclude Include="Messages\CXHorseGaming.h" />
+    <ClInclude Include="Messages\CXHorseRaceHistory.h" />
+    <ClInclude Include="Messages\CXInherenceBalanceUpgrade.h" />
+    <ClInclude Include="Messages\CXInherenceZhuanFangLevelUp.h" />
+    <ClInclude Include="Messages\CXInherenceZhuanGongCoefficient.h" />
+    <ClInclude Include="Messages\CXIssueHorseFindMateInfo.h" />
+    <ClInclude Include="Messages\CXItemTrans.h" />
+    <ClInclude Include="Messages\CXItemWanfa.h" />
+    <ClInclude Include="Messages\CXKingBattle.h" />
+    <ClInclude Include="Messages\CXLawlessOperate.h" />
+    <ClInclude Include="Messages\CXLeagueMatch.h" />
+    <ClInclude Include="Messages\CXLeaveMap.h" />
+    <ClInclude Include="Messages\CXLifeShopReq.h" />
+    <ClInclude Include="Messages\CXLockEquipOrHorse.h" />
+    <ClInclude Include="Messages\CXLockTarget.h" />
+    <ClInclude Include="Messages\CXLoginGift.h" />
+    <ClInclude Include="Messages\CXManipulateHorse.h" />
+    <ClInclude Include="Messages\CXMapInfo.h" />
+    <ClInclude Include="Messages\CXMentalGame.h" />
+    <ClInclude Include="Messages\CXMinorPasswd.h" />
+    <ClInclude Include="Messages\CXMissionTransmit.h" />
+    <ClInclude Include="Messages\CXModifyPKMode.h" />
+    <ClInclude Include="Messages\CXModifySetting.h" />
+    <ClInclude Include="Messages\CXMPVPBattle.h" />
+    <ClInclude Include="Messages\CXMutliSubmitItem.h" />
+    <ClInclude Include="Messages\CXOfflineRequest.h" />
+    <ClInclude Include="Messages\CXOffSale.h" />
+    <ClInclude Include="Messages\CXOneVsOne.h" />
+    <ClInclude Include="Messages\CXOnlineShowTips.h" />
+    <ClInclude Include="Messages\CXOpenBox.h" />
+    <ClInclude Include="Messages\CXOpenBoxManipulate.h" />
+    <ClInclude Include="Messages\CXOpenItemBox.h" />
+    <ClInclude Include="Messages\CXOperaRideHorse.h" />
+    <ClInclude Include="Messages\CXOperateSoldierReq.h" />
+    <ClInclude Include="Messages\CXOtherEquip.h" />
+    <ClInclude Include="Messages\CXPackage_SwapItem.h" />
+    <ClInclude Include="Messages\CXPackUpPacket.h" />
+    <ClInclude Include="Messages\CXPeerVip.h" />
+    <ClInclude Include="Messages\CXPetHatch.h" />
+    <ClInclude Include="Messages\CXPickBoxItem.h" />
+    <ClInclude Include="Messages\CXPickDropItem.h" />
+    <ClInclude Include="Messages\CXPing.h" />
+    <ClInclude Include="Messages\CXPlayerCallOfResult.h" />
+    <ClInclude Include="Messages\CXPlayerClickNpc.h" />
+    <ClInclude Include="Messages\CXPlayerDieResult.h" />
+    <ClInclude Include="Messages\CXPlayerRequestBaseAttrib.h" />
+    <ClInclude Include="Messages\CXPlayerRequestEquipment.h" />
+    <ClInclude Include="Messages\CXPlayerShopFavorite.h" />
+    <ClInclude Include="Messages\CXPost.h" />
+    <ClInclude Include="Messages\CXPVP2v2Battle.h" />
+    <ClInclude Include="Messages\CXPVP6v6Battle.h" />
+    <ClInclude Include="Messages\CXQueryAccountMoney.h" />
+    <ClInclude Include="Messages\CXQueryHorseFindMateInfo.h" />
+    <ClInclude Include="Messages\CXQuestAbandon.h" />
+    <ClInclude Include="Messages\CXQuestAccept.h" />
+    <ClInclude Include="Messages\CXQuestCollectHorse.h" />
+    <ClInclude Include="Messages\CXQuestCommand.h" />
+    <ClInclude Include="Messages\CXQuestContinue.h" />
+    <ClInclude Include="Messages\CXQuestMixture.h" />
+    <ClInclude Include="Messages\CXQuestRefuse.h" />
+    <ClInclude Include="Messages\CXQuestSort.h" />
+    <ClInclude Include="Messages\CXQuestSubmit.h" />
+    <ClInclude Include="Messages\CXQuestUpdate.h" />
+    <ClInclude Include="Messages\CXQuizAnswer.h" />
+    <ClInclude Include="Messages\CXRegisterTeamRecruit.h" />
+    <ClInclude Include="Messages\CXRelation.h" />
+    <ClInclude Include="Messages\CXRemoveGem.h" />
+    <ClInclude Include="Messages\CXReqLevelUp.h" />
+    <ClInclude Include="Messages\CXReqManualAttr.h" />
+    <ClInclude Include="Messages\CXReqPlayerAttrUp.h" />
+    <ClInclude Include="Messages\CXReqPunch.h" />
+    <ClInclude Include="Messages\CXReqResetAttr.h" />
+    <ClInclude Include="Messages\CXRequestBeginSubTrain.h" />
+    <ClInclude Include="Messages\CXRequestBusInfo.h" />
+    <ClInclude Include="Messages\CXRequestCardRefresh.h" />
+    <ClInclude Include="Messages\CXRequestCarryOnShopInfo.h" />
+    <ClInclude Include="Messages\CXRequestChangeMap.h" />
+    <ClInclude Include="Messages\CXRequestChariotInfo.h" />
+    <ClInclude Include="Messages\CXRequestDaytipsList.h" />
+    <ClInclude Include="Messages\CXRequestDetailEquipList.h" />
+    <ClInclude Include="Messages\CXRequestDetailEquipListChariot.h" />
+    <ClInclude Include="Messages\CXRequestDetailEquipListHorse.h" />
+    <ClInclude Include="Messages\CXRequestDetailInherenceBalanceList.h" />
+    <ClInclude Include="Messages\CXRequestDetailLifeSkillInfo.h" />
+    <ClInclude Include="Messages\CXRequestDetailProperty.h" />
+    <ClInclude Include="Messages\CXRequestDetailSpellList.h" />
+    <ClInclude Include="Messages\CXRequestEndSubTrain.h" />
+    <ClInclude Include="Messages\CXRequestGetSubTrainExp.h" />
+    <ClInclude Include="Messages\CXRequestGuildConvoyInfo.h" />
+    <ClInclude Include="Messages\CXRequestGuildConvoyList.h" />
+    <ClInclude Include="Messages\CXRequestHorseConfig.h" />
+    <ClInclude Include="Messages\CXRequestInherenceZhuanJingInfo.h" />
+    <ClInclude Include="Messages\CXRequestItemInfo.h" />
+    <ClInclude Include="Messages\CXRequestLeanLifeSkill.h" />
+    <ClInclude Include="Messages\CXRequestLeaveGame.h" />
+    <ClInclude Include="Messages\CXRequestLockObj.h" />
+    <ClInclude Include="Messages\CXRequestMyBagList.h" />
+    <ClInclude Include="Messages\CXRequestOtherOnlineDetailAttrib.h" />
+    <ClInclude Include="Messages\CXRequestPost.h" />
+    <ClInclude Include="Messages\CXRequestPrivateInfo.h" />
+    <ClInclude Include="Messages\CXRequestQuestList.h" />
+    <ClInclude Include="Messages\CXRequestSeachTeamInfo.h" />
+    <ClInclude Include="Messages\CXRequestSetMoneyMode.h" />
+    <ClInclude Include="Messages\CXRequestSetTeamEnounce.h" />
+    <ClInclude Include="Messages\CXRequestSetting.h" />
+    <ClInclude Include="Messages\CXRequestShangDianInfo.h" />
+    <ClInclude Include="Messages\CXRequestStockInfo.h" />
+    <ClInclude Include="Messages\CXRequestSubTrainMode.h" />
+    <ClInclude Include="Messages\CXRequestSubTrainSetting.h" />
+    <ClInclude Include="Messages\CXRequestTeamDistribMode.h" />
+    <ClInclude Include="Messages\CXRequestTeamFollow.h" />
+    <ClInclude Include="Messages\CXRequestTeamInfo.h" />
+    <ClInclude Include="Messages\CXRequestTeamMemberInfo.h" />
+    <ClInclude Include="Messages\CXRequestTeamMemEquip.h" />
+    <ClInclude Include="Messages\CXRequestTeamRecruitInfo.h" />
+    <ClInclude Include="Messages\CXRequestTransGoldToPlayer.h" />
+    <ClInclude Include="Messages\CXRet360Info.h" />
+    <ClInclude Include="Messages\CXRetCountryDestroyIssue.h" />
+    <ClInclude Include="Messages\CXRetEncryptOp.h" />
+    <ClInclude Include="Messages\CXRetGuildConvoy.h" />
+    <ClInclude Include="Messages\CXRetMac.h" />
+    <ClInclude Include="Messages\CXReturnTeamFollow.h" />
+    <ClInclude Include="Messages\CXRoomBattle.h" />
+    <ClInclude Include="Messages\CXRunningKill.h" />
+    <ClInclude Include="Messages\CXSaveEquipSuit.h" />
+    <ClInclude Include="Messages\CXSearchHorseFindMateInfo.h" />
+    <ClInclude Include="Messages\CXSearchOnlineUser.h" />
+    <ClInclude Include="Messages\CXSelectMapCity.h" />
+    <ClInclude Include="Messages\CXSetChannelMode.h" />
+    <ClInclude Include="Messages\CXSetHorseAttrib.h" />
+    <ClInclude Include="Messages\CXSetMoodToHead.h" />
+    <ClInclude Include="Messages\CXSetShowSuitMode.h" />
+    <ClInclude Include="Messages\CXSetTeamDistribMode.h" />
+    <ClInclude Include="Messages\CXShopActive.h" />
+    <ClInclude Include="Messages\CXShopBuy.h" />
+    <ClInclude Include="Messages\CXShopClose.h" />
+    <ClInclude Include="Messages\CXShopRepair.h" />
+    <ClInclude Include="Messages\CXShopSell.h" />
+    <ClInclude Include="Messages\CXShopSpecialRepair.h" />
+    <ClInclude Include="Messages\CXSkill.h" />
+    <ClInclude Include="Messages\CXSkillUpgrade.h" />
+    <ClInclude Include="Messages\CXSLGAirLines.h" />
+    <ClInclude Include="Messages\CXSLGBuild.h" />
+    <ClInclude Include="Messages\CXSoldierBattle.h" />
+    <ClInclude Include="Messages\CXSoldierCard.h" />
+    <ClInclude Include="Messages\CXSplitItem.h" />
+    <ClInclude Include="Messages\CXStallPurchaseAddItemInfo.h" />
+    <ClInclude Include="Messages\CXStallPurchaseBuyItem.h" />
+    <ClInclude Include="Messages\CXStallPurchasePriceAmount.h" />
+    <ClInclude Include="Messages\CXStallPurchaseRemoveItemInfo.h" />
+    <ClInclude Include="Messages\CXStopTeamFollow.h" />
+    <ClInclude Include="Messages\CXTankLeave.h" />
+    <ClInclude Include="Messages\CXTeamApply.h" />
+    <ClInclude Include="Messages\CXTeamAppoint.h" />
+    <ClInclude Include="Messages\CXTeamDismiss.h" />
+    <ClInclude Include="Messages\CXTeamInvite.h" />
+    <ClInclude Include="Messages\CXTeamKick.h" />
+    <ClInclude Include="Messages\CXTeamLeaderRetInvite.h" />
+    <ClInclude Include="Messages\CXTeamLeave.h" />
+    <ClInclude Include="Messages\CXTeamRetApply.h" />
+    <ClInclude Include="Messages\CXTeamRetInvite.h" />
+    <ClInclude Include="Messages\CXTopList.h" />
+    <ClInclude Include="Messages\CXTradeApplyI.h" />
+    <ClInclude Include="Messages\CXTradeCancel.h" />
+    <ClInclude Include="Messages\CXTradeOkIII.h" />
+    <ClInclude Include="Messages\CXTradeReplyI.h" />
+    <ClInclude Include="Messages\CXTradeSynchItemII.h" />
+    <ClInclude Include="Messages\CXTradeSynchLock.h" />
+    <ClInclude Include="Messages\CXTradeSynchMoneyII.h" />
+    <ClInclude Include="Messages\CXTrainingApplyI.h" />
+    <ClInclude Include="Messages\CXTrainingConfirmIII.h" />
+    <ClInclude Include="Messages\CXTransPosInfo.h" />
+    <ClInclude Include="Messages\CXUnEquip.h" />
+    <ClInclude Include="Messages\CXUnEquipChariot.h" />
+    <ClInclude Include="Messages\CXUnEquipHorse.h" />
+    <ClInclude Include="Messages\CXUnExtraBag.h" />
+    <ClInclude Include="Messages\CXUseEquip.h" />
+    <ClInclude Include="Messages\CXUseEquipChariot.h" />
+    <ClInclude Include="Messages\CXUseEquipHorse.h" />
+    <ClInclude Include="Messages\CXUseExtraBag.h" />
+    <ClInclude Include="Messages\CXUseItem.h" />
+    <ClInclude Include="Messages\CXUseLifeSkill.h" />
+    <ClInclude Include="Messages\CXWarehouseAcquireList.h" />
+    <ClInclude Include="Messages\CXWarehouseAddItem.h" />
+    <ClInclude Include="Messages\CXWarehouseClose.h" />
+    <ClInclude Include="Messages\CXWarehouseMoney.h" />
+    <ClInclude Include="Messages\CXWarehouseOperateHorse.h" />
+    <ClInclude Include="Messages\CXWarehouseRemoveItem.h" />
+    <ClInclude Include="Messages\CXWarehouseSwapItem.h" />
+    <ClInclude Include="Messages\CXWorldShangDianRequestSell.h" />
+    <ClInclude Include="Messages\XCAbandonLifeSkill.h" />
+    <ClInclude Include="Messages\XCAddHorsePromotion.h" />
+    <ClInclude Include="Messages\XCAddLockObj.h" />
+    <ClInclude Include="Messages\XCAddSkillToSkillList.h" />
+    <ClInclude Include="Messages\XCAlertMibaoka.h" />
+    <ClInclude Include="Messages\XCArrive.h" />
+    <ClInclude Include="Messages\XCAttack.h" />
+    <ClInclude Include="Messages\XCBaitanAddItem.h" />
+    <ClInclude Include="Messages\XCBaitanApply.h" />
+    <ClInclude Include="Messages\XCBaitanBuy.h" />
+    <ClInclude Include="Messages\XCBaitanClose.h" />
+    <ClInclude Include="Messages\XCBaitanError.h" />
+    <ClInclude Include="Messages\XCBaitanEstablish.h" />
+    <ClInclude Include="Messages\XCBaitanItemPrice.h" />
+    <ClInclude Include="Messages\XCBaitanlClose.h" />
+    <ClInclude Include="Messages\XCBaitanOpen.h" />
+    <ClInclude Include="Messages\XCBaitanRemoveItem.h" />
+    <ClInclude Include="Messages\XCBattleMap.h" />
+    <ClInclude Include="Messages\XCBattleNotice.h" />
+    <ClInclude Include="Messages\XCBBSMessages.h" />
+    <ClInclude Include="Messages\XCBoxItemList.h" />
+    <ClInclude Include="Messages\XCBusError.h" />
+    <ClInclude Include="Messages\XCBusResult.h" />
+    <ClInclude Include="Messages\XCBusRetChangeState.h" />
+    <ClInclude Include="Messages\XCBusRetInfo.h" />
+    <ClInclude Include="Messages\XCCallUpTeamMember.h" />
+    <ClInclude Include="Messages\XCCamera.h" />
+    <ClInclude Include="Messages\XCCardBagOperation.h" />
+    <ClInclude Include="Messages\XCChangeMapRestrictiveMode.h" />
+    <ClInclude Include="Messages\XCChangeProfession.h" />
+    <ClInclude Include="Messages\XCChannelError.h" />
+    <ClInclude Include="Messages\XCChannelResult.h" />
+    <ClInclude Include="Messages\XCCharAction.h" />
+    <ClInclude Include="Messages\XCCharAllTitles.h" />
+    <ClInclude Include="Messages\XCCharBUFF.h" />
+    <ClInclude Include="Messages\XCCharBusBaseAttrib.h" />
+    <ClInclude Include="Messages\XCCharDirectEffect.h" />
+    <ClInclude Include="Messages\XCCharDoAction.h" />
+    <ClInclude Include="Messages\XCCharEffectListUpdate.h" />
+    <ClInclude Include="Messages\XCCharEquipment.h" />
+    <ClInclude Include="Messages\XCCharIdle.h" />
+    <ClInclude Include="Messages\XCChariotBaseAttrib.h" />
+    <ClInclude Include="Messages\XCChariotResult.h" />
+    <ClInclude Include="Messages\XCCharJump.h" />
+    <ClInclude Include="Messages\XCCharModifyAction.h" />
+    <ClInclude Include="Messages\XCCharMonsterBaseAttrib.h" />
+    <ClInclude Include="Messages\XCCharMove.h" />
+    <ClInclude Include="Messages\XCCharMoveResult.h" />
+    <ClInclude Include="Messages\XCCharPlayerBaseAttrib.h" />
+    <ClInclude Include="Messages\XCCharSkill_CreateBullet.h" />
+    <ClInclude Include="Messages\XCCharSkill_Gather.h" />
+    <ClInclude Include="Messages\XCCharSkill_Gather_Modify.h" />
+    <ClInclude Include="Messages\XCCharSkill_Lead.h" />
+    <ClInclude Include="Messages\XCCharSkill_Lead_Modify.h" />
+    <ClInclude Include="Messages\XCCharSkill_Missed.h" />
+    <ClInclude Include="Messages\XCCharSkill_Send.h" />
+    <ClInclude Include="Messages\XCCharStopAction.h" />
+    <ClInclude Include="Messages\XCChat.h" />
+    <ClInclude Include="Messages\XCChatLaBa.h" />
+    <ClInclude Include="Messages\XCCollectMac.h" />
+    <ClInclude Include="Messages\XCCommonActivityNotify.h" />
+    <ClInclude Include="Messages\XCComplementarityNotify.h" />
+    <ClInclude Include="Messages\XCConnect.h" />
+    <ClInclude Include="Messages\XCCoolDownUpdate.h" />
+    <ClInclude Include="Messages\XCCopyMapDati.h" />
+    <ClInclude Include="Messages\XCCountry.h" />
+    <ClInclude Include="Messages\XCCountryBattleLite.h" />
+    <ClInclude Include="Messages\XCCountryCollect.h" />
+    <ClInclude Include="Messages\XCCountryDelateBegin.h" />
+    <ClInclude Include="Messages\XCCountryDestroyIssue.h" />
+    <ClInclude Include="Messages\XCCountryFetch.h" />
+    <ClInclude Include="Messages\XCCountryInfoConfirm.h" />
+    <ClInclude Include="Messages\XCCountryReturn.h" />
+    <ClInclude Include="Messages\XCCountryVoteShow.h" />
+    <ClInclude Include="Messages\XCCreatePetPromotion.h" />
+    <ClInclude Include="Messages\XCDaytipsList.h" />
+    <ClInclude Include="Messages\XCDelChar.h" />
+    <ClInclude Include="Messages\XCDelObject.h" />
+    <ClInclude Include="Messages\XCDetailAttrib.h" />
+    <ClInclude Include="Messages\XCDetailAttrib_Chariot.h" />
+    <ClInclude Include="Messages\XCDetailAttrib_Horse.h" />
+    <ClInclude Include="Messages\XCDetailAttrib_Pet.h" />
+    <ClInclude Include="Messages\XCDetailBUFF.h" />
+    <ClInclude Include="Messages\XCDetailEffectListUpdate.h" />
+    <ClInclude Include="Messages\XCDetailEquipAtt.h" />
+    <ClInclude Include="Messages\XCDetailEquipList.h" />
+    <ClInclude Include="Messages\XCDetailEquipListChariot.h" />
+    <ClInclude Include="Messages\XCDetailEquipListHorse.h" />
+    <ClInclude Include="Messages\XCDetailHealsAndDamages.h" />
+    <ClInclude Include="Messages\XCDetailInherenceBalanceList.h" />
+    <ClInclude Include="Messages\XCDetailLifeSkillInfo.h" />
+    <ClInclude Include="Messages\XCDetailSkillList.h" />
+    <ClInclude Include="Messages\XCDie.h" />
+    <ClInclude Include="Messages\XCDiscardEquipResult.h" />
+    <ClInclude Include="Messages\XCDiscardItemResult.h" />
+    <ClInclude Include="Messages\XCDuelRet.h" />
+    <ClInclude Include="Messages\XCEmpire.h" />
+    <ClInclude Include="Messages\XCEncryptKey.h" />
+    <ClInclude Include="Messages\XCEndSubTrainResult.h" />
+    <ClInclude Include="Messages\XCEnterMap.h" />
+    <ClInclude Include="Messages\XCEquipFusionResult.h" />
+    <ClInclude Include="Messages\XCEquipSuitExchangeResult.h" />
+    <ClInclude Include="Messages\XCEquipTmpPurpleAttr.h" />
+    <ClInclude Include="Messages\XCEquipWanfaResult.h" />
+    <ClInclude Include="Messages\XCErrorAttack.h" />
+    <ClInclude Include="Messages\XCErrorSkill.h" />
+    <ClInclude Include="Messages\XCExpandWarehouseSize.h" />
+    <ClInclude Include="Messages\XCFarEastWarQuit.h" />
+    <ClInclude Include="Messages\XCFightInfo.h" />
+    <ClInclude Include="Messages\XCFinger.h" />
+    <ClInclude Include="Messages\XCForceReconnect.h" />
+    <ClInclude Include="Messages\XCFuBenPingFenOpt.h" />
+    <ClInclude Include="Messages\XCFutuUI.h" />
+    <ClInclude Include="Messages\XCGameBattle.h" />
+    <ClInclude Include="Messages\XCGameWanfaState.h" />
+    <ClInclude Include="Messages\XCGarden.h" />
+    <ClInclude Include="Messages\XCGetSubTrainExpResult.h" />
+    <ClInclude Include="Messages\XCGiftPack.h" />
+    <ClInclude Include="Messages\XCGoldExchangeSillerCard.h" />
+    <ClInclude Include="Messages\XCGroupDismissRet.h" />
+    <ClInclude Include="Messages\XCGroupError.h" />
+    <ClInclude Include="Messages\XCGroupFubenChange.h" />
+    <ClInclude Include="Messages\XCGroupInviteAsk.h" />
+    <ClInclude Include="Messages\XCGroupInviteRet.h" />
+    <ClInclude Include="Messages\XCGroupKickRet.h" />
+    <ClInclude Include="Messages\XCGroupLeaveRet.h" />
+    <ClInclude Include="Messages\XCGroupRequestApplyAsk.h" />
+    <ClInclude Include="Messages\XCGroupSynchData.h" />
+    <ClInclude Include="Messages\XCGuanQiaSpellUI.h" />
+    <ClInclude Include="Messages\XCGuardFuBen.h" />
+    <ClInclude Include="Messages\XCGuild.h" />
+    <ClInclude Include="Messages\XCGuildApply.h" />
+    <ClInclude Include="Messages\XCGuildBattle.h" />
+    <ClInclude Include="Messages\XCGuildContend.h" />
+    <ClInclude Include="Messages\XCGuildConvoyList.h" />
+    <ClInclude Include="Messages\XCGuildConvoyResult.h" />
+    <ClInclude Include="Messages\XCGuildError.h" />
+    <ClInclude Include="Messages\XCGuildReturn.h" />
+    <ClInclude Include="Messages\XCHeartBeat.h" />
+    <ClInclude Include="Messages\XCHorseConfig.h" />
+    <ClInclude Include="Messages\XCHorseLevelUp.h" />
+    <ClInclude Include="Messages\XCHorseRaceGaming.h" />
+    <ClInclude Include="Messages\XCHorseRaceHistory.h" />
+    <ClInclude Include="Messages\XCInherenceBalanceUpgrade.h" />
+    <ClInclude Include="Messages\XCInherenceZhuanFangInfo.h" />
+    <ClInclude Include="Messages\XCInherenceZhuanGongInfo.h" />
+    <ClInclude Include="Messages\XCInputSuperPW.h" />
+    <ClInclude Include="Messages\XCItemInfo.h" />
+    <ClInclude Include="Messages\XCItemTrans.h" />
+    <ClInclude Include="Messages\XCItemWanfaResult.h" />
+    <ClInclude Include="Messages\XCJoinTempChannel.h" />
+    <ClInclude Include="Messages\XCKingBattle.h" />
+    <ClInclude Include="Messages\XCLeagueMatch.h" />
+    <ClInclude Include="Messages\XCLeaveGame.h" />
+    <ClInclude Include="Messages\XCLeaveMap.h" />
+    <ClInclude Include="Messages\XCLevelUp.h" />
+    <ClInclude Include="Messages\XCLevelUpResult.h" />
+    <ClInclude Include="Messages\XCLifeSkillAction.h" />
+    <ClInclude Include="Messages\XCLifeSkillExp.h" />
+    <ClInclude Include="Messages\XCLifeSkillLevel.h" />
+    <ClInclude Include="Messages\XCLifeSkillResult.h" />
+    <ClInclude Include="Messages\XCLifeSkillSucc.h" />
+    <ClInclude Include="Messages\XCLifeSkillTeacherInfo.h" />
+    <ClInclude Include="Messages\XCLoginGift.h" />
+    <ClInclude Include="Messages\XCManipulateHorseRet.h" />
+    <ClInclude Include="Messages\XCManualAttrResult.h" />
+    <ClInclude Include="Messages\XCMapMapPointData.h" />
+    <ClInclude Include="Messages\XCMentalGame.h" />
+    <ClInclude Include="Messages\XCMilitaryRankLevelup.h" />
+    <ClInclude Include="Messages\XCMinorPasswd.h" />
+    <ClInclude Include="Messages\XCModifyGuanQiaSpell.h" />
+    <ClInclude Include="Messages\XCModifySpeed.h" />
+    <ClInclude Include="Messages\XCMonsterRealMove.h" />
+    <ClInclude Include="Messages\XCMonsterSpeak.h" />
+    <ClInclude Include="Messages\XCMPVPBattle.h" />
+    <ClInclude Include="Messages\XCMyBagList.h" />
+    <ClInclude Include="Messages\XCNeedPWDProtect.h" />
+    <ClInclude Include="Messages\XCNew_Chariot.h" />
+    <ClInclude Include="Messages\XCNewBeastie.h" />
+    <ClInclude Include="Messages\XCNewBeastie_Move.h" />
+    <ClInclude Include="Messages\XCNewBus.h" />
+    <ClInclude Include="Messages\XCNewBus_Death.h" />
+    <ClInclude Include="Messages\XCNewBus_Move.h" />
+    <ClInclude Include="Messages\XCNewChariot_Death.h" />
+    <ClInclude Include="Messages\XCNewChariot_Move.h" />
+    <ClInclude Include="Messages\XCNewGainPromotion.h" />
+    <ClInclude Include="Messages\XCNewHorse.h" />
+    <ClInclude Include="Messages\XCNewHorse_Move.h" />
+    <ClInclude Include="Messages\XCNewItem.h" />
+    <ClInclude Include="Messages\XCNewItemBox.h" />
+    <ClInclude Include="Messages\XCNewMonster.h" />
+    <ClInclude Include="Messages\XCNewMonster_Death.h" />
+    <ClInclude Include="Messages\XCNewMonster_Move.h" />
+    <ClInclude Include="Messages\XCNewObjItem.h" />
+    <ClInclude Include="Messages\XCNewPlatform.h" />
+    <ClInclude Include="Messages\XCNewPlayer.h" />
+    <ClInclude Include="Messages\XCNewPlayer_Death.h" />
+    <ClInclude Include="Messages\XCNewPlayer_Move.h" />
+    <ClInclude Include="Messages\XCNewPortal.h" />
+    <ClInclude Include="Messages\XCNewSkillObj.h" />
+    <ClInclude Include="Messages\XCNewSpecial.h" />
+    <ClInclude Include="Messages\XCNotifyChangeMap.h" />
+    <ClInclude Include="Messages\XCNotifyClientToNpcPoint.h" />
+    <ClInclude Include="Messages\XCNotifyEquip.h" />
+    <ClInclude Include="Messages\XCNotifyGoodBad.h" />
+    <ClInclude Include="Messages\XCNotifyInfo.h" />
+    <ClInclude Include="Messages\XCNotifyPost.h" />
+    <ClInclude Include="Messages\XCNotifyTeamGroupInfo.h" />
+    <ClInclude Include="Messages\XCNotifyTeamInfo.h" />
+    <ClInclude Include="Messages\XCNPCTransferType.h" />
+    <ClInclude Include="Messages\XCObjTeleport.h" />
+    <ClInclude Include="Messages\XCOneVsOne.h" />
+    <ClInclude Include="Messages\XCOnlineShowTips.h" />
+    <ClInclude Include="Messages\XCOpenAwardBox.h" />
+    <ClInclude Include="Messages\XCOpenBox.h" />
+    <ClInclude Include="Messages\XCOpenBoxManipulate.h" />
+    <ClInclude Include="Messages\XCOpenFindHorseMating.h" />
+    <ClInclude Include="Messages\XCOpenOffSaleSystem.h" />
+    <ClInclude Include="Messages\XCOperateResult.h" />
+    <ClInclude Include="Messages\XCOperateSoldierRet.h" />
+    <ClInclude Include="Messages\XCOtherAttack.h" />
+    <ClInclude Include="Messages\XCOtherEquip.h" />
+    <ClInclude Include="Messages\XCOtherSkill.h" />
+    <ClInclude Include="Messages\XCPackage_SwapItem.h" />
+    <ClInclude Include="Messages\XCPackUpPacket.h" />
+    <ClInclude Include="Messages\XCPeerVip.h" />
+    <ClInclude Include="Messages\XCPetHatch.h" />
+    <ClInclude Include="Messages\XCPickDropItemResult.h" />
+    <ClInclude Include="Messages\XCPickResult.h" />
+    <ClInclude Include="Messages\XCPing.h" />
+    <ClInclude Include="Messages\XCPlayerCallOf.h" />
+    <ClInclude Include="Messages\XCPlayerDie.h" />
+    <ClInclude Include="Messages\XCPlayerFirstEnterNotify.h" />
+    <ClInclude Include="Messages\XCPlayerRealMove.h" />
+    <ClInclude Include="Messages\XCPlayerRelive.h" />
+    <ClInclude Include="Messages\XCPost.h" />
+    <ClInclude Include="Messages\XCPrescription.h" />
+    <ClInclude Include="Messages\XCPrivateInfo.h" />
+    <ClInclude Include="Messages\XCPVP2v2Battle.h" />
+    <ClInclude Include="Messages\XCPVP6v6Battle.h" />
+    <ClInclude Include="Messages\XCQuestAdd.h" />
+    <ClInclude Include="Messages\XCQuestCollectHorseResult.h" />
+    <ClInclude Include="Messages\XCQuestDoneNotify.h" />
+    <ClInclude Include="Messages\XCQuestList.h" />
+    <ClInclude Include="Messages\XCQuestListRefresh.h" />
+    <ClInclude Include="Messages\XCQuestMixtureResult.h" />
+    <ClInclude Include="Messages\XCQuestModify.h" />
+    <ClInclude Include="Messages\XCQuestRemove.h" />
+    <ClInclude Include="Messages\XCQuestSort.h" />
+    <ClInclude Include="Messages\XCQuizQuest.h" />
+    <ClInclude Include="Messages\XCQuizResult.h" />
+    <ClInclude Include="Messages\XCRectPartyShop.h" />
+    <ClInclude Include="Messages\XCRelation.h" />
+    <ClInclude Include="Messages\XCRemoveGemResult.h" />
+    <ClInclude Include="Messages\XCRemoveHorse.h" />
+    <ClInclude Include="Messages\XCReqResetAttrResult.h" />
+    <ClInclude Include="Messages\XCRequest360Info.h" />
+    <ClInclude Include="Messages\XCRequestAcceptGuildConvoy.h" />
+    <ClInclude Include="Messages\XCRequestCardRefresh.h" />
+    <ClInclude Include="Messages\XCRequestEncryptOp.h" />
+    <ClInclude Include="Messages\XCRequestGuildConvoy.h" />
+    <ClInclude Include="Messages\XCRequestTeamFollow.h" />
+    <ClInclude Include="Messages\XCRetAccountMoney.h" />
+    <ClInclude Include="Messages\XCRetChangeMap.h" />
+    <ClInclude Include="Messages\XCRetCharChangeFace.h" />
+    <ClInclude Include="Messages\XCRetFetchLostItem.h" />
+    <ClInclude Include="Messages\XCRetLostItemInfo.h" />
+    <ClInclude Include="Messages\XCRetPlayerAttrUp.h" />
+    <ClInclude Include="Messages\XCRetSetting.h" />
+    <ClInclude Include="Messages\XCRetSkillSetting.h" />
+    <ClInclude Include="Messages\XCRetStockAcc.h" />
+    <ClInclude Include="Messages\XCRetSubTrainSetting.h" />
+    <ClInclude Include="Messages\XCRetTeamDistribMode.h" />
+    <ClInclude Include="Messages\XCRetTeamMemEquip.h" />
+    <ClInclude Include="Messages\XCRetTeamRecruitInfo.h" />
+    <ClInclude Include="Messages\XCRetTransGoldToChar.h" />
+    <ClInclude Include="Messages\XCReturnHorseFindMateInfo.h" />
+    <ClInclude Include="Messages\XCReturnOnlineUser.h" />
+    <ClInclude Include="Messages\XCReturnTeamFollow.h" />
+    <ClInclude Include="Messages\XCRoomBattle.h" />
+    <ClInclude Include="Messages\XCRunningKill.h" />
+    <ClInclude Include="Messages\XCSaveEquipSuitResult.h" />
+    <ClInclude Include="Messages\XCScriptCommand.h" />
+    <ClInclude Include="Messages\XCSeachTeamInfoResult.h" />
+    <ClInclude Include="Messages\XCSendXinShouMaxLevel.h" />
+    <ClInclude Include="Messages\XCSetChannelModeResult.h" />
+    <ClInclude Include="Messages\XCSetShowSuitModeResult.h" />
+    <ClInclude Include="Messages\XCSetTeamEnounceResult.h" />
+    <ClInclude Include="Messages\XCShopBuy.h" />
+    <ClInclude Include="Messages\XCShopItemElementList.h" />
+    <ClInclude Include="Messages\XCShopMerchandiseList.h" />
+    <ClInclude Include="Messages\XCShopRepair.h" />
+    <ClInclude Include="Messages\XCShopSell.h" />
+    <ClInclude Include="Messages\XCShopSoldList.h" />
+    <ClInclude Include="Messages\XCShopSpecialRepairResult.h" />
+    <ClInclude Include="Messages\XCShopUpdateMerchandiseList.h" />
+    <ClInclude Include="Messages\XCSkill.h" />
+    <ClInclude Include="Messages\XCSkillPrepare.h" />
+    <ClInclude Include="Messages\XCSkillSuccessfulUse.h" />
+    <ClInclude Include="Messages\XCSkillUpgrade.h" />
+    <ClInclude Include="Messages\XCSLGAirLines.h" />
+    <ClInclude Include="Messages\XCSLGBuild.h" />
+    <ClInclude Include="Messages\XCSoldierBattle.h" />
+    <ClInclude Include="Messages\XCSoldierBattleEndInfo.h" />
+    <ClInclude Include="Messages\XCSoldierReadyList.h" />
+    <ClInclude Include="Messages\XCSpecialObj_ActNow.h" />
+    <ClInclude Include="Messages\XCSpecialObj_FadeOut.h" />
+    <ClInclude Include="Messages\XCSplitItemResult.h" />
+    <ClInclude Include="Messages\XCStallPurchaseAddItemInfo.h" />
+    <ClInclude Include="Messages\XCStallPurchaseBuyItem.h" />
+    <ClInclude Include="Messages\XCStallPurchasePriceAmount.h" />
+    <ClInclude Include="Messages\XCStallPurchaseRemoveItemInfo.h" />
+    <ClInclude Include="Messages\XCSubTrainModeResult.h" />
+    <ClInclude Include="Messages\XCSubTrainResult.h" />
+    <ClInclude Include="Messages\XCSystemError.h" />
+    <ClInclude Include="Messages\XCTargetListAndHitFlags.h" />
+    <ClInclude Include="Messages\XCTeamError.h" />
+    <ClInclude Include="Messages\XCTeamFollowErr.h" />
+    <ClInclude Include="Messages\XCTeamFollowList.h" />
+    <ClInclude Include="Messages\XCTeamLeaderRequestInvite.h" />
+    <ClInclude Include="Messages\XCTeamList.h" />
+    <ClInclude Include="Messages\XCTeamMemberInfo.h" />
+    <ClInclude Include="Messages\XCTeamRequestApply.h" />
+    <ClInclude Include="Messages\XCTeamRequestInvite.h" />
+    <ClInclude Include="Messages\XCTeamResult.h" />
+    <ClInclude Include="Messages\XCTimerCommand.h" />
+    <ClInclude Include="Messages\XCTopList.h" />
+    <ClInclude Include="Messages\XCTradeApplyI.h" />
+    <ClInclude Include="Messages\XCTradeCancel.h" />
+    <ClInclude Include="Messages\XCTradeError.h" />
+    <ClInclude Include="Messages\XCTradeEstablishI.h" />
+    <ClInclude Include="Messages\XCTradeSuccessIII.h" />
+    <ClInclude Include="Messages\XCTradeSynchConfirmII.h" />
+    <ClInclude Include="Messages\XCTradeSynchII.h" />
+    <ClInclude Include="Messages\XCTradeSynchLock.h" />
+    <ClInclude Include="Messages\XCTrainingApplyII.h" />
+    <ClInclude Include="Messages\XCTransPosInfo.h" />
+    <ClInclude Include="Messages\XCUICommand.h" />
+    <ClInclude Include="Messages\XCUIStateCtrl.h" />
+    <ClInclude Include="Messages\XCUnEquipResult.h" />
+    <ClInclude Include="Messages\XCUnExtraBagResult.h" />
+    <ClInclude Include="Messages\XCUpdateTitle.h" />
+    <ClInclude Include="Messages\XCUseBallEffect.h" />
+    <ClInclude Include="Messages\XCUseEquipResult.h" />
+    <ClInclude Include="Messages\XCUseExtraBagResult.h" />
+    <ClInclude Include="Messages\XCUseItemResult.h" />
+    <ClInclude Include="Messages\XCWarehouseAcquireList.h" />
+    <ClInclude Include="Messages\XCWarehouseAddItem.h" />
+    <ClInclude Include="Messages\XCWarehouseBegin.h" />
+    <ClInclude Include="Messages\XCWarehouseItemInfo.h" />
+    <ClInclude Include="Messages\XCWarehouseMoney.h" />
+    <ClInclude Include="Messages\XCWarehouseRemoveItem.h" />
+    <ClInclude Include="Messages\XCWarehouseSize.h" />
+    <ClInclude Include="Messages\XCWarehouseSwapItem.h" />
+    <ClInclude Include="Messages\XCWorldShopInfo.h" />
+    <ClInclude Include="Messages\XCWorldShopOpenSell.h" />
+    <ClInclude Include="Messages\XCWorldTime.h" />
+    <ClInclude Include="Messages\LCCaptcha.h" />
+    <ClInclude Include="Messages\LCRetAnswer.h" />
+    <ClInclude Include="Messages\LCRetChangeName.h" />
+    <ClInclude Include="Messages\LCRetPasspod.h" />
+    <ClInclude Include="Messages\LCRetRequireYYToken.h" />
+    <ClInclude Include="Messages\LCReturnCharList.h" />
+    <ClInclude Include="Messages\LCReturnCharLogin.h" />
+    <ClInclude Include="Messages\LCReturnConnect.h" />
+    <ClInclude Include="Messages\LCReturnCreateChar.h" />
+    <ClInclude Include="Messages\LCReturnDeleteChar.h" />
+    <ClInclude Include="Messages\LCReturnLogin.h" />
+    <ClInclude Include="Messages\LCReturnStatus.h" />
+    <ClInclude Include="Messages\ChannelMeridianMessage.h" />
+    <ClInclude Include="Messages\FarEastNpcMessage.h" />
+    <ClInclude Include="Messages\MaskMessage.h" />
+    <ClInclude Include="Messages\MessageStruct.h" />
+    <ClInclude Include="Messages\SanBaoMessage.h" />
+    <ClInclude Include="TAB\TAB.h" />
+    <ClInclude Include="Camp.h" />
+    <ClInclude Include="Debug.h" />
+    <ClInclude Include="Define.h" />
+    <ClInclude Include="DefineAttr.h" />
+    <ClInclude Include="DefineGuild.h" />
+    <ClInclude Include="DefineItem.h" />
+    <ClInclude Include="DefineMap.h" />
+    <ClInclude Include="DefinePlayerShop.h" />
+    <ClInclude Include="EffectMgr.h" />
+    <ClInclude Include="Enum.h" />
+    <ClInclude Include="MessageDefine.h" />
+    <ClInclude Include="MessageFactory.h" />
+    <ClInclude Include="MessageFactoryManager.h" />
+    <ClInclude Include="ScriptStruct.h" />
+    <ClInclude Include="Socket.h" />
+    <ClInclude Include="SpellDataMgr.h" />
+    <ClInclude Include="StreamSystem.h" />
+    <ClInclude Include="Struct.h" />
+    <ClInclude Include="StructChannelMeridian.h" />
+    <ClInclude Include="StructDB.h" />
+    <ClInclude Include="StructFarEastNpc.h" />
+    <ClInclude Include="StructGameBattle.h" />
+    <ClInclude Include="StructGuild.h" />
+    <ClInclude Include="StructHorse.h" />
+    <ClInclude Include="StructItem.h" />
+    <ClInclude Include="StructOneVsOne.h" />
+    <ClInclude Include="StructRoomBattle.h" />
+    <ClInclude Include="StructSLGAirLine.h" />
+    <ClInclude Include="StructSpell.h" />
+    <ClInclude Include="StructTeam.h" />
+    <ClInclude Include="StructTeamTank.h" />
+    <ClInclude Include="StructTopList.h" />
+    <ClInclude Include="TabTemplateLoader.h" />
+    <ClInclude Include="Util.h" />
+    <ClInclude Include="Version.h" />
+    <ClInclude Include="Utilities\SplitStringBase.h" />
+    <ClInclude Include="Utilities\SplitStringLevelOne.h" />
+    <ClInclude Include="Utilities\SplitStringLevelTwo.h" />
+    <ClInclude Include="EncryptAriths\BitOper.h" />
+    <ClInclude Include="EncryptAriths\BlowFish.h" />
+    <ClInclude Include="EncryptAriths\CaptchaTable.h" />
+    <ClInclude Include="EncryptAriths\CRC.h" />
+    <ClInclude Include="EncryptAriths\CryptDef.h" />
+    <ClInclude Include="EncryptAriths\DES.h" />
+    <ClInclude Include="EncryptAriths\Devalue.h" />
+    <ClInclude Include="EncryptAriths\EncryptFunction.h" />
+    <ClInclude Include="EncryptAriths\Gost.h" />
+    <ClInclude Include="EncryptAriths\Idea.h" />
+    <ClInclude Include="EncryptAriths\Increment.h" />
+    <ClInclude Include="EncryptAriths\Mars.h" />
+    <ClInclude Include="EncryptAriths\rc2.h" />
+    <ClInclude Include="EncryptAriths\rc5.h" />
+    <ClInclude Include="EncryptAriths\rc6.h" />
+    <ClInclude Include="EncryptAriths\rsa.h" />
+    <ClInclude Include="EncryptAriths\RsaDef.h" />
+    <ClInclude Include="EncryptAriths\safer.h" />
+    <ClInclude Include="EncryptAriths\tea.h" />
+    <ClInclude Include="EncryptAriths\vlong.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

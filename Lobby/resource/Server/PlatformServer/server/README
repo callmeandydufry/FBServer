@@ -1,0 +1,9 @@
+目标：能够和客户端通信，正常游戏
+不做任何异常检测
+
+* TODO CXCreateChar, CHARDBNODE, CHARDBNODE.SAVE
+* TODO 暂时不做存档
+* DONE CXHandShakeWeb
+* DONE CXRequestCha<2013-07-12 周五>r
+  数据库获取数据
+  读取配置文件

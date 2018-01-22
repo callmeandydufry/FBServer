@@ -1,0 +1,4529 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source\Data">
+      <UniqueIdentifier>{551b1223-a7ae-4209-bcfd-a6cb00bf19bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Include\Data">
+      <UniqueIdentifier>{8e520154-3048-4fa5-9e04-314b871eae81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Message">
+      <UniqueIdentifier>{0b681580-dacb-4ea4-aaf9-3e8a5fd1c50a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Message\MsgC2L">
+      <UniqueIdentifier>{02849488-1c8c-4cf9-a287-b9e7558bf412}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Message\MsgC2X">
+      <UniqueIdentifier>{4708b5d6-5cc7-4d93-b004-9eefc05374e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Message\MsgX2C">
+      <UniqueIdentifier>{b1683bea-6e61-475e-8224-c24896bdfc50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Message\MsgL2C">
+      <UniqueIdentifier>{2dc29176-60c7-49a3-9a41-b3e5d643492c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Message\MsgGroup">
+      <UniqueIdentifier>{78df246a-a312-4270-b148-c01fa6545254}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Table">
+      <UniqueIdentifier>{a8c841ab-abd0-46b7-a0a8-37e8d72a99be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Share">
+      <UniqueIdentifier>{1ce5611f-b778-46a0-83fd-89fe78dab47a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Share\Utilities">
+      <UniqueIdentifier>{23f7ce61-7fce-4841-83b6-d6d5ec2ddf79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Share\EncryptAriths">
+      <UniqueIdentifier>{2ab84f43-6bb9-413c-938a-5569676033c0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DefineResult.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="KwGamePublicLib.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\LDRequestPlayerList.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="StructCountry.cpp">
+      <Filter>Source\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="StructFinger.cpp">
+      <Filter>Source\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="StructMinorPasswd.cpp">
+      <Filter>Source\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="StructScript.cpp">
+      <Filter>Source\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CLCancelQueue.cpp">
+      <Filter>Message\MsgC2L</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CLCaptcha.cpp">
+      <Filter>Message\MsgC2L</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CLCheckAnswer.cpp">
+      <Filter>Message\MsgC2L</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CLCheckPasspod.cpp">
+      <Filter>Message\MsgC2L</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CLCheckPWCard.cpp">
+      <Filter>Message\MsgC2L</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CLHandShake.cpp">
+      <Filter>Message\MsgC2L</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CLRegisterAndCreate.cpp">
+      <Filter>Message\MsgC2L</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CLRequestChangeName.cpp">
+      <Filter>Message\MsgC2L</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CLRequireCharList.cpp">
+      <Filter>Message\MsgC2L</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CLRequireCharLogin.cpp">
+      <Filter>Message\MsgC2L</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CLRequireCreateChar.cpp">
+      <Filter>Message\MsgC2L</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CLRequireDeleteChar.cpp">
+      <Filter>Message\MsgC2L</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CLRequireLogin.cpp">
+      <Filter>Message\MsgC2L</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CLRequireYYLogin.cpp">
+      <Filter>Message\MsgC2L</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CLRequireYYToken.cpp">
+      <Filter>Message\MsgC2L</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXAcceptGuildConvoy.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXApplyPrivateInfo.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXAskCardActive.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXAskEnterFuben.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXAskEnterFubenWithOutNpc.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXAskEnterSoldierBattle.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXAskLostItemInfo.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXAskPartyShop.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXAttack.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXBaitanAddItem.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXBaitanApply.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXBaitanBuy.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXBaitanClose.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXBaitanDefaultPage.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXBaitanEstablish.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXBaitanItemPrice.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXBaitanlDefaultPage.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXBaitanOpen.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXBaitanRemoveItem.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXBaitanShopName.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXBBSApply.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXBBSSychMessages.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXBusApplyChangeState.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXBusApplyInto.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXBusLeave.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCallUpTeamMember.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCamera.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCampaign.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCancelHorseFindMateInfo.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCardBagOperation.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXChangeHorseState.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXChangeMoney.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXChangeProfession.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXChannelCreate.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXChannelDismiss.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXChannelInvite.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXChannelKick.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCharAllTitles.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCharChangeFace.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCharChangeMoveMode.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCharIdle.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCharJump.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCharMoodState.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCharMove.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCharPositionWarp.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCharRename.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCharSit.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCharStopLogic.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCharUpdateCurTitle.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCharUseSkill.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXChat.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXChatReport.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCheckSuperPW.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCleanSubTrainInfo.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXClientErrorReport.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCommand.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCommonActivityMsg.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXComplementarityNotify.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXConformFubenProcess.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCopyMapDati.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCountry.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCountryAppoint.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCountryBattleLite.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCountryCollect.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCountryDelate.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCountryDonative.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCountryFetch.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCountryInfoRequest.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCountryRemove.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCountryRequestKindom.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXCountryVoteOn.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXDiscardEquip.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXDiscardEquipChariot.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXDiscardItem.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXDispelBuffReq.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXDoEvnet.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXDuelApply.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXDuelConfirm.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXEmpire.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXEnterMap.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXEnvRequest.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXEquipFusion.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXEquipSuitExchange.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXEquipTmpPurpleAttr.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXEquipWanfa.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXEventRequest.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXExecuteScript.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXFarEastWarQuit.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXFetchLostItem.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXFinger.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXFuBenPingFenOpt.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXFutuAutoInfo.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXGameBattle.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXGarden.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXGardenQuest.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXGemCompound.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXGetAward.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXGetXinShouReward.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXGiftPack.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXGoldExchangeSillerCard.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXGroupAppoint.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXGroupChangePickupMode.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXGroupDismiss.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXGroupInvite.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXGroupInviteRet.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXGroupKick.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXGroupLeave.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXGroupRequestApply.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXGroupRequestApplyRet.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXGuardFuBen.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXGuild.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXGuildApply.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXGuildBattle.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXGuildContend.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXGuildConvoyKick.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXGuildJoin.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXHandShake.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXHeartBeat.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXHorseGaming.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXHorseRaceHistory.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXInherenceBalanceUpgrade.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXInherenceZhuanFangLevelUp.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXInherenceZhuanGongCoefficient.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXIssueHorseFindMateInfo.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXItemTrans.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXItemWanfa.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXKingBattle.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXLawlessOperate.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXLeagueMatch.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXLeaveMap.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXLifeShopReq.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXLockEquipOrHorse.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXLockTarget.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXLoginGift.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXManipulateHorse.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXMapInfo.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXMentalGame.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXMinorPasswd.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXMissionTransmit.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXModifyPKMode.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXModifySetting.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXMPVPBattle.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXMutliSubmitItem.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXOfflineRequest.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXOffSale.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXOneVsOne.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXOnlineShowTips.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXOpenBox.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXOpenBoxManipulate.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXOpenItemBox.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXOperaRideHorse.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXOperateSoldierReq.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXOtherEquip.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXPackage_SwapItem.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXPackUpPacket.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXPeerVip.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXPetHatch.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXPickBoxItem.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXPickDropItem.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXPing.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXPlayerCallOfResult.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXPlayerClickNpc.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXPlayerDieResult.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXPlayerRequestBaseAttrib.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXPlayerRequestEquipment.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXPlayerShopFavorite.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXPost.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXPVP2v2Battle.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXPVP6v6Battle.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXQueryAccountMoney.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXQueryHorseFindMateInfo.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXQuestAbandon.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXQuestAccept.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXQuestCollectHorse.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXQuestCommand.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXQuestContinue.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXQuestMixture.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXQuestRefuse.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXQuestSort.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXQuestSubmit.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXQuestUpdate.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXQuizAnswer.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRegisterTeamRecruit.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRemoveGem.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXReqLevelUp.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXReqManualAttr.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXReqPlayerAttrUp.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXReqPunch.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXReqResetAttr.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestBeginSubTrain.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestBusInfo.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestCardRefresh.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestCarryOnShopInfo.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestChangeMap.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestChariotInfo.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestDaytipsList.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestDetailEquipList.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestDetailEquipListChariot.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestDetailEquipListHorse.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestDetailInherenceBalanceList.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestDetailLifeSkillInfo.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestDetailProperty.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestDetailSpellList.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestEndSubTrain.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestGetSubTrainExp.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestGuildConvoyInfo.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestGuildConvoyList.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestHorseConfig.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestInherenceZhuanJingInfo.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestItemInfo.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestLeanLifeSkill.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestLeaveGame.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestLockObj.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestMyBagList.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestOtherOnlineDetailAttrib.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestPost.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestPrivateInfo.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestQuestList.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestSeachTeamInfo.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestSetMoneyMode.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestSetTeamEnounce.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestSetting.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestShangDianInfo.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestStockInfo.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestSubTrainMode.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestSubTrainSetting.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestTeamDistribMode.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestTeamFollow.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestTeamInfo.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestTeamMemberInfo.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestTeamMemEquip.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestTeamRecruitInfo.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRequestTransGoldToPlayer.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRet360Info.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRetCountryDestroyIssue.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRetEncryptOp.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRetGuildConvoy.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRetMac.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXReturnTeamFollow.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRoomBattle.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXRunningKill.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXSaveEquipSuit.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXSearchHorseFindMateInfo.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXSearchOnlineUser.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXSelectMapCity.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXSetChannelMode.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXSetHorseAttrib.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXSetMoodToHead.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXSetShowSuitMode.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXSetTeamDistribMode.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXShopActive.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXShopBuy.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXShopClose.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXShopRepair.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXShopSell.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXShopSpecialRepair.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXSkill.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXSkillUpgrade.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXSLGAirLines.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXSLGBuild.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXSoldierBattle.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXSoldierCard.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXSplitItem.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXStallPurchaseAddItemInfo.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXStallPurchaseBuyItem.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXStallPurchasePriceAmount.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXStallPurchaseRemoveItemInfo.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXStopTeamFollow.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXTankLeave.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXTeamApply.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXTeamAppoint.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXTeamDismiss.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXTeamInvite.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXTeamKick.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXTeamLeaderRetInvite.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXTeamLeave.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXTeamRetApply.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXTeamRetInvite.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXTopList.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXTradeApplyI.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXTradeCancel.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXTradeOkIII.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXTradeReplyI.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXTradeSynchItemII.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXTradeSynchLock.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXTradeSynchMoneyII.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXTrainingApplyI.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXTrainingConfirmIII.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXTransPosInfo.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXUnEquip.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXUnEquipChariot.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXUnEquipHorse.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXUnExtraBag.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXUseEquip.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXUseEquipChariot.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXUseEquipHorse.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXUseExtraBag.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXUseItem.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXUseLifeSkill.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXUseSectorSkill.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXWarehouseAcquireList.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXWarehouseAddItem.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXWarehouseClose.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXWarehouseMoney.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXWarehouseOperateHorse.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXWarehouseRemoveItem.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXWarehouseSwapItem.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\CXWorldShangDianRequestSell.cpp">
+      <Filter>Message\MsgC2X</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCAbandonLifeSkill.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCAddHorsePromotion.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCAddLockObj.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCAddSkillToSkillList.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCAlertMibaoka.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCArrive.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCAttack.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCBaitanAddItem.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCBaitanApply.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCBaitanBuy.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCBaitanClose.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCBaitanError.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCBaitanEstablish.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCBaitanItemPrice.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCBaitanOpen.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCBaitanRemoveItem.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCBattleMap.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCBattleNotice.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCBBSMessages.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCBoxItemList.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCBusError.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCBusResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCBusRetChangeState.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCBusRetInfo.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCallUpTeamMember.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCamera.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCardBagOperation.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCChangeMapRestrictiveMode.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCChangeProfession.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCChannelError.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCChannelResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCharAction.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCharAllTitles.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCharBUFF.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCharBusBaseAttrib.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCharDirectEffect.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCharDoAction.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCharEffectListUpdate.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCharEquipment.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCharIdle.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCChariotBaseAttrib.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCChariotResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCharJump.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCharModifyAction.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCharMonsterBaseAttrib.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCharMove.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCharMoveResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCharPlayerBaseAttrib.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCharSkill_CreateBullet.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCharSkill_Gather.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCharSkill_Gather_Modify.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCharSkill_Lead.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCharSkill_Lead_Modify.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCharSkill_Missed.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCharSkill_Send.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCharStopAction.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCChat.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCChatLaBa.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCollectMac.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCommonActivityNotify.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCConnect.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCoolDownUpdate.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCopyMapDati.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCountry.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCountryBattleLite.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCountryCollect.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCountryDelateBegin.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCountryDestroyIssue.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCountryFetch.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCountryInfoConfirm.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCountryReturn.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCountryVoteShow.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCCreatePetPromotion.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCDaytipsList.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCDelChar.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCDelObject.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCDetailAttrib.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCDetailAttrib_Chariot.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCDetailAttrib_Horse.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCDetailAttrib_Pet.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCDetailBUFF.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCDetailEffectListUpdate.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCDetailEquipAtt.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCDetailEquipList.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCDetailEquipListChariot.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCDetailEquipListHorse.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCDetailHealsAndDamages.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCDetailInherenceBalanceList.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCDetailSkillList.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCDie.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCDiscardEquipResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCDiscardItemResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCDuelRet.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCEmpire.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCEncryptKey.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCEndSubTrainResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCEnterMap.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCEquipFusionResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCEquipSuitExchangeResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCEquipTmpPurpleAttr.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCEquipWanfaResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCErrorAttack.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCErrorSkill.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCExpandWarehouseSize.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCFarEastWarQuit.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCFinger.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCForceReconnect.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCFuBenPingFenOpt.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCFutuUI.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCGameBattle.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCGameWanfaState.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCGarden.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCGetSubTrainExpResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCGiftPack.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCGoldExchangeSillerCard.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCGroupDismissRet.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCGroupError.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCGroupFubenChange.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCGroupInviteAsk.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCGroupInviteRet.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCGroupKickRet.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCGroupLeaveRet.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCGroupRequestApplyAsk.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCGroupSynchData.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCGuanQiaSpellUI.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCGuardFuBen.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCGuild.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCGuildApply.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCGuildBattle.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCGuildContend.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCGuildConvoyList.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCGuildConvoyResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCGuildError.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCGuildReturn.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCHeartBeat.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCHorseConfig.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCHorseLevelUp.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCHorseRaceGaming.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCHorseRaceHistory.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCInherenceBalanceUpgrade.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCInherenceZhuanFangInfo.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCInherenceZhuanGongInfo.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCInputSuperPW.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCItemInfo.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCItemTrans.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCItemWanfaResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCJoinTempChannel.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCKingBattle.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCLeagueMatch.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCLeaveGame.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCLeaveMap.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCLevelUp.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCLevelUpResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCLifeSkillAction.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCLifeSkillExp.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCLifeSkillLevel.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCLifeSkillResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCLifeSkillSucc.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCLifeSkillTeacherInfo.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCLoginGift.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCManipulateHorseRet.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCManualAttrResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCMapMapPointData.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCMentalGame.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCMilitaryRankLevelup.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCMinorPasswd.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCModifyGuanQiaSpell.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCModifySpeed.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCMonsterRealMove.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCMonsterSpeak.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCMPVPBattle.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCMyBagList.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNeedPWDProtect.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNew_Chariot.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNewBeastie.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNewBeastie_Move.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNewBus.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNewBus_Death.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNewBus_Move.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNewChariot_Death.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNewChariot_Move.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNewGainPromotion.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNewHorse.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNewHorse_Move.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNewItem.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNewItemBox.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNewMonster.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNewMonster_Death.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNewMonster_Move.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNewObjItem.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNewPlatform.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNewPlayer.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNewPlayer_Death.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNewPlayer_Move.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNewPortal.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNewSkillObj.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNewSpecial.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNotifyChangeMap.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNotifyClientToNpcPoint.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNotifyEquip.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNotifyGoodBad.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNotifyInfo.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNotifyPost.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNotifyTeamGroupInfo.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNotifyTeamInfo.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCNPCTransferType.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCObjTeleport.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCOneVsOne.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCOnlineShowTips.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCOpenAwardBox.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCOpenBox.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCOpenBoxManipulate.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCOpenFindHorseMating.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCOpenOffSaleSystem.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCOperateResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCOperateSoldierRet.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCOtherAttack.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCOtherSkill.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCPackage_SwapItem.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCPackUpPacket.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCPeerVip.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCPetHatch.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCPickDropItemResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCPickResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCPing.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCPlayerCallOf.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCPlayerDie.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCPlayerFirstEnterNotify.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCPlayerRealMove.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCPlayerRelive.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCPost.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCPrescription.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCPrivateInfo.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCPVP2v2Battle.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCPVP6v6Battle.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCQuestAdd.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCQuestCollectHorseResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCQuestDoneNotify.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCQuestList.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCQuestListRefresh.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCQuestMixtureResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCQuestModify.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCQuestRemove.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCQuestSort.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCQuizQuest.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCQuizResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCRectPartyShop.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCRemoveGemResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCRemoveHorse.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCReqResetAttrResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCRequest360Info.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCRequestAcceptGuildConvoy.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCRequestCardRefresh.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCRequestEncryptOp.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCRequestGuildConvoy.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCRequestTeamFollow.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCRetAccountMoney.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCRetChangeMap.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCRetCharChangeFace.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCRetFetchLostItem.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCRetLostItemInfo.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCRetPlayerAttrUp.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCRetSetting.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCRetSkillSetting.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCRetStockAcc.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCRetSubTrainSetting.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCRetTeamDistribMode.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCRetTeamMemEquip.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCRetTeamRecruitInfo.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCRetTransGoldToChar.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCReturnHorseFindMateInfo.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCReturnOnlineUser.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCReturnTeamFollow.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCRoomBattle.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCRunningKill.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCSaveEquipSuitResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCScriptCommand.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCSeachTeamInfoResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCSendXinShouMaxLevel.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCSetChannelModeResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCSetShowSuitModeResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCSetTeamEnounceResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCShopBuy.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCShopItemElementList.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCShopMerchandiseList.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCShopRepair.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCShopSell.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCShopSoldList.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCShopSpecialRepairResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCShopUpdateMerchandiseList.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCSkill.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCSkillPrepare.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCSkillSuccessfulUse.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCSkillUpgrade.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCSLGAirLines.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCSLGBuild.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCSoldierBattle.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCSoldierBattleEndInfo.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCSoldierReadyList.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCSpecialObj_ActNow.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCSpecialObj_FadeOut.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCSplitItemResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCStallPurchaseAddItemInfo.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCStallPurchaseBuyItem.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCStallPurchasePriceAmount.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCStallPurchaseRemoveItemInfo.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCSubTrainModeResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCSubTrainResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCSystemError.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCTeamError.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCTeamFollowErr.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCTeamFollowList.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCTeamLeaderRequestInvite.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCTeamList.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCTeamMemberInfo.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCTeamRequestApply.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCTeamRequestInvite.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCTeamResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCTimerCommand.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCTopList.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCTradeApplyI.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCTradeCancel.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCTradeError.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCTradeEstablishI.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCTraderror.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCTradeSuccessIII.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCTradeSynchConfirmII.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCTradeSynchII.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCTradeSynchLock.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCTrainingApplyII.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCTransPosInfo.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCUICommand.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCUIStateCtrl.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCUnEquipResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCUnExtraBagResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCUpdateTitle.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCUseBallEffect.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCUseEquipResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCUseExtraBagResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCUseItemResult.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCWarehouseAcquireList.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCWarehouseAddItem.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCWarehouseBegin.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCWarehouseItemInfo.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCWarehousekMoney.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCWarehouseMoney.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCWarehouseRemoveItem.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCWarehouseSize.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCWarehouseSwapItem.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCWorldShopInfo.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCWorldShopOpenSell.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\XCWorldTime.cpp">
+      <Filter>Message\MsgX2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\LCCaptcha.cpp">
+      <Filter>Message\MsgL2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\LCRetAnswer.cpp">
+      <Filter>Message\MsgL2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\LCRetChangeName.cpp">
+      <Filter>Message\MsgL2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\LCRetPasspod.cpp">
+      <Filter>Message\MsgL2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\LCRetRequireYYToken.cpp">
+      <Filter>Message\MsgL2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\LCReturnCharList.cpp">
+      <Filter>Message\MsgL2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\LCReturnCharLogin.cpp">
+      <Filter>Message\MsgL2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\LCReturnConnect.cpp">
+      <Filter>Message\MsgL2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\LCReturnCreateChar.cpp">
+      <Filter>Message\MsgL2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\LCReturnDeleteChar.cpp">
+      <Filter>Message\MsgL2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\LCReturnLogin.cpp">
+      <Filter>Message\MsgL2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\LCReturnStatus.cpp">
+      <Filter>Message\MsgL2C</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\ChannelMeridianMessage.cpp">
+      <Filter>Message\MsgGroup</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\FarEastNpcMessage.cpp">
+      <Filter>Message\MsgGroup</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\MaskMessage.cpp">
+      <Filter>Message\MsgGroup</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\MessageStruct.cpp">
+      <Filter>Message\MsgGroup</Filter>
+    </ClCompile>
+    <ClCompile Include="Messages\SanBaoMessage.cpp">
+      <Filter>Message\MsgGroup</Filter>
+    </ClCompile>
+    <ClCompile Include="TAB\TAB.cpp">
+      <Filter>Table</Filter>
+    </ClCompile>
+    <ClCompile Include="Camp.cpp">
+      <Filter>Share</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug.cpp">
+      <Filter>Share</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectMgr.cpp">
+      <Filter>Share</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageFactoryManager.cpp">
+      <Filter>Share</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptStruct.cpp">
+      <Filter>Share</Filter>
+    </ClCompile>
+    <ClCompile Include="SpellDataMgr.cpp">
+      <Filter>Share</Filter>
+    </ClCompile>
+    <ClCompile Include="Struct.cpp">
+      <Filter>Share</Filter>
+    </ClCompile>
+    <ClCompile Include="StructChannelMeridian.cpp">
+      <Filter>Share</Filter>
+    </ClCompile>
+    <ClCompile Include="StructDB.cpp">
+      <Filter>Share</Filter>
+    </ClCompile>
+    <ClCompile Include="StructFarEastNpc.cpp">
+      <Filter>Share</Filter>
+    </ClCompile>
+    <ClCompile Include="StructGameBattle.cpp">
+      <Filter>Share</Filter>
+    </ClCompile>
+    <ClCompile Include="StructHorse.cpp">
+      <Filter>Share</Filter>
+    </ClCompile>
+    <ClCompile Include="StructOneVsOne.cpp">
+      <Filter>Share</Filter>
+    </ClCompile>
+    <ClCompile Include="StructRoomBattle.cpp">
+      <Filter>Share</Filter>
+    </ClCompile>
+    <ClCompile Include="StructSLGAirLine.cpp">
+      <Filter>Share</Filter>
+    </ClCompile>
+    <ClCompile Include="StructTeam.cpp">
+      <Filter>Share</Filter>
+    </ClCompile>
+    <ClCompile Include="StructTeamTank.cpp">
+      <Filter>Share</Filter>
+    </ClCompile>
+    <ClCompile Include="TabTemplateLoader.cpp">
+      <Filter>Share</Filter>
+    </ClCompile>
+    <ClCompile Include="Util.cpp">
+      <Filter>Share</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities\SplitStringBase.cpp">
+      <Filter>Share\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities\SplitStringLevelOne.cpp">
+      <Filter>Share\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities\SplitStringLevelTwo.cpp">
+      <Filter>Share\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="EncryptAriths\BitOper.cpp">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClCompile>
+    <ClCompile Include="EncryptAriths\BlowFish.cpp">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClCompile>
+    <ClCompile Include="EncryptAriths\DES.cpp">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClCompile>
+    <ClCompile Include="EncryptAriths\Devalue.cpp">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClCompile>
+    <ClCompile Include="EncryptAriths\EncryptFunction.cpp">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClCompile>
+    <ClCompile Include="EncryptAriths\Gost.cpp">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClCompile>
+    <ClCompile Include="EncryptAriths\Idea.cpp">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClCompile>
+    <ClCompile Include="EncryptAriths\Increment.cpp">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClCompile>
+    <ClCompile Include="EncryptAriths\Mars.cpp">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClCompile>
+    <ClCompile Include="EncryptAriths\rc2.cpp">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClCompile>
+    <ClCompile Include="EncryptAriths\rc5.cpp">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClCompile>
+    <ClCompile Include="EncryptAriths\rc6.cpp">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClCompile>
+    <ClCompile Include="EncryptAriths\rsa.cpp">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClCompile>
+    <ClCompile Include="EncryptAriths\safer.cpp">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClCompile>
+    <ClCompile Include="EncryptAriths\tea.cpp">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClCompile>
+    <ClCompile Include="EncryptAriths\vlong.cpp">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DefineResult.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\LDRequestPlayerList.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Stdafx.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="StructCountry.h">
+      <Filter>Include\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="StructFinger.h">
+      <Filter>Include\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="StructMinorPasswd.h">
+      <Filter>Include\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="StructScript.h">
+      <Filter>Include\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CLCancelQueue.h">
+      <Filter>Message\MsgC2L</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CLCaptcha.h">
+      <Filter>Message\MsgC2L</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CLCheckAnswer.h">
+      <Filter>Message\MsgC2L</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CLCheckPasspod.h">
+      <Filter>Message\MsgC2L</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CLCheckPWCard.h">
+      <Filter>Message\MsgC2L</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CLHandShake.h">
+      <Filter>Message\MsgC2L</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CLRegisterAndCreate.h">
+      <Filter>Message\MsgC2L</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CLRequestChangeName.h">
+      <Filter>Message\MsgC2L</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CLRequireCharList.h">
+      <Filter>Message\MsgC2L</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CLRequireCharLogin.h">
+      <Filter>Message\MsgC2L</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CLRequireCreateChar.h">
+      <Filter>Message\MsgC2L</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CLRequireDeleteChar.h">
+      <Filter>Message\MsgC2L</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CLRequireLogin.h">
+      <Filter>Message\MsgC2L</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CLRequireYYLogin.h">
+      <Filter>Message\MsgC2L</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CLRequireYYToken.h">
+      <Filter>Message\MsgC2L</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXAcceptGuildConvoy.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXApplyPrivateInfo.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXAskCardActive.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXAskEnterFuben.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXAskEnterFubenWithOutNpc.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXAskEnterSoldierBattle.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXAskLostItemInfo.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXAskPartyShop.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXAttack.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXBaitanAddItem.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXBaitanApply.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXBaitanBuy.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXBaitanClose.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXBaitanDefaultPage.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXBaitanEstablish.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXBaitanItemPrice.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXBaitanOpen.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXBaitanRemoveItem.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXBaitanShopName.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXBBSApply.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXBBSSychMessages.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXBusApplyChangeState.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXBusApplyInto.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXBusLeave.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCallUpTeamMember.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCamera.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCampaign.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCancelHorseFindMateInfo.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCardBagOperation.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXChangeHorseState.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXChangeMoney.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXChangePetState.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXChangeProfession.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXChannelCreate.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXChannelDismiss.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXChannelInvite.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXChannelKick.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCharAllTitles.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCharChangeFace.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCharChangeMoveMode.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCharIdle.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCharJump.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCharMoodState.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCharMove.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCharPositionWarp.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCharRename.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCharSit.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCharStopLogic.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCharUpdateCurTitle.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCharUseSkill.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXChat.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXChatReport.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCheckSuperPW.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCleanSubTrainInfo.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXClientErrorReport.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCommand.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCommonActivityMsg.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXComplementarityNotify.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXConformFubenProcess.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCopyMapDati.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCountry.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCountryAppoint.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCountryBattleLite.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCountryCollect.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCountryDelate.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCountryDonative.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCountryFetch.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCountryInfoRequest.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCountryRemove.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCountryRequestKindom.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXCountryVoteOn.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXDiscardEquip.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXDiscardEquipChariot.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXDiscardItem.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXDispelBuffReq.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXDoEvent.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXDuelApply.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXDuelConfirm.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXEmpire.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXEnterMap.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXEnvRequest.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXEquipFusion.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXEquipSuitExchange.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXEquipTmpPurpleAttr.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXEquipWanfa.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXEventRequest.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXExecuteScript.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXFarEastWarQuit.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXFetchLostItem.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXFinger.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXFuBenPingFenOpt.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXFutuAutoInfo.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXGameBattle.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXGarden.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXGardenQuest.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXGemCompound.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXGetAward.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXGetXinShouReward.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXGiftPack.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXGoldExchangeSillerCard.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXGroupAppoint.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXGroupChangePickupMode.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXGroupDismiss.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXGroupInvite.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXGroupInviteRet.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXGroupKick.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXGroupLeave.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXGroupRequestApply.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXGroupRequestApplyRet.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXGuardFuBen.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXGuild.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXGuildApply.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXGuildBattle.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXGuildContend.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXGuildConvoyKick.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXGuildJoin.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXHandShake.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXHeartBeat.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXHorseGaming.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXHorseRaceHistory.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXInherenceBalanceUpgrade.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXInherenceZhuanFangLevelUp.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXInherenceZhuanGongCoefficient.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXIssueHorseFindMateInfo.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXItemTrans.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXItemWanfa.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXKingBattle.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXLawlessOperate.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXLeagueMatch.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXLeaveMap.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXLifeShopReq.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXLockEquipOrHorse.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXLockTarget.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXLoginGift.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXManipulateHorse.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXMapInfo.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXMentalGame.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXMinorPasswd.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXMissionTransmit.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXModifyPKMode.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXModifySetting.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXMPVPBattle.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXMutliSubmitItem.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXOfflineRequest.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXOffSale.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXOneVsOne.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXOnlineShowTips.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXOpenBox.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXOpenBoxManipulate.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXOpenItemBox.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXOperaRideHorse.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXOperateSoldierReq.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXOtherEquip.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXPackage_SwapItem.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXPackUpPacket.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXPeerVip.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXPetHatch.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXPickBoxItem.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXPickDropItem.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXPing.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXPlayerCallOfResult.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXPlayerClickNpc.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXPlayerDieResult.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXPlayerRequestBaseAttrib.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXPlayerRequestEquipment.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXPlayerShopFavorite.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXPost.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXPVP2v2Battle.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXPVP6v6Battle.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXQueryAccountMoney.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXQueryHorseFindMateInfo.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXQuestAbandon.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXQuestAccept.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXQuestCollectHorse.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXQuestCommand.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXQuestContinue.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXQuestMixture.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXQuestRefuse.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXQuestSort.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXQuestSubmit.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXQuestUpdate.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXQuizAnswer.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRegisterTeamRecruit.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRemoveGem.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXReqLevelUp.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXReqManualAttr.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXReqPlayerAttrUp.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXReqPunch.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXReqResetAttr.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestBeginSubTrain.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestBusInfo.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestCardRefresh.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestCarryOnShopInfo.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestChangeMap.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestChariotInfo.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestDaytipsList.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestDetailEquipList.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestDetailEquipListChariot.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestDetailEquipListHorse.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestDetailInherenceBalanceList.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestDetailLifeSkillInfo.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestDetailProperty.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestDetailSpellList.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestEndSubTrain.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestGetSubTrainExp.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestGuildConvoyInfo.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestGuildConvoyList.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestHorseConfig.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestInherenceZhuanJingInfo.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestItemInfo.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestLeanLifeSkill.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestLeaveGame.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestLockObj.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestMyBagList.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestOtherOnlineDetailAttrib.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestPost.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestPrivateInfo.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestQuestList.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestSeachTeamInfo.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestSetMoneyMode.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestSetTeamEnounce.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestSetting.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestShangDianInfo.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestStockInfo.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestSubTrainMode.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestSubTrainSetting.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestTeamDistribMode.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestTeamFollow.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestTeamInfo.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestTeamMemberInfo.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestTeamMemEquip.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestTeamRecruitInfo.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRequestTransGoldToPlayer.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRet360Info.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRetCountryDestroyIssue.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRetEncryptOp.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRetGuildConvoy.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRetMac.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXReturnTeamFollow.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRoomBattle.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXRunningKill.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXSaveEquipSuit.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXSearchHorseFindMateInfo.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXSearchOnlineUser.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXSelectMapCity.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXSetChannelMode.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXSetHorseAttrib.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXSetMoodToHead.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXSetShowSuitMode.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXSetTeamDistribMode.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXShopActive.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXShopBuy.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXShopClose.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXShopRepair.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXShopSell.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXShopSpecialRepair.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXSkill.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXSkillUpgrade.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXSLGAirLines.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXSLGBuild.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXSoldierBattle.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXSoldierCard.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXSplitItem.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXStallPurchaseAddItemInfo.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXStallPurchaseBuyItem.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXStallPurchasePriceAmount.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXStallPurchaseRemoveItemInfo.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXStopTeamFollow.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXTankLeave.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXTeamApply.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXTeamAppoint.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXTeamDismiss.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXTeamInvite.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXTeamKick.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXTeamLeaderRetInvite.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXTeamLeave.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXTeamRetApply.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXTeamRetInvite.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXTopList.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXTradeApplyI.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXTradeCancel.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXTradeOkIII.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXTradeReplyI.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXTradeSynchItemII.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXTradeSynchLock.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXTradeSynchMoneyII.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXTrainingApplyI.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXTrainingConfirmIII.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXTransPosInfo.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXUnEquip.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXUnEquipChariot.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXUnEquipHorse.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXUnExtraBag.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXUseEquip.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXUseEquipChariot.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXUseEquipHorse.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXUseExtraBag.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXUseItem.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXUseLifeSkill.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXWarehouseAcquireList.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXWarehouseAddItem.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXWarehouseClose.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXWarehouseMoney.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXWarehouseOperateHorse.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXWarehouseRemoveItem.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXWarehouseSwapItem.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\CXWorldShangDianRequestSell.h">
+      <Filter>Message\MsgC2X</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCAbandonLifeSkill.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCAddHorsePromotion.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCAddLockObj.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCAddSkillToSkillList.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCAlertMibaoka.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCArrive.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCAttack.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCBaitanAddItem.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCBaitanApply.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCBaitanBuy.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCBaitanClose.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCBaitanError.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCBaitanEstablish.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCBaitanItemPrice.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCBaitanlClose.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCBaitanOpen.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCBaitanRemoveItem.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCBattleMap.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCBattleNotice.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCBBSMessages.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCBoxItemList.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCBusError.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCBusResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCBusRetChangeState.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCBusRetInfo.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCallUpTeamMember.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCamera.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCardBagOperation.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCChangeMapRestrictiveMode.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCChangeProfession.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCChannelError.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCChannelResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCharAction.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCharAllTitles.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCharBUFF.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCharBusBaseAttrib.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCharDirectEffect.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCharDoAction.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCharEffectListUpdate.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCharEquipment.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCharIdle.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCChariotBaseAttrib.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCChariotResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCharJump.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCharModifyAction.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCharMonsterBaseAttrib.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCharMove.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCharMoveResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCharPlayerBaseAttrib.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCharSkill_CreateBullet.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCharSkill_Gather.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCharSkill_Gather_Modify.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCharSkill_Lead.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCharSkill_Lead_Modify.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCharSkill_Missed.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCharSkill_Send.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCharStopAction.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCChat.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCChatLaBa.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCollectMac.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCommonActivityNotify.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCConnect.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCoolDownUpdate.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCopyMapDati.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCountry.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCountryBattleLite.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCountryCollect.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCountryDelateBegin.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCountryDestroyIssue.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCountryFetch.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCountryInfoConfirm.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCountryReturn.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCountryVoteShow.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCCreatePetPromotion.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCDaytipsList.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCDelChar.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCDelObject.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCDetailAttrib.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCDetailAttrib_Chariot.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCDetailAttrib_Horse.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCDetailAttrib_Pet.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCDetailBUFF.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCDetailEffectListUpdate.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCDetailEquipAtt.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCDetailEquipList.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCDetailEquipListChariot.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCDetailEquipListHorse.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCDetailHealsAndDamages.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCDetailInherenceBalanceList.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCDetailSkillList.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCDie.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCDiscardEquipResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCDiscardItemResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCDuelRet.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCEmpire.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCEncryptKey.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCEndSubTrainResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCEnterMap.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCEquipFusionResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCEquipSuitExchangeResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCEquipTmpPurpleAttr.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCEquipWanfaResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCErrorAttack.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCErrorSkill.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCExpandWarehouseSize.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCFarEastWarQuit.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCFinger.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCForceReconnect.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCFuBenPingFenOpt.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCFutuUI.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCGameBattle.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCGameWanfaState.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCGarden.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCGetSubTrainExpResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCGiftPack.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCGoldExchangeSillerCard.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCGroupDismissRet.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCGroupError.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCGroupFubenChange.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCGroupInviteAsk.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCGroupInviteRet.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCGroupKickRet.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCGroupLeaveRet.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCGroupRequestApplyAsk.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCGroupSynchData.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCGuanQiaSpellUI.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCGuardFuBen.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCGuild.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCGuildApply.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCGuildBattle.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCGuildContend.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCGuildConvoyList.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCGuildConvoyResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCGuildError.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCGuildReturn.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCHeartBeat.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCHorseConfig.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCHorseLevelUp.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCHorseRaceGaming.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCHorseRaceHistory.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCInherenceBalanceUpgrade.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCInherenceZhuanFangInfo.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCInherenceZhuanGongInfo.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCInputSuperPW.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCItemInfo.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCItemTrans.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCItemWanfaResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCJoinTempChannel.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCKingBattle.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCLeagueMatch.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCLeaveGame.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCLeaveMap.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCLevelUp.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCLevelUpResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCLifeSkillAction.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCLifeSkillExp.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCLifeSkillLevel.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCLifeSkillResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCLifeSkillSucc.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCLifeSkillTeacherInfo.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCLoginGift.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCManipulateHorseRet.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCManualAttrResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCMapMapPointData.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCMentalGame.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCMilitaryRankLevelup.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCMinorPasswd.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCModifyGuanQiaSpell.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCModifySpeed.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCMonsterRealMove.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCMonsterSpeak.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCMPVPBattle.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCMyBagList.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNeedPWDProtect.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNew_Chariot.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNewBeastie.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNewBeastie_Move.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNewBus.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNewBus_Death.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNewBus_Move.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNewChariot_Death.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNewChariot_Move.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNewGainPromotion.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNewHorse.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNewHorse_Move.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNewItem.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNewItemBox.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNewMonster.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNewMonster_Death.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNewMonster_Move.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNewObjItem.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNewPlatform.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNewPlayer.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNewPlayer_Death.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNewPlayer_Move.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNewPortal.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNewSkillObj.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNewSpecial.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNotifyChangeMap.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNotifyClientToNpcPoint.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNotifyEquip.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNotifyGoodBad.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNotifyInfo.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNotifyPost.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNotifyTeamGroupInfo.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNotifyTeamInfo.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCNPCTransferType.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCObjTeleport.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCOneVsOne.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCOnlineShowTips.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCOpenAwardBox.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCOpenBox.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCOpenBoxManipulate.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCOpenFindHorseMating.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCOpenOffSaleSystem.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCOperateResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCOperateSoldierRet.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCOtherAttack.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCOtherSkill.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCPackage_SwapItem.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCPackUpPacket.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCPeerVip.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCPetHatch.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCPickDropItemResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCPickResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCPing.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCPlayerCallOf.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCPlayerDie.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCPlayerFirstEnterNotify.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCPlayerRealMove.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCPlayerRelive.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCPost.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCPrescription.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCPrivateInfo.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCPVP2v2Battle.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCPVP6v6Battle.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCQuestAdd.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCQuestCollectHorseResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCQuestDoneNotify.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCQuestList.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCQuestListRefresh.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCQuestMixtureResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCQuestModify.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCQuestRemove.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCQuestSort.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCQuizQuest.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCQuizResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCRectPartyShop.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCRemoveGemResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCRemoveHorse.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCReqResetAttrResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCRequest360Info.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCRequestAcceptGuildConvoy.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCRequestCardRefresh.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCRequestEncryptOp.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCRequestGuildConvoy.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCRequestTeamFollow.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCRetAccountMoney.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCRetChangeMap.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCRetCharChangeFace.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCRetFetchLostItem.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCRetLostItemInfo.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCRetPlayerAttrUp.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCRetSetting.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCRetSkillSetting.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCRetStockAcc.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCRetSubTrainSetting.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCRetTeamDistribMode.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCRetTeamMemEquip.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCRetTeamRecruitInfo.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCRetTransGoldToChar.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCReturnHorseFindMateInfo.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCReturnOnlineUser.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCReturnTeamFollow.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCRoomBattle.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCRunningKill.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCSaveEquipSuitResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCScriptCommand.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCSeachTeamInfoResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCSendXinShouMaxLevel.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCSetChannelModeResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCSetShowSuitModeResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCSetTeamEnounceResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCShopBuy.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCShopItemElementList.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCShopMerchandiseList.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCShopRepair.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCShopSell.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCShopSoldList.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCShopSpecialRepairResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCShopUpdateMerchandiseList.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCSkill.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCSkillPrepare.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCSkillSuccessfulUse.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCSkillUpgrade.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCSLGAirLines.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCSLGBuild.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCSoldierBattle.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCSoldierBattleEndInfo.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCSoldierReadyList.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCSpecialObj_FadeOut.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCSplitItemResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCStallPurchaseAddItemInfo.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCStallPurchaseBuyItem.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCStallPurchasePriceAmount.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCStallPurchaseRemoveItemInfo.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCSubTrainModeResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCSubTrainResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCSystemError.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCTeamError.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCTeamFollowErr.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCTeamFollowList.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCTeamLeaderRequestInvite.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCTeamList.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCTeamMemberInfo.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCTeamRequestApply.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCTeamRequestInvite.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCTeamResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCTimerCommand.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCTopList.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCTradeApplyI.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCTradeCancel.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCTradeError.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCTradeEstablishI.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCTradeSuccessIII.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCTradeSynchConfirmII.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCTradeSynchII.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCTradeSynchLock.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCTrainingApplyII.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCTransPosInfo.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCUICommand.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCUIStateCtrl.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCUnEquipResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCUnExtraBagResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCUpdateTitle.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCUseBallEffect.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCUseEquipResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCUseExtraBagResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCUseItemResult.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCWarehouseAcquireList.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCWarehouseAddItem.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCWarehouseBegin.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCWarehouseItemInfo.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCWarehouseMoney.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCWarehouseRemoveItem.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCWarehouseSize.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCWarehouseSwapItem.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCWorldShopInfo.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCWorldShopOpenSell.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\XCWorldTime.h">
+      <Filter>Message\MsgX2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\LCCaptcha.h">
+      <Filter>Message\MsgL2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\LCRetAnswer.h">
+      <Filter>Message\MsgL2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\LCRetChangeName.h">
+      <Filter>Message\MsgL2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\LCRetPasspod.h">
+      <Filter>Message\MsgL2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\LCRetRequireYYToken.h">
+      <Filter>Message\MsgL2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\LCReturnCharList.h">
+      <Filter>Message\MsgL2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\LCReturnCharLogin.h">
+      <Filter>Message\MsgL2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\LCReturnConnect.h">
+      <Filter>Message\MsgL2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\LCReturnCreateChar.h">
+      <Filter>Message\MsgL2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\LCReturnDeleteChar.h">
+      <Filter>Message\MsgL2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\LCReturnLogin.h">
+      <Filter>Message\MsgL2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\LCReturnStatus.h">
+      <Filter>Message\MsgL2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\ChannelMeridianMessage.h">
+      <Filter>Message\MsgGroup</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\FarEastNpcMessage.h">
+      <Filter>Message\MsgGroup</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\MessageStruct.h">
+      <Filter>Message\MsgGroup</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages\SanBaoMessage.h">
+      <Filter>Message\MsgGroup</Filter>
+    </ClInclude>
+    <ClInclude Include="TAB\TAB.h">
+      <Filter>Table</Filter>
+    </ClInclude>
+    <ClInclude Include="Camp.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="Debug.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="Define.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="DefineAttr.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="DefineGuild.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="DefineItem.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="DefineMap.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="DefinePlayerShop.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectMgr.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="Enum.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageDefine.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageFactory.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageFactoryManager.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptStruct.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="Socket.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="SpellDataMgr.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="StreamSystem.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="Struct.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="StructChannelMeridian.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="StructDB.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="StructFarEastNpc.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="StructGameBattle.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="StructGuild.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="StructHorse.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="StructItem.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="StructOneVsOne.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="StructRoomBattle.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="StructSLGAirLine.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="StructSpell.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="StructTeam.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="StructTeamTank.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="StructTopList.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="TabTemplateLoader.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="Util.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="Version.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\SplitStringBase.h">
+      <Filter>Share\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\SplitStringLevelOne.h">
+      <Filter>Share\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\SplitStringLevelTwo.h">
+      <Filter>Share\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="EncryptAriths\BitOper.h">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClInclude>
+    <ClInclude Include="EncryptAriths\BlowFish.h">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClInclude>
+    <ClInclude Include="EncryptAriths\CaptchaTable.h">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClInclude>
+    <ClInclude Include="EncryptAriths\CRC.h">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClInclude>
+    <ClInclude Include="EncryptAriths\CryptDef.h">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClInclude>
+    <ClInclude Include="EncryptAriths\DES.h">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClInclude>
+    <ClInclude Include="EncryptAriths\Devalue.h">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClInclude>
+    <ClInclude Include="EncryptAriths\EncryptFunction.h">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClInclude>
+    <ClInclude Include="EncryptAriths\Gost.h">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClInclude>
+    <ClInclude Include="EncryptAriths\Idea.h">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClInclude>
+    <ClInclude Include="EncryptAriths\Increment.h">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClInclude>
+    <ClInclude Include="EncryptAriths\Mars.h">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClInclude>
+    <ClInclude Include="EncryptAriths\rc2.h">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClInclude>
+    <ClInclude Include="EncryptAriths\rc5.h">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClInclude>
+    <ClInclude Include="EncryptAriths\rc6.h">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClInclude>
+    <ClInclude Include="EncryptAriths\rsa.h">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClInclude>
+    <ClInclude Include="EncryptAriths\RsaDef.h">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClInclude>
+    <ClInclude Include="EncryptAriths\safer.h">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClInclude>
+    <ClInclude Include="EncryptAriths\tea.h">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClInclude>
+    <ClInclude Include="EncryptAriths\vlong.h">
+      <Filter>Share\EncryptAriths</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
