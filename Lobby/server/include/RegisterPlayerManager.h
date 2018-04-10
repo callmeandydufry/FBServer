@@ -39,7 +39,9 @@ public:
 	//----------------------------------------------------------------------
 	virtual BOOL rpcRequestPlayerOnline(const char* account, int64 sessionID);
 	virtual BOOL rpcUpdatePlayerOnlineState(SNID_t snid, BOOL isOnline);
-
+	
+	// 请求玩家未读邮件 [2/22/2018 Chief]
+	virtual int32 rpcRequestUnreadMailNums(SNID_t snid);
 	//----------------------------------------------------------------------
 	//RPC调用接口 END
 	//----------------------------------------------------------------------

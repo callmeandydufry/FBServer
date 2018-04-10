@@ -100,11 +100,11 @@ int32 ChatManager::handlePrivateChannel(const tagChatMsgDealUtil* pMsgUtil)
 
 int32 ChatManager::handleGuildChannel(const tagChatMsgDealUtil* pMsgUtil)
 {
-	__GUARD__
+	__GUARD__;
 
-		return EChatResult_Sucess;
-	__UNGUARD__
-		return EChatResult_Fail;
+	return EChatResult_Sucess;
+	__UNGUARD__;
+	return EChatResult_Fail;
 }
 
 int32 ChatManager::handleWorldChannel(const tagChatMsgDealUtil* pMsgUtil)

@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "RobotManager.h"
 #include "ModuleManager.h"
+#include "Setting.h"
 
 BOOL RobotManager::initServerModule(int32 moduleName, ModuleComponent* defaultComponent, int32 groupID)
 {
@@ -28,10 +29,24 @@ void RobotManager::tickModule(uint32 uTick)
 {
 	if (mWaittingCMD)
 	{
-		char szCmd[MAX_ROBOT_CMD_STR_LEN] = { 0 };
-		std::cin >> szCmd;
+		int32 nCmdID = 0;
+		std::cout << "input cmd id:";
+		std::cin >> nCmdID;
+		std::cout << std::endl;
 
-		// todo parse cmd
+		int32 nControlNums = 0;
+		std::cout << "input robot nums:";
+		std::cin >> nControlNums;
+		std::cout << std::endl;
+
+		// invalid cmd
+		if (nCmdID >= ERCMD_END)
+			return;
+
+		tagRobotCMDUtil tagCMD;
+		tagCMD.clear();
+		tagCMD.mControlNum = nControlNums;
+		controlRobotCMD((ERobotCMD)nCmdID, tagCMD);
 
 		mWaittingCMD = FALSE;
 	}
@@ -54,8 +69,6 @@ BOOL RobotManager::controlRobotCMD(ERobotCMD eCMD, tagRobotCMDUtil& stCMD)
 	{
 		bRet = (this->*pFuncHandler)(&stCMD);
 	}
-
-	// todo after handle : log etc.
 
 	mWaittingCMD = TRUE;
 
@@ -126,6 +139,8 @@ BOOL RobotManager::handleCMDInitAllRobot(const tagRobotCMDUtil* stCMD)
 					userData,
 					10000
 				);
+
+			pRobot->setRobotCurStatus(ERobotStatus_Inited);
 		}
 	}
 
@@ -157,14 +172,41 @@ BOOL RobotManager::handleCMDStartLogin(const tagRobotCMDUtil* stCMD)
 				this
 				)
 				->rpcRobotRequestLogon();
+			pRobot->setRobotCurStatus(ERobotStatus_StableOnline);
 		}
-		pRobot->setRobotCurStatus(ERobotStatus_LogonSucess);
 	}
 
 	return TRUE;
 	__UNGUARD__;
 	return FALSE;
 }
+
+// 设置机器人不稳定操作，该操作要基于clientconnector，即机器人正常走所有的登录流程的情况下才需要该压测
+// 基于session的机器人不需要进行不稳定测试
+BOOL RobotManager::handleCMDRobotUnstable(const tagRobotCMDUtil* stCMD)
+{
+	__GUARD__;
+
+	// only login
+	FixedString<MAX_ACCOUNT> strAccount("IAMROBOT");
+	for (int32 i = 0; i < stCMD->mControlNum; ++i)
+	{
+		char szNum[DB_MAX_PASSWD_LEN] = { 0 };
+		sprintf_s(szNum, "%d", i);
+		FixedString<MAX_ACCOUNT> tempStr(szNum);
+		tempStr += strAccount;
+		RobotData* pRobot = mRobotPool.allocObject();
+		if (pRobot)
+		{
+			pRobot->setRobotCurStatus(ERobotStatus_UnStableOnline);
+		}
+	}
+
+	return TRUE;
+	__UNGUARD__;
+	return FALSE;
+}
+
 
 // 世界发言
 BOOL RobotManager::handleCMDTalkInTheWorld(const tagRobotCMDUtil* stCMD)

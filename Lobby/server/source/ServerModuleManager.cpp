@@ -11,6 +11,7 @@
 #include "ClientGateManager.h"
 #include "SnidAllocManager.h"
 #include "ServerModuleThreadContainer.h"
+#include "MailManager.h"
 
 BOOL gIsOnlyLocalServer = FALSE;
 BOOL gIsEnableModuleMultiThread = TRUE;
@@ -85,7 +86,8 @@ BOOL ServerModuleManager::init(const char* procedureName)
 	mModuleFactories.Add(pClientGateFactory->getType(), pClientGateFactory);
 // 	SnidAllocModuleFactory* SnidAllocFactory = new SnidAllocModuleFactory();
 // 	mModuleFactories.Add(SnidAllocFactory->getType(), SnidAllocFactory);
-
+	MailManagerFactory* pMailMgrFactory = new MailManagerFactory();
+	mModuleFactories.Add(pMailMgrFactory->getType(), pMailMgrFactory);
 
 	for (int i = 0; i < g_Config.mModuleInfo.mProcedures.GetSize(); ++i)
 	{
@@ -251,6 +253,8 @@ void ServerModuleManager::run()
 		{
 			continue;
 		}
+
+		uTickCount = GET_TIME().TickCount();
 
 		_NET_TRY
 		{

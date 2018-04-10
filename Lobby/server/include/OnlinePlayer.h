@@ -4,6 +4,8 @@
 #include "TypeDefine.h"
 #include "PlayerArchiveStruct.h"
 #include "ServerModuleExportInterface.h"
+#include "GameMail.h"
+#include "MailDefine.h"
 
 class OnlinePlayerManager;
 
@@ -52,6 +54,9 @@ public:
 	// 玩家上线时初始化数据 [12/13/2017 yz]
 	void					enterOnlineState();
 
+	// 请求邮件数据 [2/8/2018 Chief]
+	void					trySynMailList();
+
 	// 与客户端会话进行连接 [12/16/2017 yz]
 	void					connectClientSession();
 
@@ -75,6 +80,15 @@ public:
 	//----------------------------------------------------------------------
 	virtual void			rpcRequestPlayerDetialData(uint64 nSessionID);
 	virtual BOOL			rpcSessionCheckPlayerIsOnline();
+
+	// 同步邮件列表,由邮件模块发起同步 [2/8/2018 Chief]
+	virtual void			rpcMgrSynMailList2Player(tagMailConfirm& stListInfo);
+	// 请求全部邮件list [2/8/2018 Chief]
+	virtual void			rpcRequestPlayerMailList();
+	// 阅读邮件 [2/9/2018 Chief]
+	virtual void			rpcRequestReadMail(int32 nMailID);
+	// 玩家手动删除邮件 [2/9/2018 Chief]
+	virtual void			rpcRequestDelMail(int32 nMailID);
 	//----------------------------------------------------------------------
 	// rpc end
 	//----------------------------------------------------------------------
@@ -103,6 +117,16 @@ protected:
 
 	// onlineplayer/session心跳检测 [1/17/2018 Chief]
 	CTinyTimer				mPlayerSessionSyncTimer;
+
+	// 邮件[1/29/2018 Chief]
+	tagMailIDList			mPlayerMailArr;
+	int32					mNewMailsNum;
 };
 
 #endif
+
+// worning: // todo 没有邮件就将按钮隐藏,不让玩家太过频繁的请求所有邮件信息,强占太多资源和带宽
+// tips:
+//	1.	数据的流转
+//  2.	数据从DB获取的效率()
+

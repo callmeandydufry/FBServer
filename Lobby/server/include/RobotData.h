@@ -7,14 +7,17 @@ enum ERobotStatus
 {
 	ERobotStatus_INVALID,
 	ERobotStatus_Inited,
-	ERobotStatus_LogonSucess,
+	ERobotStatus_StableOnline,			// 稳定在线
+	ERobotStatus_UnStableOnline,		// 不稳定在线
+	ERobotStatus_StableOffline,
+	ERobotStatus_UnStableOffline,		
 	ERobotStatus_Talk2Others,
 	ERobotStatus_TalkInTheWorld,
-
 };
 
 class RobotData
 	: public IRobotData
+	, public KThread
 {
 	
 
@@ -46,6 +49,7 @@ private:
 	SNID_t						m64PlayerID;
 	uint64						m64Session;
 	ERobotStatus				mStatus;
+	CTinyTimer					mChangeTimer; // 不稳定状态下，每隔一段时间进行一次上下线请求
 }; 
 
 #endif // __ROBOT_DATA_H__

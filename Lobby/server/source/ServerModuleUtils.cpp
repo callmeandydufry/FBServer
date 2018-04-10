@@ -10,8 +10,12 @@ const char* g_szModuleName_ClientGate		= "Gate";
 const char* g_szModuleName_DBProxy			= "DBProxy";
 const char* g_szModuleName_Room				= "Room";
 const char* g_szModuleName_SnidAlloc		= "SnidAlloc";
+const char* g_szModuleName_Mail				= "Mail";
 
 #define MAX_GROUP_MODULE_NUM (10000)
+
+// todo 挪到配置文件中去,一组邮件mod对应N组server [2/22/2018 Chief]
+#define ConfigMatchServerNum (10)
 
 const char* ServerModuleUtil::convertType2String(EServerModuleType type)
 {
@@ -33,6 +37,8 @@ const char* ServerModuleUtil::convertType2String(EServerModuleType type)
 		return g_szModuleName_Room;
 	case EServerModuleType_SnidAlloc:
 		return g_szModuleName_SnidAlloc;
+	case EServerModuleType_Mail:
+		return g_szModuleName_Mail;
 	}
 
 	return g_szModuleName_Unknown;
@@ -71,6 +77,10 @@ EServerModuleType ServerModuleUtil::convertString2Type(const char* str)
 	else if (strncmp(str, g_szModuleName_SnidAlloc, 256) == 0)
 	{
 		return EServerModuleType_SnidAlloc;
+	}
+	else if (strncmp(str, g_szModuleName_Mail, 256) == 0)
+	{
+		return EServerModuleType_Mail;
 	}
 	return EServerModuleType_Unknown;
 }
@@ -121,4 +131,19 @@ int32 ServerModuleUtil::getSnidAllocModuleBySnid(SNID_t n64Snid)
 {
 	int32 group = 0;
 	return getModuleNameByTypeAndGroup(EServerModuleType_SnidAlloc, group);
+}
+
+int32 ServerModuleUtil::getMailModuleByPlayerSnid(SNID_t snid)
+{
+	// todo 之后将数字放入配置文件,用银弹是否能将有状态改为无状态?现在类似注册mod,邮件mod一对多
+	int32 serverID = (int32)SnidUtil::getPlayerServerID(snid);
+	int32 nGroupID = serverID / ConfigMatchServerNum;
+	return getModuleNameByTypeAndGroup(EServerModuleType_OnlinePlayer, nGroupID);
+	// todo 做config的检测,避免对应方面出问题.每十个regmod对应1个mailmgr
+}
+
+int32 ServerModuleUtil::getDBProxyModuleForMailMgrByGroup(int32 group)
+{
+	// 有状态的模块,与DB一对一[2/2/2018 Chief]
+	return getModuleNameByTypeAndGroup(EServerModuleType_DBProxy, group);
 }

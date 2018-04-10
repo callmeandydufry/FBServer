@@ -20,8 +20,12 @@ enum ERobotCMD
 
 struct tagRobotCMDUtil
 {		
-	// todo 
+	int32  mControlNum;
 
+	void clear()
+	{
+		mControlNum = 0;
+	}
 };
 
 class RobotManager
@@ -45,6 +49,7 @@ public:
 protected:
 	BOOL						handleCMDInitAllRobot(const tagRobotCMDUtil* stCMD);
 	BOOL						handleCMDStartLogin(const tagRobotCMDUtil* stCMD);
+	BOOL						handleCMDRobotUnstable(const tagRobotCMDUtil* stCMD);
 	BOOL						handleCMDTalkInTheWorld(const tagRobotCMDUtil* stCMD);
 	BOOL						handleCMDTalkToSomebody(const tagRobotCMDUtil* stCMD);
 

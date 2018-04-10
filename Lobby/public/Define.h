@@ -30,6 +30,8 @@
 #define DB_CHAR_NUMBER						(5)																						//
 #define DB_2_SM_TIME						(60000)																					//
 #define DB_CONNECTION_COUNT					(20)	
+#define DB_TITLE_LEN						(20)	
+#define DB_CONTENT_LEN						(32)
 
 #define DB_MAX_STR_LEN (128)
 #define DB_MAX_USER_LEN	 (32)	
@@ -40,15 +42,19 @@
 #define MAX_FILE_PATH						(260)																					//
 #define MAX_TOKEN_LEN						(512)
 #define MAX_CREATE_SNID_NUM					(1000)																					// 批量创建snid数量 [1/5/2018 Chief] 
+#define MAX_MAILID_LIST						(500)
 
 #ifdef __WINDOWS__
 #ifdef __RELEASE_SERVER__
 #define MAX_SNID_POOL_NUMS					(1000000)
+#define MAX_MAIL_POOL_NUMS					(1000000)
 #else
 #define MAX_SNID_POOL_NUMS					(10000)
+#define MAX_MAIL_POOL_NUMS					(10000)
 #endif
 #else
 #define MAX_SNID_POOL_NUMS					(1000000)
+#define MAX_MAIL_POOL_NUMS					(1000000)
 #endif
 
 #define MAX_ROBOT_NUM						(1000)
@@ -63,5 +69,18 @@ enum NET_TYPE
 	NET_TYPE_CHINANET = 1,		// 电信
 	NET_TYPE_MAX_NUM = 2,		// 类型数量
 };
+
+// GlobalVal ENUM [2/8/2018 Chief]
+enum EProFlag
+{
+	EPF_INVALID = -1,
+
+	EPF_MailID = 0,
+
+	EPF_MAX,
+};
+
+// 邮件当前可使用的最大ID [2/8/2018 Chief]
+#define MAX_MAIL_USE_ID					(1000000000)
 
 #endif

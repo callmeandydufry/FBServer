@@ -16,6 +16,7 @@ enum ESessionState
 	ESESS_WAIT_AUTH,
 	ESESS_REQUEST_ONLINE,
 	ESESS_ONLINE,
+	ESESS_OnFighting,
 	ESESS_REQUEST_OFFLINE,
 	ESESS_OFFLINE,
 	ESESS_INVALID,
@@ -79,9 +80,23 @@ public:
 
 	// onlineplayer/session心跳监测[1/17/2018 Chief]
 	virtual BOOL					rpcPlayerCheckSessionIsOnline();
+
+	// 邮件list简易数据
+	virtual void					rpcMgrSynMailList2Session(tagSendMailListInfo& stSendList);
+	
+	// 邮件详情 [2/9/2018 Chief]
+	virtual void					rpcMgrSynMailDetail2Session(tagSendMailDetail& stSendMainDetail, tagSendMailAttachMent& stAttach);
 	//----------------------------------------------------------------------
 	//RPC调用接口 END
 	//----------------------------------------------------------------------
+
+	// CALLBACK [2/9/2018 Chief]
+public:
+	// rpcRequestUnreadMailNums
+	void onRPCRequestUnreadMailNumsCallbackSucess(int32& nNum);
+	void onRPCRequestUnreadMailNumsCallbackOverTime() {}
+
+	//
 
 public:
 	// 更改当前session状态 [1/17/2018 Chief]

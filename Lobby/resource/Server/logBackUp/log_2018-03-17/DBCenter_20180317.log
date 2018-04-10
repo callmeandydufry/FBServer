@@ -1,0 +1,2 @@
+(1521290005 20:33:25 14.835 13904000) DBModel Error: select from table 't_player' failed
+(1521290006 20:33:26 15.927 13904000) DBOper::CheckDBConnection,Reconnect database,TID=13448000

@@ -52,3 +52,98 @@ void CGRPCHandler::requestPlayerData(SNID_t snid)
 		)
 		->rpcRequestPlayerDetialData(mClientSession->getSessionID());
 }
+
+//-------------------------------------------------------------------------------------------------------------
+// 邮件相关 [1/31/2018 Chief]
+//-------------------------------------------------------------------------------------------------------------
+// 请求当前是否有新的邮件 [1/31/2018 Chief]
+void CGRPCHandler::requestNewMailList(SNID_t snid)
+{
+	__GUARD__;
+	g_pModuleManager->getExportCallable < IRegisterPlayerManagerExportCallable < ClientSession > >(
+		ServerModuleUtil::getRegisterModuleByPlayerSnid(snid),
+		mClientSession->getPlayerSnid(),
+		mClientSession
+		)
+		->rpcRequestUnreadMailNums(snid)
+		->bindCallback(
+			&ClientSession::onRPCRequestUnreadMailNumsCallbackSucess,
+			&ClientSession::onRPCRequestUnreadMailNumsCallbackOverTime,
+			5000
+		);
+	__UNGUARD__;
+}
+
+// 根据类型请求邮件list [1/31/2018 Chief]
+void CGRPCHandler::requestTypeMailList(SNID_t snid, int32 mailType)
+{
+	__GUARD__;
+
+	g_pModuleManager->getExportCallable < IOnlinePlayerExportCallable < ClientSession > >(
+		ServerModuleUtil::getOnlineModuleByPlayerSnid(snid),
+		mClientSession->getPlayerSnid(),
+		mClientSession
+		)
+		->rpcRequestPlayerMailList();
+
+	__UNGUARD__;
+}
+
+// 获得邮件详情,标记当前邮件已读 [1/31/2018 Chief]
+void CGRPCHandler::requestMailDetial(SNID_t snid, int32 mailID)
+{
+	__GUARD__;
+
+	// 通知online邮件已阅 [2/9/2018 Chief]
+	g_pModuleManager->getExportCallable < IOnlinePlayerExportCallable < ClientSession > >(
+		ServerModuleUtil::getOnlineModuleByPlayerSnid(snid),
+		mClientSession->getPlayerSnid(),
+		mClientSession
+		)
+		->rpcRequestReadMail(mailID);
+
+	// 从mailmgr处获取邮件详情 [2/9/2018 Chief]
+	g_pModuleManager->getExportCallable< IMailManagerExportCallable<ClientSession> >(
+		ServerModuleUtil::getMailModuleByPlayerSnid(snid),
+		mClientSession->getPlayerSnid(),
+		mClientSession
+		)
+		->rpcRequestMailDetail(mailID, mClientSession->getSessionID());
+
+	__UNGUARD__;
+}
+
+// 获取邮件附件 [1/31/2018 Chief]
+void CGRPCHandler::requestGainMail(SNID_t snid, int32 mailID)
+{
+	__GUARD__;
+
+	// todo 等待物品系统完成
+
+	__UNGUARD__;
+}
+
+// 删除单个邮件 [1/31/2018 Chief]
+void CGRPCHandler::requestDelMailByID(SNID_t snid, int32 mailID)
+{
+	__GUARD__;
+
+	g_pModuleManager->getExportCallable < IOnlinePlayerExportCallable < ClientSession > >(
+		ServerModuleUtil::getOnlineModuleByPlayerSnid(snid),
+		mClientSession->getPlayerSnid(),
+		mClientSession
+		)
+		->rpcRequestDelMail(mailID);
+
+	__UNGUARD__;
+}
+
+// 批量删除某一类型的邮件 [1/31/2018 Chief]
+void CGRPCHandler::requestDelMailByType(SNID_t snid, int32 mailType)
+{
+	__GUARD__;
+
+	// todo
+
+	__UNGUARD__;
+}

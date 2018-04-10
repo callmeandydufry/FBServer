@@ -8,10 +8,14 @@
 #include "ServerModuleExportInterface.h"
 #include "ServerModuleManager.h"
 #include "PropertyVersion.h"
+#include "GameMailStruct.h"
+#include "MailDBProxy.h"
+#include "PropertyGlobal.h"
 
 class DBOper;
 class PlayerDBProxy;
 class SnidAllocateeDBProxy;
+class MailDBProxy;
 
 struct DBConnectionInfo
 {
@@ -31,6 +35,7 @@ enum EDBDataCategory
 	EDBCategory_Player,
 	EDBCategory_Friend,
 	EDBCategory_Guild,
+	EDBCategory_Mail,
 	EDBCategory_MAX,
 };
 
@@ -70,8 +75,26 @@ public:
 	virtual int32 rpcFetchPlayerNumInSnidRange(int32 serverID, SNID_t begin, SNID_t end);
 
 	// 获取给定区间内多个玩家的注册玩家数据 [1/2/2018 yz]
-	virtual BatchRegPlayerArchive& rpcFetchRegisterPlayerInSnidRange(int32 serverID, SNID_t begin, int32 limit);
+	virtual BatchRegisterPlayerArchive& rpcFetchRegisterPlayerInSnidRange(int32 serverID, SNID_t begin, int32 limit);
 
+	// 获取邮件总数 [2/5/2018 Chief] 
+	virtual tagMailsNum& rpcRequestAllMailsNum(int32 nGroup);
+
+	// 批量获取邮件信息 [2/5/2018 Chief]
+	virtual BatchBaseMailArchive& rpcFetchBaseMailData(int32 nStartID, int32 nSelectNum, int32 nGroupID);
+	virtual BatchAttachmentMailArchive& rpcFetchAttachmentMailData(int32 nStartID, int32 nSelectNum, int32 nGroupID);
+	virtual BatchContentMailArchive& rpcFetchContentMailData(int32 nStartID, int32 nSelectNum, int32 nGroupID);
+	virtual BatchSystemMailArchive& rpcFetchSystemMailData(int32 nStartID, int32 nSelectNum, int32 nGroupID);
+
+	// 操作邮件 [2/7/2018 Chief]
+	virtual BOOL rpcOperatorBaseMailData(BaseMailArchive& stArchive, int32 nGroupID, int32 nOper);
+	virtual void rpcOperatorAttachmentMailData(AttachmentMailArchive& stArchive, int32 nGroupID, int32 nOper);
+	virtual void rpcOperatorContentMailData(ContentMailArchive& stArchive, int32 nGroupID, int32 nOper);
+	virtual void rpcOperatorSystemMailData(SystemMailArchive& stArchive, int32 nGroupID, int32 nOper);
+
+	// globalval [2/8/2018 Chief]
+	virtual int32 rpcFetchGlobalVal(int32 nGroup, int32 eType);
+	virtual void rpcSaveGlobalVal(int32 nGroup, int32 eType, int32 nVal);
 	//---------------------------------------------------------------------------------------
 	// RPC远程接口定义 END [12/16/2017 yz]
 	//---------------------------------------------------------------------------------------
@@ -91,12 +114,21 @@ protected:
 
 	PlayerDBProxy*				mPlayerDBProxy;
  
-	//---------------------------------------------------------------------------------------
-	// 用来做函数返回值用的，因为要返回引用，所以不能用临时变量，这里使用一个成员变量返回引用 [12/16/2017 yz]
-	//---------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------
+// 用来做函数返回值用的，因为要返回引用，所以不能用临时变量，这里使用一个成员变量返回引用 [12/16/2017 yz]
+//---------------------------------------------------------------------------------------
 	PlayerArchive				mReturnPlayerArchive;
 	DBVersionState				mDBVersionState;
-	BatchRegPlayerArchive		mBatchPlayerArchive;
+	BatchRegisterPlayerArchive	mBatchPlayerArchive;
+	DBGlobalState				mGlobalState;
+
+	// mail [2/6/2018 Chief]
+	MailDBProxy*				mMailDBProxy;
+	tagMailsNum					mStMailsNum;
+	BatchBaseMailArchive		mBatchBaseMailData;
+	BatchAttachmentMailArchive	mBatchAttachmentMailData;
+	BatchContentMailArchive		mBatchContentMailData;
+	BatchSystemMailArchive		mBatchSystemMailData;
 };
 
 

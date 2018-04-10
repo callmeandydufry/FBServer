@@ -106,6 +106,8 @@ uint32 CGHandShakeDispatch::Process(CGHandShake *pKMessage, Connector *pConnecto
 
 		IncomingConnectorManager* incomingMgr = (IncomingConnectorManager*)pConnector->GetConnectorMgr();
 
+		// incomingMgr->getGateManager() 在此处判断当前的ip是否非法
+
 		if (!CheckVersion(pKMessage->GetCheckVer(), 0xFFFFFFFF))
 		{
 			QLogSystem::QUICK_LOG

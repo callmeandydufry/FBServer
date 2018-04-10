@@ -91,6 +91,9 @@
     <Filter Include="Module\Chat">
       <UniqueIdentifier>{9b387bf3-2bc3-4ccc-b873-ab5562e14f84}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Module\Mail">
+      <UniqueIdentifier>{07e75fec-6777-4344-b859-94666918a3e1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\public\Module\ModuleManager.cpp">
@@ -377,6 +380,18 @@
     </ClCompile>
     <ClCompile Include="source\RobotManager.cpp">
       <Filter>Module\Robot</Filter>
+    </ClCompile>
+    <ClCompile Include="source\MailManager.cpp">
+      <Filter>Module\Mail</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GameMail.cpp">
+      <Filter>Module\Mail</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GameMailStruct.cpp">
+      <Filter>Module\Mail</Filter>
+    </ClCompile>
+    <ClCompile Include="source\MailDBProxy.cpp">
+      <Filter>Module\DBProxy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -835,6 +850,33 @@
       <Filter>Module\Robot</Filter>
     </ClInclude>
     <ClInclude Include="include\RobotManager.h">
+      <Filter>Module\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MailDefine.h">
+      <Filter>Module\Mail</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MailManager.h">
+      <Filter>Module\Mail</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GameMail.h">
+      <Filter>Module\Mail</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GameMailStruct.h">
+      <Filter>Module\Mail</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PropertyMailState.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\DefinePropertyStruct.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MailDBProxy.h">
+      <Filter>Module\DBProxy</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PropertyGlobal.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PrivateTest.h">
       <Filter>Module\Robot</Filter>
     </ClInclude>
   </ItemGroup>

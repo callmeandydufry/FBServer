@@ -2,6 +2,7 @@
 #include "OnlinePlayer.h"
 #include "OnlinePlayerManager.h"
 #include "ModuleManager.h"
+#include "GameMailStruct.h"
 
 OnlinePlayer::OnlinePlayer()
 {
@@ -102,8 +103,15 @@ void OnlinePlayer::tickComponent(uint32 uTick)
 
 	case EOnlineState_Online:
 		{
-		if (mPlayerSessionSyncTimer.CountingTimer(uTick))
-			checkClientSessionState();
+			// 定时心跳检测 [2/8/2018 Chief]
+			if (mPlayerSessionSyncTimer.CountingTimer(uTick))
+			{
+				checkClientSessionState();
+
+				// 定期请求邮件list [2/8/2018 Chief]
+				trySynMailList();
+			}
+			
 		}
 		break;
 
@@ -168,10 +176,26 @@ void OnlinePlayer::requestDBData()
 	__UNGUARD__
 }
 
+// 同步邮件,用来确定玩家拥有多少新的邮件 [2/8/2018 Chief]
+void OnlinePlayer::trySynMailList()
+{
+	__GUARD__;
+
+	g_pModuleManager->getExportCallable< IMailManagerExportCallable<OnlinePlayer> >(
+		ServerModuleUtil::getMailModuleByPlayerSnid(mSnid),
+		MODULE_DEFAULT_ID,
+		this
+		)
+		->rpcSynMailList(mSnid);
+
+	__UNGUARD__
+}
+
 void OnlinePlayer::receiveDBData(PlayerArchive* dbArchive)
 {
 	__GUARD__
 	mPlayerArchive = *dbArchive;
+
 	mOnlineState = EOnlineState_DBInited;
 	__UNGUARD__
 }
@@ -209,6 +233,29 @@ void OnlinePlayer::enterOnlineState()
 			&__OnlinePlayer_rpcUpdatePlayerOnlineState_Callback::callbackOvertime,
 			2000
 		);
+
+	// test code 玩家上线后创建文本邮件 [2/22/2018 Chief]
+	DBBaseMailState stBaseMail;
+	stBaseMail.clear();
+	stBaseMail.setMailType(EMT_NOTICE);
+	uint32 nTimer = GET_TIME().GetCTime();
+	stBaseMail.setCreateTime(nTimer);
+	stBaseMail.setCreateTime(nTimer + 3600 * 24 * 1);
+
+	FixedString<DB_TITLE_LEN> title("Player online");
+
+	FixedString<DB_CONTENT_LEN> content;
+	String strCon;
+	strCon = StringUtil::printf("player '%s' is online now", mPlayerArchive.mDBState.getAccountName().c_str());
+	content = strCon;
+
+	g_pModuleManager->getExportCallable< IMailManagerExportCallable<OnlinePlayer> >(
+		ServerModuleUtil::getMailModuleByPlayerSnid(snid),
+		MODULE_DEFAULT_ID,
+		this
+		)
+		->rpcSendContentMail(stBaseMail, title, content);
+
 	__UNGUARD__
 }
 
@@ -345,4 +392,104 @@ void OnlinePlayer::requestPlayerDetialData()
 		)
 		->rpcS2CSynPlayerExtData(mPlayerArchive.mDBState);
 
+}
+
+//----------------------------------------------------------------------
+// 邮件 [1/29/2018 Chief]
+//----------------------------------------------------------------------
+void OnlinePlayer::rpcRequestPlayerMailList()
+{
+	__GUARD__;
+
+	// 将邮件状态和list发送给mgr [2/9/2018 Chief]
+	String strMailListInfo;
+	mPlayerMailArr.serialize(strMailListInfo);
+
+	tagMailConfirm stMaillistInfo;
+	stMaillistInfo.clear();
+	stMaillistInfo.setMailIDList(strMailListInfo);
+
+	// rpcsend(stMaillistInfo, mSessionID)
+	g_pModuleManager->getExportCallable< IMailManagerExportCallable<OnlinePlayer> >(
+		ServerModuleUtil::getMailModuleByPlayerSnid(mSnid),
+		MODULE_DEFAULT_ID,
+		this
+		)
+		->rpcRequestAllPlayerMailsData(mSnid, stMaillistInfo, mSessionID);
+
+	__UNGUARD__;
+}
+
+//----------------------------------------------------------------------
+// 同步maillist信息 [1/29/2018 Chief]
+//----------------------------------------------------------------------
+void OnlinePlayer::rpcMgrSynMailList2Player(tagMailConfirm& stListInfo)
+{
+	__GUARD__;
+
+	tagMailIDList stMailList;
+	stMailList.Clear();
+	stMailList.unserialize(stListInfo.getMailIDList().c_str());
+
+	int32 nSize = stMailList.getValidMailNums();
+	mNewMailsNum = 0;
+	// 只关心未读邮件 [2/9/2018 Chief]
+	for (int32 i = 0; i < nSize; ++i)
+	{
+		BYTE bOldStatus = 0;
+		int32 nFindIndex = mPlayerMailArr.findMailByID(stMailList.mMailData[i].mMailID);
+		if (nFindIndex)
+		{
+			bOldStatus = mPlayerMailArr.mMailData[nFindIndex].mMailStatus;
+			if (bOldStatus) mNewMailsNum++;
+		}
+		else
+		{
+			mNewMailsNum++;
+		}
+
+		stMailList.mMailData[i].mMailStatus = bOldStatus;
+	}
+
+	// 同步邮件list [2/9/2018 Chief]
+	mPlayerMailArr = stMailList;
+
+	// todo 存储到DB [2/9/2018 Chief]
+	
+
+	__UNGUARD__;
+}
+
+//----------------------------------------------------------------------
+// 阅读邮件 [2/9/2018 Chief]
+//----------------------------------------------------------------------
+void OnlinePlayer::rpcRequestReadMail(int32 nMailID)
+{
+	__GUARD__;
+
+	int32 nPos = mPlayerMailArr.findMailByID(nMailID);
+	if (nPos)
+	{
+		mPlayerMailArr.mMailData[nPos].setMailStatus(EMS_Read);
+	}
+	// todo save to db [2/9/2018 Chief]
+
+	__UNGUARD__;
+}
+
+//----------------------------------------------------------------------
+// 删除邮件 [2/9/2018 Chief]
+//----------------------------------------------------------------------
+void OnlinePlayer::rpcRequestDelMail(int32 nMailID)
+{
+	__GUARD__;
+
+	int32 nPos = mPlayerMailArr.findMailByID(nMailID);
+	if (nPos)
+	{
+		mPlayerMailArr.mMailData[nPos].setMailStatus(EMS_DEL);
+	}
+	// todo save to db [2/9/2018 Chief]
+
+	__UNGUARD__;
 }

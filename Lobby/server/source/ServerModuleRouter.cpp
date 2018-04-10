@@ -121,6 +121,10 @@ BOOL ServerModuleRouter::checkAllModuleRegistered()
 		{
 			moduleStat.mSnidAllocModuleNum++;
 		}
+		else if (type == EServerModuleType_Mail)
+		{
+			moduleStat.mMailModuleNum++;
+		}
 	}
 
 	if (memcmp(&moduleStat, &g_Config.mModuleInfo.mModuleStat, sizeof(MODULE_STAT)) == 0)

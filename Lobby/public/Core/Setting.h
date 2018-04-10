@@ -86,6 +86,7 @@ struct MODULE_STAT
 		mIndexAllocModuleNum = 0;
 		mRoomModuleNum = 0;
 		mSnidAllocModuleNum = 0;
+		mMailModuleNum = 0;
 	}
 
 	int32 mOnlinePlayerModuleNum;
@@ -96,6 +97,7 @@ struct MODULE_STAT
 	int32 mIndexAllocModuleNum;
 	int32 mRoomModuleNum;
 	int32 mSnidAllocModuleNum;
+	int32 mMailModuleNum;
 };
 
 struct MODULE_SETTING
@@ -114,6 +116,7 @@ struct MODULE_SETTING
 struct ROBOT_SETTION
 {
 	int32 mRunRobotNum;
+	//TDynaArray<FixedString<MAX_MODULE_NAME_LEN> > mArrCmd;
 
 	ROBOT_SETTION()
 	{
@@ -140,6 +143,7 @@ struct BASE_SETTING
 		mDisconnectTime = 1000;
 		m_nCompressMessage = TRUE;
 		mSessionReservedTime = 60000;
+		mEnableRandEncryptKey = FALSE;
 	};
 
 	~BASE_SETTING()
@@ -233,6 +237,8 @@ private:
 
 	// 读取模块配置信息 [11/25/2016 yz]
 	void	LoadModuleConfig();
+
+	void	LoadRobotConfig();
 
 /*
  -----------------------------------------------------------------------------------------------------------------------

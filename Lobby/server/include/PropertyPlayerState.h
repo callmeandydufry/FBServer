@@ -27,12 +27,14 @@ OnlinePlayer Struct
 	PROPERTY(int32, BuyDiamond, 0)\
 	PROPERTY(int32, Level, 0)\
 	PROPERTY(uint64, Exp, 0)\
+	PROPERTY(FixedString<MAX_MAILID_LIST>, MailIDList, " ")\
+	PROPERTY(uint64, MailStatus, 0)\
 
 struct DBPlayerState
 {
 	//-------------------------------------------------------------------------
 	//  Ù–‘¡–±Ì [12/12/2017 yz]
-	STRUCT_PROPERTY_LIST(PROPERTYS_PlayerState)
+	STRUCT_PROPERTY_LIST(PROPERTYS_PlayerState);
 	//-------------------------------------------------------------------------
 };
 
@@ -87,7 +89,6 @@ protected:
 	SNID_t mSnid;
 	String mAccount;
 };
-
 
 /*
 ---------------------------------------------------------------------------------------------------------
@@ -185,5 +186,10 @@ protected:
 	SNID_t mSnidRangeBegin;
 	int32 mCountLimit;
 };
+
+
+//-------------------------------------------------------------------------------------------------------- -
+//  [2/8/2018 Chief]
+//-------------------------------------------------------------------------------------------------------- -
 
 #endif

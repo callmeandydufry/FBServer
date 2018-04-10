@@ -282,15 +282,15 @@ void RegisterPlayerManager::tickFetchDataFromDB()
 class __RegisterPlayerManager_rpcFetchRegisterPlayerInSnidRange_Callback : public RegisterPlayerManager
 {
 public:
-	void callbackSuccess(BatchRegPlayerArchive& regPlayerArchives)
+	void callbackSuccess(BatchRegisterPlayerArchive& regPlayerArchives)
 	{
 		for (int32 i = 0; i < regPlayerArchives.mBatchNum; ++i)
 		{
-			initRegisterPlayer(regPlayerArchives.mBatchPlayerData[i]);
+			initRegisterPlayer(regPlayerArchives.mBatchRegisterPlayerData[i]);
 		}
 
 		// 一次申请的批量玩家没有返回申请的数量，说明数据库中的玩家已经被找完了 [1/16/2018 yz]
-		if (regPlayerArchives.mBatchNum < BATCH_REGPLAYER_NUM)
+		if (regPlayerArchives.mBatchNum < BATCH_RegisterPlayer_NUM)
 		{
 			mIsALLPlayerInited = TRUE;
 		}
@@ -314,7 +314,7 @@ void RegisterPlayerManager::fetchRegisterPlayerByRange()
 		MODULE_DEFAULT_ID,
 		(__RegisterPlayerManager_rpcFetchRegisterPlayerInSnidRange_Callback*)this
 		)
-		->rpcFetchRegisterPlayerInSnidRange(serverID, mNextValidSnid, BATCH_REGPLAYER_NUM)
+		->rpcFetchRegisterPlayerInSnidRange(serverID, mNextValidSnid, BATCH_RegisterPlayer_NUM)
 		->bindCallback(
 			&__RegisterPlayerManager_rpcFetchRegisterPlayerInSnidRange_Callback::callbackSuccess,
 			&__RegisterPlayerManager_rpcFetchRegisterPlayerInSnidRange_Callback::callbackOvertime,
@@ -344,6 +344,21 @@ SNID_t RegisterPlayerManager::allocNewSnid()
 
 	return INVALID_SNID;
 }
+
+//----------------------------------------------------------------------
+//请求玩家未读邮件 [2/22/2018 Chief]
+//----------------------------------------------------------------------
+int32 RegisterPlayerManager::rpcRequestUnreadMailNums(SNID_t snid)
+{
+	RegisterPlayer* player = mSnidPlayerMap.Get(snid);
+	if (NULL != player)
+	{
+		return player->getUnReadMailNums();
+	}
+
+	return 0;
+}
+
 
 //----------------------------------------------------------------------
 // factory

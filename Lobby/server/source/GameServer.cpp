@@ -14,7 +14,7 @@ purpose:	战场服务器启动管理器
 #include "ServerModuleThreadContainer.h"
 #include "GameServer.h"
 #include "Version.h"
-
+#include "PrivateTest.h"
 
 int32	g_Command_CommandDeny = FALSE;
 int32	g_Command_Enable = FALSE;
@@ -24,6 +24,14 @@ GameServer g_GameServer;
 
 int32 main(int32 argc, char *argv[])
 {
+// 	PrivateTt::ThreadTest testThread;
+// 	testThread.CreateMyThread();
+// 	WaitForMultipleObjects(10, testThread.mThreadHand, TRUE, INFINITE);
+
+	PrivateTt::testVirtualDestructor tVD;
+	tVD.test();
+
+
 	//#if defined(__WINDOWS__)
 #ifdef __WINDOWS__
 	_CrtSetDbgFlag(_CrtSetDbgFlag(0) | _CRTDBG_LEAK_CHECK_DF);

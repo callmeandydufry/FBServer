@@ -145,6 +145,7 @@ enum EServerModuleType
 	EServerModuleType_DBProxy = 6,
 	EServerModuleType_Room = 7,
 	EServerModuleType_SnidAlloc = 8,
+	EServerModuleType_Mail = 9,
 
 	EServerModuleType_MAX,
 };
@@ -164,6 +165,8 @@ public:
 	static int32 getDBProxyModuleByPlayerSnid(SNID_t snid);
 	static int32 getSessionModuleBySessionID(int64 sessionID);
 	static int32 getSnidAllocModuleBySnid(SNID_t snid);
+	static int32 getMailModuleByPlayerSnid(SNID_t snid);
+	static int32 getDBProxyModuleForMailMgrByGroup(int32 group);
 };
 
 #endif

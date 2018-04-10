@@ -17,6 +17,13 @@ class IncomingConnectorManager;
 class SessionConnectorManager;
 class ClientSession;
 
+struct tagIllegalIP
+{
+	FixedString<IP_SIZE>	mIP;
+	int32 mNum;
+	uint32 mLastFailTimer;
+};
+
 class ClientGateManager
 	: public ServerModuleBase
 	, public IClientGateManager
@@ -56,6 +63,11 @@ public:
 public:
 	BOOL								checkSessionOnlineBySnid(SNID_t u64PlayerID);
 	uint64								getSessionIDBySnid(SNID_t u64PlayerID);
+
+	// todo 获得非法ip、每10秒所有非法ip值--，==0则清除，保证不频繁的失败登录，并记录登录失败log [1/24/2018 Chief]
+	// todo session中获得当前登录的时间&& 如何记录失败登录的时间，失败后session会清理，sessionmgr进行缓存，新增结构体 ip/num/timer
+	// todo mgr中tick，登录时间在一分钟之内，num++
+	BOOL								getIllegalIP(FixedString<IP_SIZE> ip);
 protected:
 	uint32								mIncomingPort;
 
@@ -75,6 +87,10 @@ protected:
 	TStringHashMap<ClientSession*>		mAccountSessionMap;
 	// 通过SNID查找角色 [12/13/2017 yz]
 	TIntegerHashMap<ClientSession*>		mSessionIDMap;
+
+	// 非法ip [1/24/2018 Chief]
+	CommonObjectPool<tagIllegalIP>		mIllegalIPList;
+	TStringHashMap<tagIllegalIP*>		mIllegalIPMap;
 };
 
 //---------------------------------------------------------------------------------------

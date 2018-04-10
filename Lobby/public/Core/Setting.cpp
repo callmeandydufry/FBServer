@@ -92,6 +92,7 @@ BOOL SettingSystem::Init()
 	PrintAllConfigInfo();
 	LoadPlatformServerConfig();
 	LoadModuleConfig();
+	LoadRobotConfig();
 
 	return TRUE;
 
@@ -210,6 +211,7 @@ void SettingSystem::LoadModuleConfig()
 	mModuleInfo.mModuleStat.mIndexAllocModuleNum = ini.Get_Property_Int("ALL", "IndexAllocModuleNum");
 	mModuleInfo.mModuleStat.mRoomModuleNum = ini.Get_Property_Int("ALL", "RoomModuleNum");
 	mModuleInfo.mModuleStat.mSnidAllocModuleNum = ini.Get_Property_Int("ALL", "SnidAllocModuleNum");
+	mModuleInfo.mModuleStat.mMailModuleNum = ini.Get_Property_Int("ALL", "MailModuleNum");
 
 	mModuleInfo.mCoordinatorInfo.m_szName = "Coordinator";
 	mModuleInfo.mCoordinatorInfo.m_szIP =		ini.GetText("Coordinator", "ip");
@@ -279,6 +281,15 @@ void SettingSystem::LoadGameConfig()
 	Configer	ini(FILE_GAMECONFIG);
 
 	mConfigInfo.m_SystemMode = ini.Get_Property_Int("System", "SystemMode");
+
+	__UNGUARD__
+}
+
+void SettingSystem::LoadRobotConfig()
+{
+	__GUARD__;
+
+	Configer	ini(FILE_ROBOT_CONFIG);
 
 	mRobotInfo.mRunRobotNum = ini.Get_Property_Int("Robot", "RunRobotNum");
 	if (mRobotInfo.mRunRobotNum > MAX_ROBOT_NUM)

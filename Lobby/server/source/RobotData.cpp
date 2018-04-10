@@ -10,8 +10,31 @@ int64 RobotData::getComponentId()
 //
 //----------------------------------------------------------------------
 void RobotData::tickComponent(uint32 uTick)
-{
+{	
 
+	switch (mStatus)
+	{
+	case ERobotStatus_INVALID:
+		break;
+	case ERobotStatus_Inited:
+		break;
+	case ERobotStatus_StableOnline:
+		break;
+	case ERobotStatus_UnStableOnline:
+		// todo 每5秒请求离线
+		break;
+	case ERobotStatus_StableOffline:
+		break;
+	case ERobotStatus_UnStableOffline:
+		// todo 每5秒请求重新连接，并上线，基于clientconnector并走完整登录流程的情况
+		break;
+	case ERobotStatus_Talk2Others:
+		break;
+	case ERobotStatus_TalkInTheWorld:
+		break;
+	default:
+		break;
+	}
 }
 
 //----------------------------------------------------------------------

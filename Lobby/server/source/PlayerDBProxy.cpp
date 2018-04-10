@@ -147,7 +147,7 @@ BOOL PlayerDBProxy::doFetchPlayerNumInSnidRange(int32 serverID, SNID_t begin, SN
 	return FALSE;
 }
 
-BOOL PlayerDBProxy::doFetchRegisterPlayerInSnidRange(int32 serverID, SNID_t begin, int32 limit, BatchRegPlayerArchive* batchPlayerData)
+BOOL PlayerDBProxy::doFetchRegisterPlayerInSnidRange(int32 serverID, SNID_t begin, int32 limit, BatchRegisterPlayerArchive* batchPlayerData)
 {
 	__GUARD__
 	DBOper* dbOper = mDBManager->getDBConnByCategory(EDBCategory_Player, serverID);
@@ -168,9 +168,9 @@ BOOL PlayerDBProxy::doFetchRegisterPlayerInSnidRange(int32 serverID, SNID_t begi
 	{
 		if (mDBModelRegisterPlayerState.getAffectedRowCount() > 0)
 		{
-			for (int32 i = 0; i < BATCH_REGPLAYER_NUM && i < mDBModelRegisterPlayerState.getAffectedRowCount(); ++i)
+			for (int32 i = 0; i < BATCH_RegisterPlayer_NUM && i < mDBModelRegisterPlayerState.getAffectedRowCount(); ++i)
 			{
-				mDBModelRegisterPlayerState.doSQLFetch(dbCore, &batchPlayerData->mBatchPlayerData[batchPlayerData->mBatchNum].mDBState);
+				mDBModelRegisterPlayerState.doSQLFetch(dbCore, &batchPlayerData->mBatchRegisterPlayerData[batchPlayerData->mBatchNum].mDBState);
 				batchPlayerData->mBatchNum++;
 			}
 			

@@ -48,6 +48,9 @@ BOOL ClientGateManager::initServerModule(int32 moduleName, ModuleComponent* defa
 	mAccountSessionMap.InitTable(MODULE_ONLINEPLAYER_NUM, MAX_ACCOUNT);
 	mSessionIDMap.InitTable(MODULE_ONLINEPLAYER_NUM);
 
+	mIllegalIPList.initPool(MODULE_ONLINEPLAYER_NUM);
+	mIllegalIPMap.InitTable(MODULE_ONLINEPLAYER_NUM, MAX_ACCOUNT);
+
 	return TRUE;
 	__UNGUARD__;
 	return FALSE;
@@ -226,7 +229,17 @@ uint64 ClientGateManager::rpcS2CSynWorldChatData(const char* szMsg, uint32 chatI
 
 	// todo 将世界聊天内容缓存到某处，reg？玩家上线时，client将请求世界聊天内容
 
-	// todo 将聊天内容发给本服所有在线玩家
+	// 将聊天内容发给本服所有在线玩家 [1/23/2018 Chief]
+	int32 nState = 0;
+	for (int32 i = 0; i < mSessionList.GetSize(); ++i)
+	{
+		nState = mSessionList[i]->getSessionState();
+		if (!(mSessionList[i] && (ESESS_ONLINE == nState || ESESS_OnFighting == nState)))
+			continue;
+
+		mSessionList[i]->rpcS2CSynPlayerChatData(szMsg, chatID, EChatChannel_World, u64Sender);
+	}
+
 
 	return nSessionID;
 	__UNGUARD__;
@@ -291,10 +304,21 @@ uint64 ClientGateManager::getSessionIDBySnid(SNID_t u64PlayerID)
 	return FALSE;
 }
 
+BOOL ClientGateManager::getIllegalIP(FixedString<IP_SIZE> ip)
+{
+	__GUARD__;
+
+	tagIllegalIP* pIllegalIP = mIllegalIPMap.Get(ip.c_str());
+
+	return (NULL != pIllegalIP);
+	
+	__UNGUARD__;
+	return FALSE;
+}
+
 //----------------------------------------------------------------------
 // factory
 //----------------------------------------------------------------------
-
 EServerModuleType ClientGateModuleFactory::getType() const
 {
 	return EServerModuleType_ClientGate;

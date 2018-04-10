@@ -3,6 +3,7 @@
 #include "DBOper.h"
 #include "PlayerDBProxy.h"
 #include "RegisterPlayerStruct.h"
+#include "MailDBProxy.h"
 
 DBProxyManager::DBProxyManager()
 {
@@ -38,6 +39,7 @@ BOOL DBProxyManager::initServerModule(int32 moduleName, ModuleComponent* default
 	}
 
 	mPlayerDBProxy			= new PlayerDBProxy(this);
+	mMailDBProxy			= new MailDBProxy(this);
 
 	return TRUE;
 }
@@ -111,7 +113,7 @@ int32 DBProxyManager::rpcFetchPlayerNumInSnidRange(int32 serverID, SNID_t begin,
 	return INVALID_ID;
 }
 
-BatchRegPlayerArchive& DBProxyManager::rpcFetchRegisterPlayerInSnidRange(int32 serverID, SNID_t begin, int32 limit)
+BatchRegisterPlayerArchive& DBProxyManager::rpcFetchRegisterPlayerInSnidRange(int32 serverID, SNID_t begin, int32 limit)
 {
 	mBatchPlayerArchive.clear();
 	__GUARD__;
@@ -157,6 +159,49 @@ void DBProxyManager::loadDBConfig()
 		mDBConnectionInfos[i].mDBPwd = szPassword_Decoded;
 	}
 
+	{
+		EDBDataCategory dbCategory = EDBCategory_Player;
+
+		int32 groupNum = ini.Get_Property_Int("Player", "GroupNum", 0);
+		for (int32 i = 0; i < groupNum; ++i)
+		{
+			String groupName = StringUtil::printf("Group%d", i);
+			mCategoryConnMap[dbCategory][i] = ini.Get_Property_Int("Player", groupName.c_str());
+		}
+	}
+
+	{
+		EDBDataCategory dbCategory = EDBCategory_Friend;
+
+		int32 groupNum = ini.Get_Property_Int("Friend", "GroupNum", 0);
+		for (int32 i = 0; i < groupNum; ++i)
+		{
+			String groupName = StringUtil::printf("Group%d", i);
+			mCategoryConnMap[dbCategory][i] = ini.Get_Property_Int("Friend", groupName.c_str());
+		}
+	}
+
+	{
+		EDBDataCategory dbCategory = EDBCategory_Guild;
+
+		int32 groupNum = ini.Get_Property_Int("Guild", "GroupNum", 0);
+		for (int32 i = 0; i < groupNum; ++i)
+		{
+			String groupName = StringUtil::printf("Group%d", i);
+			mCategoryConnMap[dbCategory][i] = ini.Get_Property_Int("Guild", groupName.c_str());
+		}
+	}
+
+	{
+		EDBDataCategory dbCategory = EDBCategory_Mail;
+
+		int32 groupNum = ini.Get_Property_Int("Mail", "GroupNum", 0);
+		for (int32 i = 0; i < groupNum; ++i)
+		{
+			String groupName = StringUtil::printf("Group%d", i);
+			mCategoryConnMap[dbCategory][i] = ini.Get_Property_Int("Guild", groupName.c_str());
+		}
+	}
 
 	__UNGUARD__
 
@@ -238,9 +283,227 @@ BOOL DBProxyManager::CheckVersion(int32 nConnNum)
 	return FALSE;
 }
 
-//----------------------------------------------------------------------
+//---------------------------------------------------------------------------------------
+// t_global
+//---------------------------------------------------------------------------------------
+int32 DBProxyManager::rpcFetchGlobalVal(int32 nGroup, int32 eType)
+{
+	int32 nVal = 0;
+	__GUARD__;
+
+	if (nGroup < 0 || nGroup >= DB_MAX_CONNECTION)
+		return nVal;
+
+	DBOper* dbOper = mDBConnections[nGroup];
+	KCheck(dbOper);
+	DBCore* dbCore = dbOper->GetInterface();
+	KCheck(dbCore);
+
+	if (!dbCore->IsConnected())
+	{
+		QLogSystem::QUICK_LOG(SLOW_LOG_GL_DBCENTER, "PlayerDBProxy::doCheckVersion error");
+		return nVal;
+	}
+
+	DBGlobalPro stDBGlobalPro;
+	stDBGlobalPro.clear();
+
+	mGlobalState.clear();
+	mGlobalState.setCheckType((EProFlag)eType);
+	if (mGlobalState.doSQLSelect(dbCore))
+	{
+		if (mGlobalState.getAffectedRowCount() > 0)
+		{
+			mGlobalState.doSQLFetch(dbCore, &stDBGlobalPro);
+			nVal = stDBGlobalPro.getGlobalVal();
+		}
+	}
+
+	return nVal;
+	__UNGUARD__;
+	return nVal;
+}
+
+void DBProxyManager::rpcSaveGlobalVal(int32 nGroup, int32 eType, int32 nVal)
+{
+	__GUARD__;
+	if (nGroup < 0 || nGroup >= DB_MAX_CONNECTION)
+		return;
+
+	if (nGroup < 0 || nGroup >= DB_MAX_CONNECTION)
+		return;
+
+	DBOper* dbOper = mDBConnections[nGroup];
+	KCheck(dbOper);
+	DBCore* dbCore = dbOper->GetInterface();
+	KCheck(dbCore);
+
+	if (!dbCore->IsConnected())
+	{
+		QLogSystem::QUICK_LOG(SLOW_LOG_GL_DBCENTER, "PlayerDBProxy::doCheckVersion error");
+		return;
+	}
+
+	mGlobalState.clear();
+	DBGlobalPro stDBGlobalPro;
+	stDBGlobalPro.clear();
+	stDBGlobalPro.setGlobalIndex((int32)eType);
+	stDBGlobalPro.setGlobalVal(nVal);
+	mGlobalState.clear();
+	mGlobalState.readFromProps(&stDBGlobalPro);
+	mGlobalState.doSQLUpdate(dbCore);
+
+	return;
+	__UNGUARD__
+		return;
+}
+
+//---------------------------------------------------------------------------------------
+// 获取邮件总数 [2/5/2018 Chief]
+//---------------------------------------------------------------------------------------
+tagMailsNum& DBProxyManager::rpcRequestAllMailsNum(int32 nGroup)
+{
+	mStMailsNum.clear();
+	__GUARD__;
+
+	mStMailsNum.setBaseMailNum(mMailDBProxy->doFetchMailNum(EDBT_Base, nGroup));
+	mStMailsNum.setAttachmentMailNum(mMailDBProxy->doFetchMailNum(EDBT_Attach, nGroup));
+	mStMailsNum.setContentMailNum(mMailDBProxy->doFetchMailNum(EDBT_Content, nGroup));
+	mStMailsNum.setSystemMailNum(mMailDBProxy->doFetchMailNum(EDBT_System, nGroup));
+
+	return mStMailsNum;
+
+	__UNGUARD__;
+	return mStMailsNum;
+}
+
+//---------------------------------------------------------------------------------------
+// 批量获取邮件数据 [2/5/2018 Chief]
+//---------------------------------------------------------------------------------------
+BatchBaseMailArchive& DBProxyManager::rpcFetchBaseMailData(int32 nStartID, int32 nSelectNum, int32 nGroupID)
+{
+	mBatchBaseMailData.clear();
+	__GUARD__;
+
+	mMailDBProxy->doFetchBaseMailsInfo(mBatchBaseMailData, nGroupID, nStartID, nSelectNum);
+
+	return mBatchBaseMailData;
+
+	__UNGUARD__;
+	return mBatchBaseMailData;
+}
+
+BatchAttachmentMailArchive& DBProxyManager::rpcFetchAttachmentMailData(int32 nStartID, int32 nSelectNum, int32 nGroupID)
+{
+	mBatchAttachmentMailData.clear();
+	__GUARD__;
+
+	mMailDBProxy->doFetchAttachmentMailsInfo(mBatchAttachmentMailData, nGroupID, nStartID, nSelectNum);
+
+	return mBatchAttachmentMailData;
+
+	__UNGUARD__;
+	return mBatchAttachmentMailData;
+}
+
+BatchContentMailArchive& DBProxyManager::rpcFetchContentMailData(int32 nStartID, int32 nSelectNum, int32 nGroupID)
+{
+	mBatchContentMailData.clear();
+	__GUARD__;
+
+	mMailDBProxy->doFetchContentMailsInfo(mBatchContentMailData, nGroupID, nStartID, nSelectNum);
+
+	return mBatchContentMailData;
+
+	__UNGUARD__;
+	return mBatchContentMailData;
+}
+
+BatchSystemMailArchive& DBProxyManager::rpcFetchSystemMailData(int32 nStartID, int32 nSelectNum, int32 nGroupID)
+{
+	mBatchSystemMailData.clear();
+	__GUARD__;
+
+	mMailDBProxy->doFetchSystemMailsInfo(mBatchSystemMailData, nGroupID, nStartID, nSelectNum);
+
+	return mBatchSystemMailData;
+
+	__UNGUARD__;
+	return mBatchSystemMailData;
+}
+
+//---------------------------------------------------------------------------------------
+// 操作邮件 [2/7/2018 Chief]
+//---------------------------------------------------------------------------------------
+BOOL DBProxyManager::rpcOperatorBaseMailData(BaseMailArchive& stArchive, int32 nGroupID, int32 nOper)
+{
+	__GUARD__;
+
+	if (EDBO_Insert == nOper)
+	{
+		mMailDBProxy->doInsertBaseMailsInfo(stArchive, nGroupID);
+	}
+	else if (EDBO_Update == nOper)
+	{
+		mMailDBProxy->doUpdateBaseMailsInfo(stArchive, nGroupID);
+	}
+
+	return TRUE;
+	__UNGUARD__;
+	return FALSE;
+}
+
+void DBProxyManager::rpcOperatorAttachmentMailData(AttachmentMailArchive& stArchive, int32 nGroupID, int32 nOper)
+{
+	__GUARD__;
+
+	if (EDBO_Insert == nOper)
+	{
+		mMailDBProxy->doInsertAttachmentMailsInfo(stArchive, nGroupID);
+	}
+	else if (EDBO_Update == nOper)
+	{
+		mMailDBProxy->doUpdateAttachmentMailsInfo(stArchive, nGroupID);
+	}
+
+	__UNGUARD__;
+}
+
+void DBProxyManager::rpcOperatorContentMailData(ContentMailArchive& stArchive, int32 nGroupID, int32 nOper)
+{
+	__GUARD__;
+
+	if (EDBO_Insert == nOper)
+	{
+		mMailDBProxy->doInsertContentMailsInfo(stArchive, nGroupID);
+	}
+	else if (EDBO_Update == nOper)
+	{
+		mMailDBProxy->doUpdateContentMailsInfo(stArchive, nGroupID);
+	}
+
+	__UNGUARD__;
+}
+
+void DBProxyManager::rpcOperatorSystemMailData(SystemMailArchive& stArchive, int32 nGroupID, int32 nOper)
+{
+	__GUARD__;
+
+	if (EDBO_Insert == nOper)
+	{
+		mMailDBProxy->doInsertSystemMailsInfo(stArchive, nGroupID);
+	}
+	else if (EDBO_Update == nOper)
+	{
+		mMailDBProxy->doUpdateSystemMailsInfo(stArchive, nGroupID);
+	}
+
+	__UNGUARD__;
+}
+
+//---------------------------------------------------------------------------------------
 // factory
-//----------------------------------------------------------------------
+//---------------------------------------------------------------------------------------
 
 EServerModuleType DBProxyModuleFactory::getType() const
 {

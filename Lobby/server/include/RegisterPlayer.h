@@ -3,6 +3,9 @@
 
 #include "TypeDefine.h"
 #include "RegisterPlayerStruct.h"
+#include "GameMail.h"
+#include "MailDefine.h"
+#include <queue>
 
 class RegisterPlayer
 {
@@ -19,12 +22,22 @@ public:
 	{
 		mPlayerArchive.mDBState = dbArchive;
 		mIsOnline = FALSE;
+		if (!mUnReadMailIDQueue.empty())
+		{
+			for (int32 i = 0; i < mUnReadMailIDQueue.size(); ++i)
+				mUnReadMailIDQueue.pop();
+		}
 	}
 
 	void clear()
 	{
 		mPlayerArchive.clear();
 		mIsOnline = FALSE;
+		if (!mUnReadMailIDQueue.empty())
+		{
+			for (int32 i = 0; i < mUnReadMailIDQueue.size(); ++i)
+				mUnReadMailIDQueue.pop();
+		}
 	}
 
 	BOOL isOnline() const
@@ -47,10 +60,18 @@ public:
 		return mPlayerArchive.mDBState.getAccountName().c_str();
 	}
 
-protected:
-	RegisterPlayerArchive mPlayerArchive;
+	int32 getUnReadMailNums()
+	{
+		return mUnReadMailIDQueue.size();
+	}
 
-	BOOL mIsOnline;
+protected:
+	RegisterPlayerArchive	mPlayerArchive;
+
+	BOOL					mIsOnline;
+
+	// 玩家离线时接受到的邮件 [1/29/2018 Chief]
+	std::queue<int32>		mUnReadMailIDQueue;
 };
 
 #endif

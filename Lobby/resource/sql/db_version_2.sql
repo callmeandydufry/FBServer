@@ -33,6 +33,8 @@ CREATE TABLE `t_player` (
   `BuyDiamond` int(11) NOT NULL COMMENT '钻石',
   `Level` int(11) NOT NULL COMMENT '等级',
   `Exp` bigint(20) NOT NULL COMMENT '经验',
+  `MailIDList` varchar(500) NOT NULL COMMENT '邮件list',
+  `MailStatus` BIGINT(20) unsigned NOT NULL COMMENT '邮件状态',
   PRIMARY KEY  (`aid`),
   UNIQUE KEY `Index_char_playerguid` (`Snid`),
   UNIQUE KEY `Index_char_playername` USING HASH (`CharacterName`),
@@ -63,6 +65,72 @@ CREATE TABLE `t_version` (
   `verNum` int(11) NOT NULL COMMENT '版本号',
   PRIMARY KEY  (`aid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Table structure for table `t_mail_base` 
+--
+DROP TABLE IF EXISTS `t_mail_base`;
+CREATE TABLE `t_mail_base` (
+  `MailID` int(11) NOT NULL default -1 COMMENT '邮件唯一id',
+  `ServerID` smallint(5) NOT NULL COMMENT '服务器ID',
+  `MailType` int(11) NOT NULL default 0 COMMENT '邮件类型',
+  `CreateTime` int(11) NOT NULL default 0 COMMENT '创建时间',
+  `OverTime` int(11) NOT NULL default 0 COMMENT '过期时间',
+  PRIMARY KEY  (`MailID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Table structure for table `t_mail_attach` 
+--
+DROP TABLE IF EXISTS `t_mail_attach`;
+CREATE TABLE `t_mail_attach` (
+  `MailID` int(11) NOT NULL default -1 COMMENT '邮件唯一id',
+  `TypeMisc1` int(11) NOT NULL default 0 COMMENT '奖励id',
+  `TypeMisc2` int(11) NOT NULL default 0 COMMENT '奖励id',
+  `TypeMisc3` int(11) NOT NULL default 0 COMMENT '奖励id',
+  `Num1` int(11) NOT NULL default 0 COMMENT '奖励数量',
+  `Num2` int(11) NOT NULL default 0 COMMENT '奖励数量',
+  `Num3` int(11) NOT NULL default 0 COMMENT '奖励数量',
+  `Valid` TINYINT(3) NOT NULL DEFAULT '0' COMMENT '是否有效',
+  PRIMARY KEY  (`MailID`)
+) ENGINE=MYISAM DEFAULT CHARSET=utf8;
+
+--
+-- Table structure for table `t_mail_content ` 
+--
+DROP TABLE IF EXISTS `t_mail_content`;
+CREATE TABLE `t_mail_content` (
+  `MailID` int(11) NOT NULL default -1 COMMENT '邮件唯一id',
+  `Title` varchar(50) NOT NULL COMMENT '邮件title',
+  `Content` varchar(50) NOT NULL COMMENT '邮件内容',
+  `Valid` TINYINT(3) NOT NULL DEFAULT '0' COMMENT '是否有效',
+  PRIMARY KEY  (`MailID`)
+) ENGINE=MYISAM DEFAULT CHARSET=utf8;
+
+--
+-- Table structure for table `t_mail_system ` 
+--
+DROP TABLE IF EXISTS `t_mail_system`;
+CREATE TABLE `t_mail_system` (
+  `MailID` int(11) NOT NULL default -1 COMMENT '邮件唯一id',
+  `MinLv` smallint(5) NOT NULL COMMENT '最小等级',
+  `MaxLv` smallint(5) NOT NULL COMMENT '最大等级',
+  `Valid` TINYINT(3) NOT NULL DEFAULT '0' COMMENT '是否有效',
+  PRIMARY KEY  (`MailID`)
+) ENGINE=MYISAM DEFAULT CHARSET=utf8;
+
+--
+-- Table structure for table `t_globalval ` 
+--
+DROP TABLE IF EXISTS `t_globalval`;
+CREATE TABLE `t_globalval` (
+  `GlobalIndex` int(11) NOT NULL default 0 COMMENT 'globalid',
+  `GlobalVal` int(11) NOT NULL default 0 COMMENT 'globalVal',
+  PRIMARY KEY  (`GlobalIndex`)
+) ENGINE=MYISAM DEFAULT CHARSET=utf8;
+INSERT INTO t_globalval(globaltype, globalvalue) VALUES(0, '1');
+
+
 
 -- INSERT INTO `t_version` VALUES(1); 每次版本号需要+1
 INSERT INTO `t_version`(verNum) VALUES(2);

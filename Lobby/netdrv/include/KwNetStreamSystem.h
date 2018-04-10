@@ -57,7 +57,7 @@ class RecieveStream
 public :
 	RecieveStream( Socket* sock, 
 		uint32 BufferSize = INITRECSIZE,
-		uint32 MaxBufferSize = 96*1024 ) ;
+		uint32 MaxBufferSize = 500*1024 ) ;
 	virtual ~RecieveStream( ) ;
 
 

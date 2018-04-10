@@ -31,9 +31,8 @@
 #define FILE_IPSET							"./Config/IpSet.ini"
 #define FILE_MERGE_SERVER_CONFIG			"../mergeserver/MergeServerConfig.ini"
 #define FILE_MODULE_CONFIG					"./Config/ModuleConfig.ini"
+#define FILE_ROBOT_CONFIG					"./Config/RobotConfig.ini"
 
-// 活动相关配置 [xingzhishan]
-#define FILE_ACTIVITY_CONFIG				"./ActivityConfig/ActivityConfig.ini"
 
 /************************************************************************/
 /* 服务器玩法配置                                                       */

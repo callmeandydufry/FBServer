@@ -1,0 +1,37 @@
+(1521775527 11:25:27 0.062 2192000) GameServer Starting... (1804231125)(9824069)
+(1521775527 11:25:27 0.078 2192000) 
+ Current VERSION 0
+
+
+(1521775527 11:25:27 0.078 2192000) InitServer PROCNAME=MechineLocal FD_SETSIZE=2048...
+(1521775527 11:25:27 0.109 2192000) ################################################################################################################################
+(1521775527 11:25:27 0.109 2192000) #				ALL SERVER CONFIG				
+(1521775527 11:25:27 0.109 2192000) ################################################################################################################################
+(1521775527 11:25:27 0.109 2192000) # ServerID=0
+(1521775527 11:25:27 0.109 2192000) # ServerCount=1
+(1521775527 11:25:27 0.109 2192000) # [0] CNC IP=127.0.0.1, CHINANET IP= Port=17711, ServerID=0, Type=0, MachineID=0
+(1521775527 11:25:27 0.109 2192000) ################################################################################################################################
+(1521775527 11:25:27 0.125 2192000) 
+NewStaticServer( )...OK
+(1521775527 11:25:27 0.125 2192000) [New] Begin new g_pGuardThread ... 
+(1521775527 11:25:27 0.125 2192000) [New] new g_pGuardThread OK ! 
+(1521775527 11:25:27 0.125 2192000) [New] Begin new g_pModuleManager ... 
+(1521775527 11:25:27 0.140 2192000) [New] new g_pModuleManager OK ! 
+(1521775527 11:25:27 0.140 2192000) [New] Begin new g_pModuleThreadContainer ... 
+(1521775527 11:25:27 0.140 2192000) [New] new g_pModuleThreadContainer OK ! 
+(1521775527 11:25:27 0.140 2192000) 
+InitStaticServer( )...OK
+(1521775527 11:25:27 0.140 2192000) [Init] Begin INIT_MESSAGE_FACTORY() ... 
+(1521775527 11:25:27 0.140 2192000) [Init] INIT_MESSAGE_FACTORY() OK ! 
+(1521775527 11:25:27 0.140 2192000) [Init] Begin g_pGameServerMainThread->Init() ... 
+(1521775527 11:25:27 0.140 2192000) [Init] g_pGameServerMainThread->Init() OK ! 
+(1521775527 11:25:27 0.140 2192000) [Init] Begin g_pModuleThreadContainer->Init() ... 
+(1521775527 11:25:27 0.140 2192000) [Init] g_pModuleThreadContainer->Init() OK ! 
+(1521775527 11:25:27 0.140 2192000) [Init] Begin g_pModuleManager->Init() ... 
+(1521775527 11:25:27 0.156 2192000) ModuleManager::init self proc name = MechineLocal
+(1521775528 11:25:28 1.373 2192000) [Init] g_pModuleManager->Init() OK ! 
+(1521775528 11:25:28 1.373 2192000) 
+Loop...
+(1521775528 11:25:28 1.388 2192000) g_pGuardThread->Loop( )...
+(1521775528 11:25:28 1.388 2192000) ServerModuleThreadContainer Time init OK!
+(1521775528 11:25:28 1.388 2192000) BattleServerMainThread Time init OK!

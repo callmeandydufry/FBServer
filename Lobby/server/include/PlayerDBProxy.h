@@ -5,7 +5,7 @@
 
 class PlayerArchive;
 class RegisterPlayerArchive;
-class BatchRegPlayerArchive;
+class BatchRegisterPlayerArchive;
 class DBProxyManager;
 
 class PlayerDBProxy
@@ -28,7 +28,7 @@ public:
 	BOOL doFetchPlayerNumInSnidRange(int32 serverID, SNID_t begin, SNID_t end, int32& playerNum);
 
 	// 获取给定区间内多个玩家的注册玩家数据 [1/2/2018 yz]
-	BOOL doFetchRegisterPlayerInSnidRange(int32 serverID, SNID_t begin, int32 limit, BatchRegPlayerArchive* batchPlayerData);
+	BOOL doFetchRegisterPlayerInSnidRange(int32 serverID, SNID_t begin, int32 limit, BatchRegisterPlayerArchive* batchPlayerData);
 
 protected:
 	DBProxyManager*					mDBManager;

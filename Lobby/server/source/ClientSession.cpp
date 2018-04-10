@@ -149,6 +149,11 @@ void ClientSession::tickComponent(uint32 uTick)
 		}
 	}
 	break;
+	case ESESS_OnFighting:
+	{
+
+	}
+	break;
 	case ESESS_REQUEST_OFFLINE:
 	{
 		
@@ -493,4 +498,51 @@ BOOL ClientSession::rpcPlayerCheckSessionIsOnline()
 
 	__UNGUARD__;
 	return FALSE;
+}
+
+//----------------------------------------------------------------------
+//邮件list简易数据
+//----------------------------------------------------------------------
+void ClientSession::rpcMgrSynMailList2Session(tagSendMailListInfo& stSendList)
+{
+	__GUARD__;
+
+	if (mClientRPCInterface)
+	{
+		// todo 增加有效邮件个数的参数
+		mClientRPCInterface->SynTypeMailList(MAX_S2CSYNMAIL_NUMS, stSendList);
+	}
+
+	__UNGUARD__;
+}
+
+//----------------------------------------------------------------------
+//邮件详情
+//----------------------------------------------------------------------
+void ClientSession::rpcMgrSynMailDetail2Session(tagSendMailDetail& stSendMainDetail, tagSendMailAttachMent& stAttach)
+{
+	__GUARD__;
+
+	if (mClientRPCInterface)
+	{
+		mClientRPCInterface->SynMailDetialData(stSendMainDetail, stAttach);
+	}
+
+	__UNGUARD__;
+}
+
+//----------------------------------------------------------------------
+// CALLBACK [2/9/2018 Chief]
+//----------------------------------------------------------------------
+// rpcRequestUnreadMailNums
+void ClientSession::onRPCRequestUnreadMailNumsCallbackSucess(int32& nNum)
+{
+	__GUARD__;
+
+	if (mClientRPCInterface)
+	{
+		mClientRPCInterface->SynNewMailNums(nNum);
+	}
+
+	__UNGUARD__;
 }

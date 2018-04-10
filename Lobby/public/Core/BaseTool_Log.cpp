@@ -310,15 +310,12 @@ namespace	QLogSystem
 		RegisterLogPath(QUICK_LOG_CDKEY,			"CDKey",			eQUICK_LOG);
 		RegisterLogPath(QUICK_LOG_DEBUGDUMP,		"DebugDump",		eQUICK_LOG);
 		RegisterLogPath(QUICK_LOG_CONNECTOR,		"connector_login",	eQUICK_LOG);
-		RegisterLogPath(QUICK_LOG_WECHATRED,		"wechatred",		eQUICK_LOG);
-		RegisterLogPath(QUICK_LOG_TOPLIST_RANK,		"toplistrank",		eQUICK_LOG);
-		RegisterLogPath(QUICK_LOG_ARENA_AWARD,		"arenaaward",		eQUICK_LOG);
+		RegisterLogPath(QUICK_LOG_MAILMGR,			"mailmgr",			eQUICK_LOG);
 		RegisterLogPath(QUICK_LOG_ZUOBI,			"zuobi",			eQUICK_LOG, TRUE);
 		RegisterLogPath(QUICK_LOG_ACTIVITY_STATUS,	"activitystatus",	eQUICK_LOG);
 		RegisterLogPath(QUICK_LOG_PLAYER_RENAME,	"playerRename",		eQUICK_LOG);
 		RegisterLogPath(QUICK_LOG_GUILD_RENAME,		"guildRename",		eQUICK_LOG);
 		RegisterLogPath(QUICK_LOG_PLAYER_PHYSICALPOWER_OVERFLOW,		"PhysicalPowerOverflow",		eQUICK_LOG);
-		RegisterLogPath(QUICK_LOG_ARENA_RANK_UP_AWARD,		"ArenaRankUpAward",		eQUICK_LOG);
 		RegisterLogPath(QUICK_LOG_CITY_BUILDING_MAP, "CityBuildingMap", eQUICK_LOG);
 
 		RegisterLogPath(SLOW_LOG_AIDEBUG,			"AIDebug",			eSLOW_LOG);
@@ -351,13 +348,6 @@ namespace	QLogSystem
 		RegisterLogPath(SLOW_LOG_GAME_LOGIC_BATTLEINFO,			"audit/BattleInfoLog",	eSLOW_LOG, FALSE);
 
 		RegisterLogPath(SLOW_LOG_MERGE_SERVER, "MergeServer", eSLOW_LOG, TRUE);
-		RegisterLogPath(SLOW_LOG_PLAYER_ARTIFACT, "db/Artifact", eSLOW_LOG);
-		RegisterLogPath(SLOW_LOG_PLAYER_FIND_TREASURE, "db/FindTreasure", eSLOW_LOG);
-		RegisterLogPath(SLOW_LOG_PLAYER_HERO_TRANSFER, "db/HeroTransfer", eSLOW_LOG);
-		RegisterLogPath(SLOW_LOG_PLAYER_INDENTURE, "db/Indenture", eSLOW_LOG);
-		RegisterLogPath(SLOW_LOG_PLAYER_EFFECT_UP_DATA, "db/EffectUpData", eSLOW_LOG);
-
-		RegisterLogPath(SLOW_LOG_SHOP_REPEAT_BUY_LIMIT_COUNT_ITEM, "ShopLimitItemRepeatBuy", eSLOW_LOG);
 		
 		// ´´½¨Ä¿Â¼ [xingzhishan]
 		RegisterDir();
