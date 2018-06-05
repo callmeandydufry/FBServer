@@ -79,7 +79,6 @@
     <ClCompile Include="..\public\Utilities\SplitStringLevelOne.cpp" />
     <ClCompile Include="..\public\Utilities\SplitStringLevelTwo.cpp" />
     <ClCompile Include="..\public\Version.cpp" />
-    <ClCompile Include="SnidallocateeDBProxy.cpp" />
     <ClCompile Include="source\CGHandShakeHandler.cpp" />
     <ClCompile Include="source\CGPingHandler.cpp" />
     <ClCompile Include="source\CGRequestLoginHandler.cpp" />
@@ -110,6 +109,8 @@
     <ClCompile Include="source\RegisterPlayerStruct.cpp" />
     <ClCompile Include="source\RobotData.cpp" />
     <ClCompile Include="source\RobotManager.cpp" />
+    <ClCompile Include="source\RoomData.cpp" />
+    <ClCompile Include="source\RoomMgr.cpp" />
     <ClCompile Include="source\ServerModuleBase.cpp" />
     <ClCompile Include="source\ServerModuleManager.cpp">
       <PreprocessToFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</PreprocessToFile>
@@ -124,6 +125,7 @@
     <ClCompile Include="source\ServerModuleUtils.cpp" />
     <ClCompile Include="source\SessionConnectorManager.cpp" />
     <ClCompile Include="source\SnidAllocArchiveData.cpp" />
+    <ClCompile Include="source\SnidallocateeDBProxy.cpp" />
     <ClCompile Include="source\SnidAllocManager.cpp" />
     <ClCompile Include="source\SSHandShakeHandler.cpp" />
     <ClCompile Include="source\stdafx.cpp">
@@ -167,6 +169,7 @@
     <ClInclude Include="..\public\Debug.h" />
     <ClInclude Include="..\public\Define.h" />
     <ClInclude Include="..\public\DefineResult.h" />
+    <ClInclude Include="..\public\Defines\RoomDefine.h" />
     <ClInclude Include="..\public\Enum.h" />
     <ClInclude Include="..\public\ExceptionHandler.h" />
     <ClInclude Include="..\public\IntegerHashMap.h" />
@@ -284,6 +287,8 @@
     <ClInclude Include="include\RegisterPlayerStruct.h" />
     <ClInclude Include="include\RobotData.h" />
     <ClInclude Include="include\RobotManager.h" />
+    <ClInclude Include="include\RoomData.h" />
+    <ClInclude Include="include\RoomMgr.h" />
     <ClInclude Include="include\ServerModuleBase.h" />
     <ClInclude Include="include\ServerModuleExportInterface.h" />
     <ClInclude Include="include\ServerModuleManager.h" />
@@ -388,7 +393,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>./include;./../NetDrv/include;./../public;./../public/Module;./../public/DataBase;./../public/EncryptAriths;./../public/Item;./../public/Messages;./../public/TAB;./../public/Utilities;./../public/Messages/MsgMediator;./../public/Core;./../public/ModuleExportInterface;./../public/Connector;./../thirdparties/lzopro/include;../../Public;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./../public/Defines;./include;./../NetDrv/include;./../public;./../public/Module;./../public/DataBase;./../public/EncryptAriths;./../public/Item;./../public/Messages;./../public/TAB;./../public/Utilities;./../public/Messages/MsgMediator;./../public/Core;./../public/ModuleExportInterface;./../public/Connector;./../thirdparties/lzopro/include;../../Public;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;__WINDOWS__;__GAMESERVER__;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -428,7 +433,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>./include;./../NetDrv/include;./../public;./../public/Module;./../public/DataBase;./../public/EncryptAriths;./../public/Item;./../public/Messages;./../public/TAB;./../public/Utilities;./../public/Messages/MsgMediator;./../public/Core;./../public/ModuleExportInterface;./../public/Connector;./../thirdparties/lzopro/include;../../Public;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./../public/Defines;./include;./../NetDrv/include;./../public;./../public/Module;./../public/DataBase;./../public/EncryptAriths;./../public/Item;./../public/Messages;./../public/TAB;./../public/Utilities;./../public/Messages/MsgMediator;./../public/Core;./../public/ModuleExportInterface;./../public/Connector;./../thirdparties/lzopro/include;../../Public;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;__WINDOWS__;__GAMESERVER__;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <ExceptionHandling>Sync</ExceptionHandling>

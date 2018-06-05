@@ -132,6 +132,11 @@ DECLARE_EXPORT_METHOD_PARAM2(CLS, OPERATION, rpcRequestMailDetail, void, int32, 
 CREATE_CLASS_INTERFACE(IMailManager, EXPORT_DECLARATION_IMailManager)
 
 //----------------------------------------------------------------------------
+#define EXPORT_DECLARATION_IRoomMgr(CLS, OPERATION)	\
+
+CREATE_CLASS_INTERFACE(IRoomMgr, EXPORT_DECLARATION_IRoomMgr)
+
+//----------------------------------------------------------------------------
 
 //
 #define REGISTER_SERVER_MODULE_EXPORT_METHODS() \

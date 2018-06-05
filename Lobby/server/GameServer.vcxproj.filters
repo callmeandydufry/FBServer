@@ -369,9 +369,6 @@
     <ClCompile Include="source\SnidAllocArchiveData.cpp">
       <Filter>Module\SnidAlloc</Filter>
     </ClCompile>
-    <ClCompile Include="SnidallocateeDBProxy.cpp">
-      <Filter>Module\DBProxy</Filter>
-    </ClCompile>
     <ClCompile Include="source\ChatManager.cpp">
       <Filter>Module\Chat</Filter>
     </ClCompile>
@@ -391,6 +388,15 @@
       <Filter>Module\Mail</Filter>
     </ClCompile>
     <ClCompile Include="source\MailDBProxy.cpp">
+      <Filter>Module\DBProxy</Filter>
+    </ClCompile>
+    <ClCompile Include="source\RoomData.cpp">
+      <Filter>Module\Room</Filter>
+    </ClCompile>
+    <ClCompile Include="source\RoomMgr.cpp">
+      <Filter>Module\Room</Filter>
+    </ClCompile>
+    <ClCompile Include="source\SnidallocateeDBProxy.cpp">
       <Filter>Module\DBProxy</Filter>
     </ClCompile>
   </ItemGroup>
@@ -878,6 +884,15 @@
     </ClInclude>
     <ClInclude Include="include\PrivateTest.h">
       <Filter>Module\Robot</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RoomData.h">
+      <Filter>Module\Room</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Defines\RoomDefine.h">
+      <Filter>Module\Room</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RoomMgr.h">
+      <Filter>Module\Room</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
