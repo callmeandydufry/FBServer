@@ -10,7 +10,7 @@
 //         them   as   they   arrive.   When   this   application   receives   data   from   a   client,     
 //         it   simply   echos   (this   is   why   we   call   it   an   echo   server)   the   data   back   in     
 //         it's   original   form   until   the   client   closes   the   connection.     
-//       
+//     
 //   Compile:     
 //     
 //         cl   -o   select   select.cpp   ws2_32.lib     

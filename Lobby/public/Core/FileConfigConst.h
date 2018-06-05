@@ -46,6 +46,10 @@
 /************************************************************************/
 /* 服务器相关内部表格                                                   */
 /************************************************************************/
+#define FILE_ROBOTINFO_TAB					"./Config/RobotInfo.tab"
+#define FILE_ITEMINFO_TAB					"./Config/ItemInfo.tab"
+
+
 #define FILE_MAP_INFO					"./Config/mapdefines.tab"				// 默认的MapServer对应的配置表
 #define FILE_MAP_INFO_6					"./Config/mapdefines_6.tab"				// 6 MapServer对应的配置表
 #define FILE_MAP_INFO_10				"./Config/mapdefines_10.tab"			// 10 MapServer对应的配置表
